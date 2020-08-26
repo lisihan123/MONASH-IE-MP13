@@ -3,4 +3,14 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="explore_hooded_plover">Explore Hooded Plover</string>
+    <string name="know_them_better">Know Them Better</string>
+    <string name="natural_enemy">Natural Enemy</string>
+    <string name="feather_color">Feather Color</string>
+    <string name="life_cycle">Life Cycle</string>
+    <string name="favorite_food">Favorite Food</string>
+    <string name="nickname">Nickname</string>
+    <string name="feeding_period">Feeding Period</string>
+    <string name="todo">TODO</string>
+    <string name="view_life_cycle_of_hoody">View Life Cycle of Hoody</string>
 </resources>
