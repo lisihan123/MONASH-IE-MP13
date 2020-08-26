@@ -8,7 +8,7 @@ import android.view.animation.Transformation;
 //https://blog.csdn.net/beijingshi1/article/details/10142553
 //https://blog.csdn.net/marrn/article/details/51758500?utm_medium=distribute.pc_relevant_download.none-task-blog-baidujs-1.nonecase&depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-baidujs-1.nonecase
 
-public class Rotate3dAnimation extends Animation {
+public class Rotate3d extends Animation {
     // 开始角度
     private final float mFromDegrees;
     // 结束角度
@@ -22,8 +22,8 @@ public class Rotate3dAnimation extends Animation {
     // 摄像头
     private Camera mCamera;
 
-    public Rotate3dAnimation(float fromDegrees, float toDegrees, float centerX,
-                             float centerY, float depthZ, boolean reverse) {
+    public Rotate3d(float fromDegrees, float toDegrees, float centerX,
+                    float centerY, float depthZ, boolean reverse) {
         mFromDegrees = fromDegrees;
         mToDegrees = toDegrees;
         mCenterX = centerX;
