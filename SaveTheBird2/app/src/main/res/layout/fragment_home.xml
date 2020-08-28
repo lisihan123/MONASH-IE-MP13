@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,8 +55,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="413dp"
-                android:layout_height="244dp"
+                android:layout_width="412dp"
+                android:layout_height="287dp"
                 android:src="@drawable/hooded_plover_home"
                 app:layout_constraintBottom_toTopOf="@+id/btn_life_cycle"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -184,32 +184,117 @@
                 android:id="@+id/tv_know_them"
                 android:layout_width="361dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="37dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="75dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="40dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableEnd="@drawable/ic_arrow_down"
                 android:fontFamily="monospace"
-                android:text="@string/know_them_better"
+                android:text="@string/what_went_wrong"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.46"
+                app:layout_constraintHorizontal_bias="0.19"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_life_cycle"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_life_cycle" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="146dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginEnd="176dp"
-                android:text="Button"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="319dp"
+                android:layout_height="244dp"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="170dp"
+                android:layout_marginBottom="80dp"
+                android:background="#D7BDE2"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_know_them" />
+
+            <Button
+                android:id="@+id/fact_1"
+                android:layout_width="265dp"
+                android:layout_height="55dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="fact#1"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.066" />
+
+            <Button
+                android:id="@+id/share_1"
+                android:layout_width="53dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableStart="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@+id/fact_1"
+                app:layout_constraintEnd_toEndOf="@+id/fact_1"
+                app:layout_constraintHorizontal_bias="0.924"
+                app:layout_constraintStart_toStartOf="@+id/fact_1"
+                app:layout_constraintTop_toTopOf="@+id/fact_1" />
+
+
+            <Button
+                android:id="@+id/fact_2"
+                android:layout_width="265dp"
+                android:layout_height="55dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="fact#2"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.491" />
+
+            <Button
+                android:id="@+id/share_2"
+                android:layout_width="53dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableStart="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@+id/fact_2"
+                app:layout_constraintEnd_toEndOf="@+id/fact_2"
+                app:layout_constraintHorizontal_bias="0.924"
+                app:layout_constraintStart_toStartOf="@+id/fact_2"
+                app:layout_constraintTop_toTopOf="@+id/fact_2" />
+
+
+            <Button
+                android:id="@+id/fact_3"
+                android:layout_width="265dp"
+                android:layout_height="55dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="fact#3"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.914" />
+
+            <Button
+                android:id="@+id/share_3"
+                android:layout_width="53dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableStart="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@+id/fact_3"
+                app:layout_constraintEnd_toEndOf="@+id/fact_3"
+                app:layout_constraintHorizontal_bias="0.924"
+                app:layout_constraintStart_toStartOf="@+id/fact_3"
+                app:layout_constraintTop_toTopOf="@+id/fact_3" />
+
+
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
