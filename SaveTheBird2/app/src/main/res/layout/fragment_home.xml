@@ -57,7 +57,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="412dp"
                 android:layout_height="287dp"
-                android:src="@drawable/hooded_plover_home"
+                android:src="@drawable/hp_home_2"
                 app:layout_constraintBottom_toTopOf="@+id/btn_life_cycle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.333"
@@ -68,17 +68,37 @@
                 android:id="@+id/btn_tag_1"
                 android:layout_width="135dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="60dp"
                 android:background="@drawable/shape_capsule"
                 android:drawableStart="@drawable/ic_tag"
                 android:fontFamily="monospace"
-                android:text="@string/feather_color"
+                android:text="@string/habitat"
                 android:textAllCaps="false"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.15" />
+                app:layout_constraintVertical_bias="0.193" />
+
+
+            <Button
+                android:id="@+id/btn_tag_1back"
+                android:layout_width="135dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="60dp"
+                android:background="@drawable/shape_capsule"
+                android:backgroundTint="#7468BE"
+                android:fontFamily="monospace"
+                android:text="@string/habitat_answer"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.193" />
+
+
 
             <Button
                 android:id="@+id/btn_tag_2"
@@ -92,10 +112,10 @@
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
                 app:layout_constraintEnd_toEndOf="@+id/btn_tag_1"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.269"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.531" />
+                app:layout_constraintVertical_bias="0.471" />
 
             <Button
                 android:id="@+id/btn_tag_3"
@@ -125,16 +145,16 @@
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.901"
+                app:layout_constraintHorizontal_bias="0.894"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.81" />
+                app:layout_constraintVertical_bias="0.971" />
 
             <Button
                 android:id="@+id/btn_tag_5"
                 android:layout_width="139dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="28dp"
                 android:background="@drawable/shape_capsule"
                 android:drawableStart="@drawable/ic_tag"
                 android:fontFamily="monospace"
@@ -143,7 +163,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.472" />
+                app:layout_constraintVertical_bias="0.288" />
 
             <Button
                 android:id="@+id/btn_life_cycle"
@@ -151,7 +171,7 @@
                 android:layout_height="31dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/shape_capsule"
-                android:backgroundTint="#D7BDE2"
+                android:backgroundTint="#7468BE"
                 android:fontFamily="monospace"
                 android:text="@string/view_life_cycle_of_hoody"
                 android:textAllCaps="false"
@@ -203,17 +223,18 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="319dp"
-                android:layout_height="244dp"
+                android:layout_width="314dp"
+                android:layout_height="295dp"
                 android:layout_marginStart="170dp"
                 android:layout_marginTop="17dp"
                 android:layout_marginEnd="170dp"
                 android:layout_marginBottom="80dp"
-                android:background="#D7BDE2"
+                android:background="#D6D1E8"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_know_them" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_know_them"
+                app:layout_constraintVertical_bias="1.0" />
 
             <Button
                 android:id="@+id/fact_1"
@@ -249,10 +270,10 @@
                 android:text="fact#2"
                 app:layout_constraintBottom_toBottomOf="@+id/textView"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintHorizontal_bias="0.51"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.491" />
+                app:layout_constraintVertical_bias="0.354" />
 
             <Button
                 android:id="@+id/share_2"
@@ -275,10 +296,10 @@
                 android:text="fact#3"
                 app:layout_constraintBottom_toBottomOf="@+id/textView"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintHorizontal_bias="0.509"
+                app:layout_constraintHorizontal_bias="0.51"
                 app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.914" />
+                app:layout_constraintVertical_bias="0.65" />
 
             <Button
                 android:id="@+id/share_3"
@@ -291,6 +312,31 @@
                 app:layout_constraintHorizontal_bias="0.924"
                 app:layout_constraintStart_toStartOf="@+id/fact_3"
                 app:layout_constraintTop_toTopOf="@+id/fact_3" />
+
+            <Button
+                android:id="@+id/fact_4"
+                android:layout_width="265dp"
+                android:layout_height="55dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="fact#4"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.941" />
+
+            <Button
+                android:id="@+id/share_4"
+                android:layout_width="53dp"
+                android:layout_height="35dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableStart="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@+id/fact_4"
+                app:layout_constraintEnd_toEndOf="@+id/fact_4"
+                app:layout_constraintHorizontal_bias="0.924"
+                app:layout_constraintStart_toStartOf="@+id/fact_4"
+                app:layout_constraintTop_toTopOf="@+id/fact_4" />
 
 
 
