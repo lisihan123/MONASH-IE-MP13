@@ -4,6 +4,12 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
+    // Add these lines in `android`
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
         applicationId "com.example.savethebird"
         minSdkVersion 29
@@ -33,5 +39,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Add these lines in `dependencies`
+    implementation 'com.amplifyframework:core:1.1.2'
+    implementation 'com.amplifyframework:aws-datastore:1.1.2'
+    implementation 'com.amplifyframework:aws-api:1.1.2'
 
 }

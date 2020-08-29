@@ -1,7 +1,11 @@
 package com.example.savethebird;
 
 import android.os.Bundle;
+import android.util.Log;
 
+import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Priority;
+import com.amplifyframework.datastore.generated.model.Todo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+
+        Amplify.DataStore.observe(Todo.class,
+                started -> Log.i("Tutorial", "Observation began."),
+                change -> Log.i("Tutorial", change.item().toString()),
+                failure -> Log.e("Tutorial", "Observation failed.", failure),
+                () -> Log.i("Tutorial", "Observation complete.")
+        );
     }
 
 }
+
+
