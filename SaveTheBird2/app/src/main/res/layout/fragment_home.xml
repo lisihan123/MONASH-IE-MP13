@@ -118,7 +118,6 @@
                 app:layout_constraintVertical_bias="0.193" />
 
 
-
             <Button
                 android:id="@+id/btn_tag_2"
                 android:layout_width="139dp"
@@ -131,11 +130,11 @@
                 android:textAllCaps="false"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintEnd_toEndOf="@+id/btn_tag_1"
-                app:layout_constraintHorizontal_bias="0.269"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.471" />
+                app:layout_constraintVertical_bias="0.452" />
 
             <Button
                 android:id="@+id/btn_tag_3"
