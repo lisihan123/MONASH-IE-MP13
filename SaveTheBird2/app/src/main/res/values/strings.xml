@@ -13,14 +13,11 @@
     <string name="feeding_period">Feeding Period</string>
     <string name="todo">TODO</string>
     <string name="view_life_cycle_of_hoody">View Life Cycle of Hoody</string>
-<<<<<<< HEAD
     <string name="what_went_wrong">What Went Wrong?</string>
     <string name="support">Support</string>
     <string name="explore">Explore</string>
     <string name="about_us">About Us</string>
     <string name="habitat">Habitat</string>
     <string name="habitat_answer">Beach/ Salt Lake</string>
-=======
     <string name="back">back</string>
->>>>>>> master
 </resources>
