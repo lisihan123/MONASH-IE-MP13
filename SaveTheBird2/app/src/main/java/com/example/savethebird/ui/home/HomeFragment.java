@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
         mtg4b = view.findViewById(R.id.btn_tag_4back);
         mtg5b = view.findViewById(R.id.btn_tag_5back);
         mtg6b = view.findViewById(R.id.btn_tag_6back);
-        mtg7b = view.findViewById(R.id.btn_tag_6back);
+        mtg7b = view.findViewById(R.id.btn_tag_7back);
         mtg1.setOnClickListener(new Listener());
         mtg2.setOnClickListener(new Listener());
         mtg3.setOnClickListener(new Listener());

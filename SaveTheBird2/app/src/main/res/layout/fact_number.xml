@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/fact_kid_bg_tv"
+        android:layout_width="498dp"
+        android:layout_height="988dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/fact_bg" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="390dp"
+        android:layout_height="121dp"
+        android:fontFamily="monospace"
+        android:text="@string/fact_4_title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="249dp"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/Yong_HP"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="78dp"
+        android:layout_height="32dp"
+        android:fontFamily="monospace"
+        android:text="@string/this_4"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="192dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="382dp"
+        android:layout_height="710dp"
+        android:fontFamily="monospace"
+        android:text="@string/fact_4_content"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="210dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
