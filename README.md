@@ -1,6 +1,6 @@
 # 
 
-# ![screenshot](screenshots\Faunalytics_Logo.png)<br>MP13 - Faunalytics
+# ![screenshot](screenshots/Faunalytics_Logo.png)<br>MP13 - Faunalytics
 
 # **Save The Bird**
 
@@ -35,7 +35,7 @@ P.S. set up the AVD only if you have not installed before
 ```
 Step 1 - Click on 'AVD Manager' icon at the top right corner as shown below 
 ```
-![screenshot](screenshots\ss_avd.png)
+![screenshot](screenshots/ss_avd.png)
 
 ```
 Step 2 - Click on 'Create Virtual Device'
@@ -48,7 +48,7 @@ Step 5 - Let the default settings be and click on 'Finish'
 
 Step 6 - Click on the 'Launch AVD' icon as shown below
 ```
-![screenshot](screenshots\ss_launch.png)
+![screenshot](screenshots/ss_launch.png)
 
 <br>
 
@@ -58,7 +58,7 @@ Step 1 - Turn on the launched AVD by clicking on the 'Power' button
 
 Step 2 - Make sure you have clicked the '1: Project' bar and then drag-and-drop the 'app-release.apk' file from the directory as shown below in the screenshot, onto the launched AVD to install the application
 ```
-![screenshot](screenshots\ss_apk.png)
+![screenshot](screenshots/ss_apk.png)
 ```
 P.S.
 1. kindly uninstall the application before reinstalling to avoid failure if previously installed
