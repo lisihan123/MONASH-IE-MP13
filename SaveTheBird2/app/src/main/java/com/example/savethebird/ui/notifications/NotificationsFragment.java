@@ -1,5 +1,7 @@
 package com.example.savethebird.ui.notifications;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,11 +43,27 @@ public class NotificationsFragment extends Fragment {
     private class Listener implements View.OnClickListener{
         @Override
         public void onClick(View view) {
-            String number = "0405503888";
-            Intent intent = new Intent(Intent.ACTION_DIAL);
-            Uri data = Uri.parse("tel:" + number);
-            intent.setData(data);
-            startActivity(intent);
+            AlertDialog.Builder build = new AlertDialog.Builder(getContext());
+            build.setTitle("Call").setMessage("Would you like to call Birdlife Australia?")
+                    .setPositiveButton("Call", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            String number = "0405503888";
+                            Intent intent = new Intent(Intent.ACTION_CALL);
+                            Uri data = Uri.parse("tel:" + number);
+                            intent.setData(data);
+                            startActivity(intent);
+                        }
+                    }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Toast.makeText(getContext(),"Cancel",Toast.LENGTH_SHORT).show();
+                }
+            }).show();
+
+
         }
     }
+
+
 }
