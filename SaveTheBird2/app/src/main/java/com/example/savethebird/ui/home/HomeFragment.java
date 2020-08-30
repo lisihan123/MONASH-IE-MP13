@@ -12,15 +12,18 @@ import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.savethebird.R;
+import com.example.savethebird.ui.notifications.NotificationsFragment;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private Button mtg1, mtg2,mtg3,mtg4,mtg5,mtg6,mtg7;
     private Button mtg1b,mtg2b,mtg3b,mtg4b,mtg5b,mtg6b,mtg7b;
+    private Button mbtf1,mbtf2,mbtf3,mbtf4;
     private Switch mswich1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -65,6 +68,14 @@ public class HomeFragment extends Fragment {
         mtg7b.setOnClickListener(new Listener());
         mswich1= view.findViewById(R.id.home_switch_hp);
         mswich1.setOnCheckedChangeListener(new Listener());
+        mbtf1 = view.findViewById(R.id.fact_1);
+        mbtf2 = view.findViewById(R.id.fact_2);
+        mbtf3 = view.findViewById(R.id.fact_3);
+        mbtf4 = view.findViewById(R.id.fact_4);
+        mbtf1.setOnClickListener(new Listener());
+        mbtf2.setOnClickListener(new Listener());
+        mbtf3.setOnClickListener(new Listener());
+        mbtf4.setOnClickListener(new Listener());
 
     }
 
@@ -122,8 +133,15 @@ public class HomeFragment extends Fragment {
                 case R.id.btn_tag_7back:
                     applyRotation(0,0,-90,mtg7b,mtg7);
                     break;
+                case R.id.fact_1:
+                    replaceFragment(new NotificationsFragment());
 
             }
+        }
+
+        public void replaceFragment(Fragment replaceFragment){
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,replaceFragment).commit();
         }
 
         @Override
@@ -152,13 +170,13 @@ public class HomeFragment extends Fragment {
                 mtg5.setVisibility(View.VISIBLE);
                 mtg6.setVisibility(View.VISIBLE);
                 mtg7.setVisibility(View.VISIBLE);
-//                mtg1b.setVisibility(View.VISIBLE);
-//                mtg2b.setVisibility(View.VISIBLE);
-//                mtg3b.setVisibility(View.VISIBLE);
-//                mtg4b.setVisibility(View.VISIBLE);
-//                mtg5b.setVisibility(View.VISIBLE);
-//                mtg6b.setVisibility(View.VISIBLE);
-//                mtg7b.setVisibility(View.VISIBLE);
+                mtg1b.setVisibility(View.GONE);
+                mtg2b.setVisibility(View.GONE);
+                mtg3b.setVisibility(View.GONE);
+                mtg4b.setVisibility(View.GONE);
+                mtg5b.setVisibility(View.GONE);
+                mtg6b.setVisibility(View.GONE);
+                mtg7b.setVisibility(View.GONE);
 
                 }
 
