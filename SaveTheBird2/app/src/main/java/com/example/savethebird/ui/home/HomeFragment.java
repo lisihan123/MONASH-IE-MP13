@@ -17,8 +17,8 @@ import com.example.savethebird.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-    private Button mtg1, mtg2;
-    private Button mtg1b;
+    private Button mtg1, mtg2,mtg3,mtg4,mtg5,mtg6,mtg7;
+    private Button mtg1b,mtg2b,mtg3b,mtg4b,mtg5b,mtg6b,mtg7b;
     private boolean IsBack = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -29,31 +29,98 @@ public class HomeFragment extends Fragment {
 
 
         initView(view);
-        setOnClick();
         return view;
     }
 
     private void initView(View view){
         mtg1 = view.findViewById(R.id.btn_tag_1);
         mtg2 = view.findViewById(R.id.btn_tag_2);
+        mtg3 = view.findViewById(R.id.btn_tag_3);
+        mtg4 = view.findViewById(R.id.btn_tag_4);
+        mtg5 = view.findViewById(R.id.btn_tag_5);
+        mtg6 = view.findViewById(R.id.btn_tag_6);
+        mtg7 = view.findViewById(R.id.btn_tag_7);
+        mtg2b = view.findViewById(R.id.btn_tag_2back);
         mtg1b = view.findViewById(R.id.btn_tag_1back);
+        mtg3b = view.findViewById(R.id.btn_tag_3back);
+        mtg4b = view.findViewById(R.id.btn_tag_4back);
+        mtg5b = view.findViewById(R.id.btn_tag_5back);
+        mtg6b = view.findViewById(R.id.btn_tag_6back);
+        mtg7b = view.findViewById(R.id.btn_tag_6back);
+        mtg1.setOnClickListener(new Listener());
+        mtg2.setOnClickListener(new Listener());
+        mtg3.setOnClickListener(new Listener());
+        mtg4.setOnClickListener(new Listener());
+        mtg5.setOnClickListener(new Listener());
+        mtg6.setOnClickListener(new Listener());
+        mtg7.setOnClickListener(new Listener());
+        mtg1b.setOnClickListener(new Listener());
+        mtg2b.setOnClickListener(new Listener());
+        mtg3b.setOnClickListener(new Listener());
+        mtg4b.setOnClickListener(new Listener());
+        mtg5b.setOnClickListener(new Listener());
+        mtg6b.setOnClickListener(new Listener());
+        mtg7b.setOnClickListener(new Listener());
+
     }
 
-    private void setOnClick(){
-        mtg1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(IsBack){
-                    //第一阶段翻转
-                    applyRotation(1,0,90);
-                    IsBack = true;
-                }else{
-                    //第一阶段翻转
-                    applyRotation(0,0,-90);
-                    IsBack= false;
-                }
+    private class Listener implements View.OnClickListener{
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.btn_tag_1:
+                    applyRotation(1,0,90,mtg1,mtg1b);
+                    break;
+
+                case R.id.btn_tag_1back:
+                    applyRotation(0,0,-90,mtg1b,mtg1);
+                    break;
+                case R.id.btn_tag_2:
+                    applyRotation(1,0,90,mtg2,mtg2b);
+                    break;
+
+                case R.id.btn_tag_2back:
+                    applyRotation(0,0,-90,mtg2b,mtg2);
+                    break;
+                case R.id.btn_tag_3:
+                    applyRotation(1,0,90,mtg3,mtg3b);
+                    break;
+
+                case R.id.btn_tag_3back:
+                    applyRotation(0,0,-90,mtg3b,mtg3);
+                    break;
+                case R.id.btn_tag_4:
+                    applyRotation(1,0,90,mtg4,mtg4b);
+                    break;
+
+                case R.id.btn_tag_4back:
+                    applyRotation(0,0,-90,mtg4b,mtg4);
+                    break;
+                case R.id.btn_tag_5:
+                    applyRotation(1,0,90,mtg5,mtg5b);
+                    break;
+
+                case R.id.btn_tag_5back:
+                    applyRotation(0,0,-90,mtg5b,mtg5);
+                    break;
+                case R.id.btn_tag_6:
+                    applyRotation(1,0,90,mtg6,mtg6b);
+                    break;
+
+                case R.id.btn_tag_6back:
+                    applyRotation(0,0,-90,mtg6b,mtg6);
+                    break;
+
+                case R.id.btn_tag_7:
+                    applyRotation(1,0,90,mtg7,mtg7b);
+                    break;
+
+                case R.id.btn_tag_7back:
+                    applyRotation(0,0,-90,mtg7b,mtg7);
+                    break;
+
             }
-        });
+        }
     }
 
     /**
@@ -62,7 +129,7 @@ public class HomeFragment extends Fragment {
      * @param start 起始角度
      * @param end 结束角度
      */
-    private void applyRotation(int tag, float start, float end) {
+    private void applyRotation(int tag, float start, float end, Button front, Button back) {
         // 得到中心点(以中心翻转)
         //X轴中心点
         final float centerX = mtg1.getWidth() / 2.0f;
@@ -74,8 +141,8 @@ public class HomeFragment extends Fragment {
         final Rotate3d rotation = new Rotate3d(start, end, centerX, centerY,depthZ, true);
         rotation.setDuration(300);//设置动画持续时间
         rotation.setInterpolator(new AccelerateInterpolator());//设置动画变化速度
-        rotation.setAnimationListener(new DisplayNextView(tag));//设置第一阶段动画监听器
-        mtg1.startAnimation(rotation);
+        rotation.setAnimationListener(new DisplayNextView(tag,front,back));//设置第一阶段动画监听器
+        front.startAnimation(rotation);
 
 
     }
@@ -86,23 +153,23 @@ public class HomeFragment extends Fragment {
      */
     private final class DisplayNextView implements Animation.AnimationListener {
         private final int tag;
+        private Button front;
+        private Button back;
 
-        private DisplayNextView(int tag) {
+        private DisplayNextView(int tag, Button front, Button back) {
             this.tag = tag;
+            this.front = front;
+            this.back = back;
         }
 
         public void onAnimationStart(Animation animation) {
         }
 
         public void onAnimationEnd(Animation animation) {
-            //第一阶段动画结束时，也就是整个Activity垂直于手机屏幕，
-            //执行第二阶段动画
-            mtg1.setVisibility(View.GONE);
-            mtg1b.setVisibility(View.VISIBLE);
-            if(mtg2.getVisibility()==View.VISIBLE)
-            {System.out.println("显示");}
-            //调整两个界面各自的visibility
-//            adjustVisiable();
+
+            front.setVisibility(View.GONE);
+            back.setVisibility(View.VISIBLE);
+
         }
 
         public void onAnimationRepeat(Animation animation) {
