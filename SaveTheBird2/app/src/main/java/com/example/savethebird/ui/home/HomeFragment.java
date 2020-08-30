@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -19,7 +21,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private Button mtg1, mtg2,mtg3,mtg4,mtg5,mtg6,mtg7;
     private Button mtg1b,mtg2b,mtg3b,mtg4b,mtg5b,mtg6b,mtg7b;
-    private boolean IsBack = false;
+    private Switch mswich1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -61,10 +63,12 @@ public class HomeFragment extends Fragment {
         mtg5b.setOnClickListener(new Listener());
         mtg6b.setOnClickListener(new Listener());
         mtg7b.setOnClickListener(new Listener());
+        mswich1= view.findViewById(R.id.home_switch_hp);
+        mswich1.setOnCheckedChangeListener(new Listener());
 
     }
 
-    private class Listener implements View.OnClickListener{
+    private class Listener implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
         @Override
         public void onClick(View view) {
             switch (view.getId()){
@@ -120,6 +124,45 @@ public class HomeFragment extends Fragment {
                     break;
 
             }
+        }
+
+        @Override
+        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            if(b){
+                mtg1.setVisibility(View.GONE);
+                mtg2.setVisibility(View.GONE);
+                mtg3.setVisibility(View.GONE);
+                mtg4.setVisibility(View.GONE);
+                mtg5.setVisibility(View.GONE);
+                mtg6.setVisibility(View.GONE);
+                mtg7.setVisibility(View.GONE);
+                mtg1b.setVisibility(View.GONE);
+                mtg2b.setVisibility(View.GONE);
+                mtg3b.setVisibility(View.GONE);
+                mtg4b.setVisibility(View.GONE);
+                mtg5b.setVisibility(View.GONE);
+                mtg6b.setVisibility(View.GONE);
+                mtg7b.setVisibility(View.GONE);
+            }
+                else{
+                mtg1.setVisibility(View.VISIBLE);
+                mtg2.setVisibility(View.VISIBLE);
+                mtg3.setVisibility(View.VISIBLE);
+                mtg4.setVisibility(View.VISIBLE);
+                mtg5.setVisibility(View.VISIBLE);
+                mtg6.setVisibility(View.VISIBLE);
+                mtg7.setVisibility(View.VISIBLE);
+//                mtg1b.setVisibility(View.VISIBLE);
+//                mtg2b.setVisibility(View.VISIBLE);
+//                mtg3b.setVisibility(View.VISIBLE);
+//                mtg4b.setVisibility(View.VISIBLE);
+//                mtg5b.setVisibility(View.VISIBLE);
+//                mtg6b.setVisibility(View.VISIBLE);
+//                mtg7b.setVisibility(View.VISIBLE);
+
+                }
+
+
         }
     }
 
