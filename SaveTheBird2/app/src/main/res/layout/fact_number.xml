@@ -33,7 +33,7 @@
         android:id="@+id/imageView5"
         android:layout_width="249dp"
         android:layout_height="120dp"
-        app:srcCompat="@drawable/Yong_HP"
+        app:srcCompat="@drawable/hp_fact"
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="72dp" />
 
