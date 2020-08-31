@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -94,8 +94,8 @@
                 android:drawableStart="@drawable/ic_tag_white"
                 android:fontFamily="monospace"
                 android:text="@string/habitat_answer"
-                android:textColor="#FFFFFF"
                 android:textAllCaps="false"
+                android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -140,7 +140,7 @@
                 app:layout_constraintHorizontal_bias="0.557"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.193"/>
+                app:layout_constraintVertical_bias="0.193" />
 
             <Button
                 android:id="@+id/btn_tag_3"
@@ -217,7 +217,7 @@
                 app:layout_constraintHorizontal_bias="0.105"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="@+id/imageView"
-                app:layout_constraintVertical_bias="0.781"/>
+                app:layout_constraintVertical_bias="0.781" />
 
             <Button
                 android:id="@+id/btn_tag_5"
@@ -491,8 +491,8 @@
                 android:layout_width="265dp"
                 android:layout_height="55dp"
                 android:backgroundTint="#FFFFFF"
-                android:text="@string/fact_4"
                 android:fontFamily="monospace"
+                android:text="@string/fact_4"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -512,9 +512,6 @@
                 app:layout_constraintHorizontal_bias="0.924"
                 app:layout_constraintStart_toStartOf="@+id/fact_4"
                 app:layout_constraintTop_toTopOf="@+id/fact_4" />
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

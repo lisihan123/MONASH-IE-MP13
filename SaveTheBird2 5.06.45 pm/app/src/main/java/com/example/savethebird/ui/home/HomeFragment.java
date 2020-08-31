@@ -162,7 +162,7 @@ public class HomeFragment extends Fragment {
         }
 
         public void replaceFragment(Fragment newFragment){
-            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).commit();
         }
 
