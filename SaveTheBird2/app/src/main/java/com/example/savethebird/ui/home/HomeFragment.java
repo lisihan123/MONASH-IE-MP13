@@ -14,8 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 import com.example.savethebird.R;
+import com.example.savethebird.ui.FactDogFragment;
+import com.example.savethebird.ui.FactKidFragment;
+import com.example.savethebird.ui.FactNumberFragment;
+import com.example.savethebird.ui.factVehFragment;
 import com.example.savethebird.ui.notifications.NotificationsFragment;
 
 public class HomeFragment extends Fragment {
@@ -134,14 +139,26 @@ public class HomeFragment extends Fragment {
                     applyRotation(0,0,-90,mtg7b,mtg7);
                     break;
                 case R.id.fact_1:
-                    replaceFragment(new NotificationsFragment());
+                    replaceFragment(new factVehFragment());
+                    break;
+                case R.id.fact_2:
+                    replaceFragment(new FactKidFragment());
+                    break;
+                case R.id.fact_3:
+                    replaceFragment(new FactDogFragment());
+                    break;
+                case R.id.fact_4:
+                    replaceFragment(new FactNumberFragment());
+                    break;
+
+
 
             }
         }
 
-        public void replaceFragment(Fragment replaceFragment){
+        public void replaceFragment(Fragment newFragment){
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,replaceFragment).commit();
+            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
         }
 
         @Override
