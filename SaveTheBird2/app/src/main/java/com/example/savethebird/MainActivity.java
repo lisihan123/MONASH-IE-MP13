@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        Amplify.DataStore.observe(Todo.class,
-                started -> Log.i("Tutorial", "Observation began."),
-                change -> Log.i("Tutorial", change.item().toString()),
-                failure -> Log.e("Tutorial", "Observation failed.", failure),
-                () -> Log.i("Tutorial", "Observation complete.")
-        );
+//        Amplify.DataStore.observe(Todo.class,
+//                started -> Log.i("Tutorial", "Observation began."),
+//                change -> Log.i("Tutorial", change.item().toString()),
+//                failure -> Log.e("Tutorial", "Observation failed.", failure),
+//                () -> Log.i("Tutorial", "Observation complete.")
+//        );
 //        navView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
 
     }
