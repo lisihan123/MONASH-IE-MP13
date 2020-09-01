@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
+import com.example.savethebird.BannerFragment;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
@@ -140,7 +141,7 @@ public class HomeFragment extends Fragment {
                     applyRotation(0,0,-90,mtg7b,mtg7);
                     break;
                 case R.id.fact_1:
-                    replaceFragment(new factVehFragment());
+                    replaceFragment(new BannerFragment());
                     Toast.makeText(getContext(),"Come soon",Toast.LENGTH_LONG);
                     break;
                 case R.id.fact_2:
