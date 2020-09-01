@@ -28,9 +28,8 @@ allprojects {
     }
 }
 
-// Add this line at the end of the file
-apply plugin: 'com.amplifyframework.amplifytools'
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+// Add this line at the end of the file
+apply plugin: 'com.amplifyframework.amplifytools'

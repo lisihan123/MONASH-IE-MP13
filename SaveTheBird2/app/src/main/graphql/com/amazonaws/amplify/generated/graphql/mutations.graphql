@@ -8,9 +8,6 @@ mutation CreateTodo(
     name
     priority
     description
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -24,9 +21,6 @@ mutation UpdateTodo(
     name
     priority
     description
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -40,9 +34,6 @@ mutation DeleteTodo(
     name
     priority
     description
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
