@@ -24,46 +24,53 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/bitter"
+                android:gravity="center_horizontal"
                 android:text="@string/fact_title_dog"
                 android:textSize="23sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/imageView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.512"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_dog_content"
                 android:layout_width="372dp"
-                android:layout_height="481dp"
-                android:layout_marginTop="312dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/bitter"
                 android:text="@string/fact_content_dog"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="311dp"
-                android:layout_height="289dp"
-                android:layout_marginTop="40dp"
+                android:layout_width="375dp"
+                android:layout_height="250dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dog_title"
                 app:srcCompat="@drawable/dog_1" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="509dp"
-                android:layout_height="569dp"
-                android:layout_marginTop="530dp"
+                android:layout_width="375dp"
+                android:layout_height="240dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="65dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.568"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dog_content"
                 app:srcCompat="@drawable/dog_2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
