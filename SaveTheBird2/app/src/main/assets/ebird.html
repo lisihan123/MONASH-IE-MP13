@@ -13,6 +13,13 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 <!--
+    <script src="/lib/jquery.plugin.js"></script>
+    <script src="/lib/jquery.min.js"></script>
+-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!--
     <script src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
     <script src="https://raw.github.com/calvinmetcalf/catiline/master/dist/catiline.min.js"></script>
 -->
@@ -23,7 +30,7 @@
 
 
 
-<div id="mapid" style="width: 600px; height: 400px;"></div>
+<div id="mapid" style="width: 1000px; height:1400px;"></div>
 <script>
 
     var mymap = L.map('mapid').setView([-37.813, 144.96], 7);
@@ -37,28 +44,19 @@
     accessToken: 'pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw'
 }).addTo(mymap);
     
-    d3.csv("ebird_hooplo.csv", function(data) {
+    d3.csv("./ebird_hooplo.csv", function(data) {
 
         data.forEach(function(row){
             L.circle([row.LATITUDE, row.LONGITUDE], 500, {
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 1
-            }).addTo(mymap).bindPopup("I am a circle.");
+            }).addTo(mymap);
         });
 
     });
 
 </script>
-
-
-<script>
-    
-    shp('files/shapeFile.zip').then(function(data){
-		//do stuff with data
-	});
-
-</script>    
     
 </body>
 </html>
