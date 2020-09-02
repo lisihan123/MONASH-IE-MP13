@@ -90,7 +90,7 @@ public class HomeFragment extends Fragment {
     private void initView(View view){
         mBanner = view.findViewById(R.id.mBanner);
         //图片资源
-        int[] imageResourceID = new int[]{R.drawable.f1,R.drawable.f2,R.drawable.f3};
+        int[] imageResourceID = new int[]{R.drawable.f1,R.drawable.f2,R.drawable.kids};
         List<Integer> imgeList = new ArrayList<>();
         //轮播标题
         String[] mtitle = new String[]{"Only 550 Hooded Plover in Victoria", "Threats from dogs and horses", "Threats from Kids and Pedestrians"};
