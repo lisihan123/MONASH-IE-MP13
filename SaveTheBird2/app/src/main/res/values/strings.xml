@@ -12,7 +12,7 @@
     <string name="nickname">Nickname</string>
     <string name="feeding_period">Feeding Period</string>
     <string name="todo">TODO</string>
-    <string name="view_life_cycle_of_hoody">View Life Cycle of Hoody</string>
+    <string name="view_life_cycle_of_hoody">View Life Cycle of Hooded Plover</string>
     <string name="what_went_wrong">What Went Wrong?</string>
     <string name="support">Support</string>
     <string name="explore">Explore</string>
@@ -49,10 +49,13 @@
     <string name="fact_content_status_1">This shy little creature, we affectionately call \'Hoody\', is a shorebird named Hooded Plover. Fifteen years ago, the terrible fact was that only 200 Hoodies were left, ringing alarm bells in Victoria. Therefore, BirdLife Australia has adopted a series of conservations to help the species return to Australian beaches.\n\n Notably, the survival rate of the Hooded Plover chicks is one of the lowest of all species, i.e. there is only 1 chick growing to an adult in every 100. Without human assistance, the survival rate of Hoodies from eggs to fully grown adults is only 2.5%.</string>
     <string name="fact_content_status_2">\n\nIn addition to frequent tides and storms due to climate change and unavoidable natural enemies, including red foxes, silver gulls, magpies and crows, up to 95% of the nesting failure rate is also due to people\'s unintentional beach behaviours, such as residents bringing their pet dogs on the beach. Indiscriminate chasing in the nesting area on the beach, horse racing or cars destroying the exposed birds\' nests on beaches, and even during breeding, an increasing number of tourists, make the Hooded Plovers unable to safely leave their nests to get food for their little ones.</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="home_page">Why Hoodies are in Threat?</string>
+    <string name="home_page">Why Hooded Plovers are in Threat?</string>
     <string name="call_bird_life">Call for Birdlife</string>
     <string name="map">Map</string>
     <string name="support_menu">Support</string>
+    <string name="do_you_know">Do you know?</string>
+    <string name="only_550">There are only 550 Hooded Plovers in VIC!</string>
+    <string name="use_app">Try to use our APP to help them.</string>
     <string name="explore_link_1">https://ebird.org/species/hooplo2</string>
     <string name="explore_link_2">https://birdlife.org.au/bird-profile/hooded-plover</string>
 
