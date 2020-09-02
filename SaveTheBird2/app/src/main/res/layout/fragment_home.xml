@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bitter"
         android:text="@string/home_page"
-        android:textSize="24sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
