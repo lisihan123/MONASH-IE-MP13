@@ -11,19 +11,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
-        android:text="@string/fact_1_title_1"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="@string/fact_title_kid"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_dog_content"
         android:layout_width="416dp"
         android:layout_height="355dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="monospace"
-        android:text="@string/fact_1_content"
+        android:text="@string/fact_content_kid"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="360dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
