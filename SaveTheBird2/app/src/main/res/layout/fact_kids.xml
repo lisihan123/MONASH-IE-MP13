@@ -6,127 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/fact_kid_bg_tv"
-        android:layout_width="572dp"
-        android:layout_height="988dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fact_bg" />
-
     <TextView
         android:id="@+id/tv_dog_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="208dp"
-        android:layout_marginBottom="840dp"
         android:fontFamily="monospace"
         android:text="@string/fact_1_title_1"
         android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="304dp"
-        android:layout_marginTop="309dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginBottom="648dp"
-        android:fontFamily="monospace"
-        android:text="@string/hp"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="147dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="74dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="351dp"
-        android:layout_marginBottom="634dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv"
-        app:srcCompat="@drawable/beach_girl_eggs_zoom" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="275dp"
-        android:layout_marginTop="227dp"
-        android:layout_marginEnd="268dp"
-        android:layout_marginBottom="729dp"
-        android:fontFamily="monospace"
-        android:text="@string/vs"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="167dp"
-        android:layout_height="354dp"
-        android:layout_marginStart="328dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="428dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/hp3" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="426dp"
-        android:layout_marginEnd="439dp"
-        android:layout_marginBottom="523dp"
-        android:fontFamily="monospace"
-        android:text="@string/you"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_dog_content"
         android:layout_width="416dp"
         android:layout_height="355dp"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="444dp"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="189dp"
         android:fontFamily="monospace"
         android:text="@string/fact_1_content"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv" />
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="360dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="375dp"
+        android:layout_height="291dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_dog_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dog_title"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/kid" />
 </androidx.constraintlayout.widget.ConstraintLayout>
