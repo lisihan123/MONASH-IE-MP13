@@ -37,7 +37,7 @@ public class LoadingActiviy extends AppCompatActivity {
 
 
 
-        initView();
+        initView(intent);
 //        try {
 //            Thread.sleep(5000);
 //        } catch (InterruptedException e) {
@@ -50,9 +50,16 @@ public class LoadingActiviy extends AppCompatActivity {
 
     }
 
-    private  void initView(){
+    private  void initView(Intent intent){
         megg = (ImageView) findViewById(R.id.imageView9);
         load(megg);
+        megg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+                finish();
+            }
+        });
     }
     private void load(ImageView image) {
         String url = "";
