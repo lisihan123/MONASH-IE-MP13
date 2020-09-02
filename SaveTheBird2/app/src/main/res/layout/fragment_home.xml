@@ -11,10 +11,17 @@
 
     <com.youth.banner.Banner
         android:id="@+id/mBanner"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="411dp"
+        android:layout_height="213dp"
+        android:layout_marginBottom="57dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_home_page"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </com.youth.banner.Banner>
+
+
     <TextView
         android:id="@+id/tv_home_page"
         android:layout_width="wrap_content"
@@ -24,10 +31,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <Button
         android:id="@+id/btn_life_cycle"
@@ -43,9 +49,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
 
     <Button
         android:id="@+id/btn_call_bird_life"
@@ -64,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

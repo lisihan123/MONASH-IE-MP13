@@ -14,12 +14,12 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.savethebird.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="@string/map"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.savethebird.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/support_menu"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
