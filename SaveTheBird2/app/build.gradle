@@ -47,6 +47,6 @@ dependencies {
     implementation 'com.amplifyframework:aws-datastore:1.1.2'
     implementation 'com.amplifyframework:aws-api:1.1.2'
     implementation 'com.facebook.android:facebook-share:[5,6)'
-//    implementation 'com.youth.banner:banner:1.4.10'
-//    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
 }

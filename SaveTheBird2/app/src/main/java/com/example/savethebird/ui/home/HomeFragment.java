@@ -1,5 +1,6 @@
 package com.example.savethebird.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
 
+import com.bumptech.glide.Glide;
 import com.example.savethebird.BannerFragment;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.FactDogFragment;
@@ -24,14 +27,22 @@ import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
 import com.example.savethebird.ui.factVehFragment;
 import com.example.savethebird.ui.notifications.NotificationsFragment;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
+import com.youth.banner.loader.ImageLoader;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-    private Button mtg1, mtg2,mtg3,mtg4,mtg5,mtg6,mtg7;
-    private Button mtg1b,mtg2b,mtg3b,mtg4b,mtg5b,mtg6b,mtg7b;
-    private Button mbtf1,mbtf2,mbtf3,mbtf4;
-    private Switch mswich1;
+//    private Button mtg1, mtg2,mtg3,mtg4,mtg5,mtg6,mtg7;
+//    private Button mtg1b,mtg2b,mtg3b,mtg4b,mtg5b,mtg6b,mtg7b;
+//    private Button mbtf1,mbtf2,mbtf3,mbtf4;
+//    private Switch mswich1;
+    private Banner mBanner;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,7 +51,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 
-//        initView(view);
+       initView(view);
         return view;
     }
 
@@ -85,6 +96,52 @@ public class HomeFragment extends Fragment {
 //        mbtf4.setOnClickListener(new Listener());
 //
 //    }
+
+    private void initView(View view){
+        mBanner = view.findViewById(R.id.mBanner);
+        //图片资源
+        int[] imageResourceID = new int[]{R.drawable.f1,R.drawable.f2,R.drawable.f3};
+        List<Integer> imgeList = new ArrayList<>();
+        //轮播标题
+        String[] mtitle = new String[]{"fact1", "fact2", "fact3"};
+        List<String> titleList = new ArrayList<>();
+
+        for (int i = 0; i < imageResourceID.length; i++) {
+            imgeList.add(imageResourceID[i]);//把图片资源循环放入list里面
+            titleList.add(mtitle[i]);//把标题循环设置进列表里面
+            //设置图片加载器，通过Glide加载图片
+            mBanner.setImageLoader(new ImageLoader() {
+                @Override
+                public void displayImage(Context context, Object path, ImageView imageView) {
+                    Glide.with(getContext()).load(path).into(imageView);
+                }
+            });
+            //设置轮播的动画效果,里面有很多种特效,可以到GitHub上查看文档。
+//          mBanner.setBannerAnimation(Transformer.accordion);
+            mBanner.setImages(imgeList);//设置图片资源
+            mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);//设置banner显示样式（带标题的样式）
+            mBanner.setBannerTitles(titleList); //设置标题集合（当banner样式有显示title时）
+            //设置指示器位置（即图片下面的那个小圆点）
+            mBanner.setIndicatorGravity(BannerConfig.CENTER);
+            mBanner.setDelayTime(3000);//设置轮播时间3秒切换下一图
+            mBanner.setOnBannerListener(new OnBannerListener() {
+                @Override
+                public void OnBannerClick(int position) {
+//                    Toast.makeText(getContext(), "你点击了第" + (position + 1) + "张轮播图", Toast.LENGTH_SHORT).show();
+                    if(position == 0){
+
+                    }
+                    if (position==1){}
+                    if (position==2){
+
+                    }
+                }
+            });//设置监听
+            mBanner.start();//开始进行banner渲染
+        }
+
+
+    }
 
 //    private class Listener implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 //        @Override
@@ -162,10 +219,10 @@ public class HomeFragment extends Fragment {
 //            }
 //        }
 
-//        public void replaceFragment(Fragment newFragment){
-//            FragmentManager fragmentManager = getFragmentManager();
-//            fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).commit();
-//        }
+        public void replaceFragment(Fragment newFragment){
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).commit();
+        }
 //
 //        @Override
 //        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
