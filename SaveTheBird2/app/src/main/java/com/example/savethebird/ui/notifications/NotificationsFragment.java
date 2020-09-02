@@ -9,16 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.savethebird.R;
+import com.example.savethebird.ui.ExploreFragment;
 
 public class NotificationsFragment extends Fragment {
 
@@ -68,13 +67,17 @@ public class NotificationsFragment extends Fragment {
                     }).show();
                     break;
                 case R.id.btn_more_explore:
-                    Toast.makeText(getContext(),"Come soon",Toast.LENGTH_LONG);
+                    replaceFragment(new ExploreFragment());
                     break;
                 case R.id.btn_more_about_us:
-                    Toast.makeText(getContext(),"Come soon ",Toast.LENGTH_LONG);
+//                    replaceFragment(new ExploreFragment());
                     break;
 
             }
+        }
+        public void replaceFragment(Fragment newFragment){
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
         }
 
 

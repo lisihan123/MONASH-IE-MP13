@@ -22,7 +22,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/bitter"
                 android:text="@string/fact_title_kid"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -32,16 +32,17 @@
 
             <TextView
                 android:id="@+id/tv_dog_content"
-                android:layout_width="416dp"
-                android:layout_height="355dp"
+                android:layout_width="395dp"
+                android:layout_height="299dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="monospace"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/bitter"
                 android:text="@string/fact_content_kid"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.607"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
