@@ -14,23 +14,23 @@ import com.facebook.share.model.ShareLinkContent;
 
 //https://blog.csdn.net/qq_41545435/article/details/88601716
 //https://developers.facebook.com/docs/sharing/android
-public class factVehFragment extends Fragment {
+public class SupportFragment extends Fragment {
 
 
-    public factVehFragment(){
+    public SupportFragment(){
 
     }
 
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-              View rootView = inflater.inflate(R.layout.fragment_veh, container, false);
+              View rootView = inflater.inflate(R.layout.support_support, container, false);
               return rootView;
 
       }
-      public void fbShare(){
-          ShareLinkContent content = new ShareLinkContent.Builder()
-                  .setContentUrl(Uri.parse("https://developers.facebook.com"))
-                  .build();
-
-      }
+//      public void fbShare(){
+//          ShareLinkContent content = new ShareLinkContent.Builder()
+//                  .setContentUrl(Uri.parse("https://developers.facebook.com"))
+//                  .build();
+//
+//      }
 }
