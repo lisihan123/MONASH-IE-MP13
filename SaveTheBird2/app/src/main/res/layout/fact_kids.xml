@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/fact_bg" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_dog_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="74dp"
@@ -115,7 +115,7 @@
         app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv_dog_content"
         android:layout_width="416dp"
         android:layout_height="355dp"
         android:layout_marginStart="79dp"
