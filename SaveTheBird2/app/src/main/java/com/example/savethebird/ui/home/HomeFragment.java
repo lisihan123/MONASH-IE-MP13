@@ -215,7 +215,7 @@ public class HomeFragment extends Fragment {
 
         public void replaceFragment(Fragment newFragment){
             FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).commit();
+            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
         }
 //
 //        @Override
