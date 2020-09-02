@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.example.savethebird.ui.dashboard.DashboardFragment"
-        android:label="@string/map"
+        android:label="Map"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment

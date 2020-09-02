@@ -5,28 +5,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.Animation;
-import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
-import com.example.savethebird.BannerFragment;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
-import com.example.savethebird.ui.factVehFragment;
-import com.example.savethebird.ui.notifications.NotificationsFragment;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
@@ -103,7 +93,7 @@ public class HomeFragment extends Fragment {
         int[] imageResourceID = new int[]{R.drawable.f1,R.drawable.f2,R.drawable.f3};
         List<Integer> imgeList = new ArrayList<>();
         //轮播标题
-        String[] mtitle = new String[]{"fact1", "fact2", "fact3"};
+        String[] mtitle = new String[]{"Only 550 Hooded Plover in Victoria", "Threats from dogs and horses", "Threats from Kids and Pedestrians"};
         List<String> titleList = new ArrayList<>();
 
         for (int i = 0; i < imageResourceID.length; i++) {
@@ -130,9 +120,13 @@ public class HomeFragment extends Fragment {
 //                    Toast.makeText(getContext(), "你点击了第" + (position + 1) + "张轮播图", Toast.LENGTH_SHORT).show();
                     if(position == 0){
 
+                        replaceFragment(new FactNumberFragment());
                     }
-                    if (position==1){}
+                    if (position==1){
+                        replaceFragment(new FactDogFragment());
+                    }
                     if (position==2){
+                        replaceFragment(new FactKidFragment());
 
                     }
                 }

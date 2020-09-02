@@ -3,6 +3,7 @@ package com.example.savethebird;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.Window;
 
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Priority;
@@ -56,22 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        int id = item.getItemId();
-//        switch (id) {
-//            case R.id.navigation_home:
-//                replace(new HomeFragment());
-//                break;
-//            case R.id.navigation_dashboard:
-//                replace(new DashboardFragment());
-//                break;
-//            case R.id.navigation_notifications:
-//                replace(new NotificationsFragment());
-//                break;
-//
-//        }
-//        return true;
-//    }
+
 
     public void replace(Fragment nextFragment){
         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, nextFragment).commit();

@@ -20,8 +20,6 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.xml.transform.Transformer;
-
 public class BannerFragment extends Fragment {
 
     private Banner mBanner;
