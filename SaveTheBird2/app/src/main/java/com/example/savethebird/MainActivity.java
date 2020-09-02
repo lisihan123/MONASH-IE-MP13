@@ -1,27 +1,11 @@
 package com.example.savethebird;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.Window;
 
-import com.amplifyframework.core.Amplify;
-import com.amplifyframework.datastore.generated.model.Priority;
-import com.amplifyframework.datastore.generated.model.Todo;
-import com.example.savethebird.ui.FactDogFragment;
-import com.example.savethebird.ui.FactKidFragment;
-import com.example.savethebird.ui.FactNumberFragment;
-import com.example.savethebird.ui.dashboard.DashboardFragment;
-import com.example.savethebird.ui.factVehFragment;
-import com.example.savethebird.ui.home.HomeFragment;
-import com.example.savethebird.ui.notifications.NotificationsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;

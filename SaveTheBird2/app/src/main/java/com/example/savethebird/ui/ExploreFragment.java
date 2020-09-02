@@ -14,16 +14,16 @@ import com.facebook.share.model.ShareLinkContent;
 
 //https://blog.csdn.net/qq_41545435/article/details/88601716
 //https://developers.facebook.com/docs/sharing/android
-public class SupportFragment extends Fragment {
+public class ExploreFragment extends Fragment {
 
 
-    public SupportFragment(){
+    public ExploreFragment(){
 
     }
 
     @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-              View rootView = inflater.inflate(R.layout.support_support, container, false);
+              View rootView = inflater.inflate(R.layout.support_explore, container, false);
               return rootView;
 
       }
