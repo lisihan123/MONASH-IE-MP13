@@ -16,7 +16,7 @@
         android:autoLink="web"
         android:fontFamily="@font/bitter"
         android:text="@string/explore_link_1"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
@@ -32,7 +32,7 @@
         android:autoLink="web"
         android:fontFamily="@font/bitter"
         android:text="@string/explore_link_2"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
