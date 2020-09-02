@@ -27,8 +27,9 @@
                 android:textSize="23sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="45dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_dog_content"
