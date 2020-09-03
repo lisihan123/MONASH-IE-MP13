@@ -11,8 +11,8 @@
 
     <com.youth.banner.Banner
         android:id="@+id/mBanner"
-        android:layout_width="411dp"
-        android:layout_height="213dp"
+        android:layout_width="410dp"
+        android:layout_height="211dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="57dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_home_page"
@@ -34,10 +34,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
+        app:layout_constraintVertical_bias="0.404" />
 
     <Button
         android:id="@+id/btn_life_cycle"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.409" />
+        app:layout_constraintVertical_bias="0.379" />
 
     <Button
         android:id="@+id/btn_call_bird_life"
@@ -74,7 +74,7 @@
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.286" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
