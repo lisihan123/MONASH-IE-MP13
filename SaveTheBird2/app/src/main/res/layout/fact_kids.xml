@@ -36,29 +36,38 @@
                 android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="316dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="65dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/fact_content_kid"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="375dp"
-                android:layout_height="285dp"
+                android:layout_width="350dp"
+                android:layout_height="350dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_dog_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.506"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_dog_title"
-                app:srcCompat="@drawable/kid" />
+                app:srcCompat="@drawable/beach_girl_eggs_zoom" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="375dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dog_content"
+                app:srcCompat="@drawable/hp_fact" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
