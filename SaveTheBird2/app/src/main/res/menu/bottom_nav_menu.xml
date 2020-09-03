@@ -12,11 +12,6 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/home"/>
 
-<!--    <item-->
-<!--        android:id="@+id/navigation_dashboard"-->
-<!--        android:icon="@drawable/location"-->
-<!--        android:title="@string/map" />-->
-
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/support"
