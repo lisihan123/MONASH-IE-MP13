@@ -14,8 +14,8 @@
     <string name="todo">TODO</string>
     <string name="view_life_cycle_of_hoody">View Life Cycle of Hooded Plover</string>
     <string name="what_went_wrong">What Went Wrong?</string>
-    <string name="support">Support</string>
-    <string name="explore">Explore</string>
+    <string name="report_sighting">Report Sighting</string>
+    <string name="connect">Connect with NGOs</string>
     <string name="about_us">About Us</string>
     <string name="habitat">Habitat</string>
     <string name="habitat_answer">Beach/ Salt Lake</string>
@@ -58,6 +58,7 @@
     <string name="use_app">Try using our app to help them</string>
     <string name="explore_link_1">https://ebird.org/species/hooplo2</string>
     <string name="explore_link_2">https://birdlife.org.au/bird-profile/hooded-plover</string>
+    <string name="explore">Explore some facts</string>
 
 
 
