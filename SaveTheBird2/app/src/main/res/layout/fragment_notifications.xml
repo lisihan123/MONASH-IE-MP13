@@ -6,26 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btn_more_support"
         android:layout_width="197dp"
         android:layout_height="85dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="136dp"
         android:background="@drawable/shape_capsule"
         android:drawableTop="@drawable/ic_phone"
@@ -33,7 +19,6 @@
         android:paddingVertical="@dimen/activity_vertical_margin"
         android:text="@string/report_sighting"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/btn_more_explore"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,16 +28,14 @@
         android:layout_width="197dp"
         android:layout_height="85dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="95dp"
         android:layout_marginEnd="136dp"
-        android:layout_marginBottom="25dp"
         android:background="@drawable/shape_capsule"
         android:drawableTop="@drawable/ic_search"
         android:fontFamily="@font/bitter"
         android:paddingVertical="@dimen/activity_vertical_margin"
         android:text="@string/connect"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/btn_more_about_us"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_more_support" />
@@ -62,7 +45,7 @@
         android:layout_width="197dp"
         android:layout_height="85dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="136dp"
         android:background="@drawable/shape_capsule"
         android:drawableTop="@drawable/ic_info"
