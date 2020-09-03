@@ -56,8 +56,8 @@
     <string name="do_you_know">Do you know?</string>
     <string name="only_550">Only around 550 Hooded Plovers left in Victoria,\n where are 692 recorded beaches </string>
     <string name="use_app">Try using our app to help them</string>
-    <string name="explore_link_1">https://ebird.org/species/hooplo2</string>
-    <string name="explore_link_2">https://birdlife.org.au/bird-profile/hooded-plover</string>
+    <string name="explore_link_1">https://birdlife.org.au/bird-profile/hooded-plover</string>
+    <string name="explore_link_2">https://ebird.org/species/hooplo2</string>
     <string name="explore">Explore some facts</string>
     <string name="coming_soon">Coming Soon ....</string>
     <string name="page_bar_home">\t\t\t\tExplore Facts about Hooded Plovers</string>
