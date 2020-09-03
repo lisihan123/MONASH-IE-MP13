@@ -30,17 +30,19 @@
         android:fontFamily="@font/bitter"
         android:gravity="center"
         android:text="@string/home_page"
-        android:textSize="20sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401" />
 
     <Button
         android:id="@+id/btn_life_cycle"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
+        android:layout_width="299dp"
+        android:layout_height="58dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/shape_capsule"
         android:backgroundTint="#7468BE"
@@ -51,15 +53,14 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.320" />
+        app:layout_constraintVertical_bias="0.409" />
 
     <Button
         android:id="@+id/btn_call_bird_life"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
+        android:layout_width="296dp"
+        android:layout_height="54dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/shape_capsule"
         android:backgroundTint="#7468BE"
@@ -70,10 +71,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.210" />
+        app:layout_constraintVertical_bias="0.315" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

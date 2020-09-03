@@ -28,7 +28,7 @@
                 android:fontFamily="@font/bitter"
                 android:gravity="center_horizontal"
                 android:text="@string/fact_title_status"
-                android:textSize="20sp"
+                android:textSize="23sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/imageView5"
                 app:layout_constraintEnd_toEndOf="parent"
