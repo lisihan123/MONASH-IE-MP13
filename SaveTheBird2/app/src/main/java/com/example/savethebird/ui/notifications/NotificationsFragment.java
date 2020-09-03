@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.savethebird.R;
+import com.example.savethebird.ui.ComeSoonFragment;
 import com.example.savethebird.ui.ExploreFragment;
 
 public class NotificationsFragment extends Fragment {
@@ -70,7 +71,7 @@ public class NotificationsFragment extends Fragment {
                     replaceFragment(new ExploreFragment());
                     break;
                 case R.id.btn_more_about_us:
-//                    replaceFragment(new ExploreFragment());
+                    replaceFragment(new ComeSoonFragment());
                     break;
 
             }

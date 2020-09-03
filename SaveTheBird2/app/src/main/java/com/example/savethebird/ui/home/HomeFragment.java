@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
 import com.example.savethebird.R;
+import com.example.savethebird.ui.ComeSoonFragment;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
@@ -28,11 +30,9 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-//    private Button mtg1, mtg2,mtg3,mtg4,mtg5,mtg6,mtg7;
-//    private Button mtg1b,mtg2b,mtg3b,mtg4b,mtg5b,mtg6b,mtg7b;
-//    private Button mbtf1,mbtf2,mbtf3,mbtf4;
-//    private Switch mswich1;
+
     private Banner mBanner;
+    private Button mcall, mlc;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -132,12 +132,30 @@ public class HomeFragment extends Fragment {
                 }
             });//设置监听
             mBanner.start();//开始进行banner渲染
+
+            mcall = view.findViewById(R.id.btn_call_bird_life);
+            mlc = view.findViewById(R.id.btn_life_cycle);
+            Listener ls = new Listener();
+            mcall.setOnClickListener(ls);
+            mlc.setOnClickListener(ls);
         }
 
 
     }
 
-//    private class Listener implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+    private class Listener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            switch(view.getId()){
+                case R.id.btn_call_bird_life:
+                    replaceFragment(new ComeSoonFragment());
+                    break;
+                case R.id.btn_life_cycle:
+                    replaceFragment(new ComeSoonFragment());
+                    break;
+            }
+        }
+    }
 //        @Override
 //        public void onClick(View view) {
 //            switch (view.getId()){
