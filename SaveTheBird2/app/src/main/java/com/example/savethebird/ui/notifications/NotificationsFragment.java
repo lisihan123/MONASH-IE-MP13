@@ -55,7 +55,7 @@ public class NotificationsFragment extends Fragment {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     String number = "0405503888";
-                                    Intent intent = new Intent(Intent.ACTION_CALL);
+                                    Intent intent = new Intent(Intent.ACTION_DIAL);
                                     Uri data = Uri.parse("tel:" + number);
                                     intent.setData(data);
                                     startActivity(intent);
@@ -79,6 +79,7 @@ public class NotificationsFragment extends Fragment {
         public void replaceFragment(Fragment newFragment){
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
+
         }
 
 

@@ -1,6 +1,7 @@
 package com.example.savethebird;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -48,15 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
-    public void replace(Fragment nextFragment){
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, nextFragment).commit();
+    @Override
+    public void onBackPressed() {
+        getSupportFragmentManager().popBackStack();
+//        super.onBackPressed();
     }
-
-
-
 }
 
 

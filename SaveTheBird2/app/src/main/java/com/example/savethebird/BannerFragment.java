@@ -61,7 +61,7 @@ public class BannerFragment extends Fragment {
             mBanner.setBannerTitles(titleList); //设置标题集合（当banner样式有显示title时）
             //设置指示器位置（即图片下面的那个小圆点）
             mBanner.setIndicatorGravity(BannerConfig.CENTER);
-            mBanner.setDelayTime(3000);//设置轮播时间3秒切换下一图
+            mBanner.setDelayTime(5000);//设置轮播时间3秒切换下一图
             mBanner.setOnBannerListener(new OnBannerListener() {
                 @Override
                 public void OnBannerClick(int position) {
