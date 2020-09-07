@@ -64,6 +64,7 @@
     <string name="page_bar_map">\t\t\t\t\t\t\t Distribution of Hooded Plovers</string>
     <string name="page_bar_support">\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Support </string>
     <string name="home">Home</string>
-
-
+    <string name="fact_list_1">Only about 550 Hooded Plovers remain \nin Victoria, where 692 beaches are recorded. </string>
+    <string name="fact_list_2">Hooded Plovers face threats from dog \nchasing and horseshoe trampling. </string>
+    <string name="fact_list_3">For beach lovers: watch out for \nHoodies nests exposed on the beach. </string>
 </resources>
