@@ -61,7 +61,7 @@
         android:id="@+id/btn_call_bird_life"
         android:layout_width="296dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/shape_capsule"
         android:backgroundTint="#7468BE"
         android:fontFamily="@font/roboto"
@@ -69,12 +69,10 @@
         android:textAllCaps="false"
         android:textColor="#FDFDFD"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_life_cycle" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
