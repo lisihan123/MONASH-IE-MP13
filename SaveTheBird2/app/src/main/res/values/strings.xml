@@ -64,6 +64,7 @@
     <string name="page_bar_map">\t\t\t\t\t\t\t Distribution of Hooded Plovers</string>
     <string name="page_bar_support">\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Support </string>
     <string name="home">Home</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw</string>
 
 
 </resources>
