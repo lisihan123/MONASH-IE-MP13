@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="140sp"
         android:clickable="true"
-        android:elevation="4dp">
+        android:elevation="4dp"
+        android:layout_marginTop="5dp">
 
 
         <ImageView
@@ -55,7 +56,8 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:clickable="true"
-        android:elevation="4dp">
+        android:elevation="30dp"
+        android:layout_marginTop="5dp">
 
         <ImageView
             android:id="@+id/imageView11"
@@ -97,7 +99,8 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:clickable="true"
-        android:elevation="4dp">
+        android:elevation="30dp"
+        android:layout_marginTop="5dp">
 
         <ImageView
             android:id="@+id/imageView12"

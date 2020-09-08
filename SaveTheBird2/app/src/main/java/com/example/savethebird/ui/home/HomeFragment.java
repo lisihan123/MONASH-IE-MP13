@@ -14,7 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.LifeCycleFragment;
 import com.bumptech.glide.Glide;
+import com.example.savethebird.ListFragment;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.ComeSoonFragment;
 import com.example.savethebird.ui.FactDogFragment;
@@ -96,7 +98,7 @@ public class HomeFragment extends Fragment {
 
     private void initView(View view){
         mBanner = view.findViewById(R.id.mBanner);
-        //图片资源
+        //Image resource
         int[] imageResourceID = new int[]{R.drawable.f1,R.drawable.f2,R.drawable.kids};
         List<Integer> imgeList = new ArrayList<>();
         //轮播标题
@@ -156,10 +158,10 @@ public class HomeFragment extends Fragment {
         public void onClick(View view) {
             switch(view.getId()){
                 case R.id.btn_call_bird_life:
-                    replaceFragment(new ComeSoonFragment());
+                    replaceFragment(new ListFragment());
                     break;
                 case R.id.btn_life_cycle:
-                    replaceFragment(new ComeSoonFragment());
+                    replaceFragment(new LifeCycleFragment());
                     break;
             }
         }

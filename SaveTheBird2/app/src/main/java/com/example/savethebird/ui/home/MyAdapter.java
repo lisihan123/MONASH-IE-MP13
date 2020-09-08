@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.savethebird.R;
+
 import java.util.List;
 
 public class MyAdapter extends PagerAdapter {
@@ -41,7 +43,7 @@ public class MyAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         View view = layoutInflater.inflate(R.layout.card_item, container, false);
-        ImageView imageView = (ImageView)view.findViewById(R.id.imageView);
+        ImageView imageView = view.findViewById(R.id.imageView);
         imageView.setImageResource(lstImages.get(position));
         container.addView(view);
         return view;

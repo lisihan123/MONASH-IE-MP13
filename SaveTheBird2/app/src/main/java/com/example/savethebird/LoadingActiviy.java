@@ -38,15 +38,15 @@ public class LoadingActiviy extends AppCompatActivity {
 
 
         initView(intent);
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-//        startActivity(intent);
-        //add finish method to close this activity
-//        finish();
+        startActivity(intent);
+ //       add finish method to close this activity
+        finish();
 
     }
 
