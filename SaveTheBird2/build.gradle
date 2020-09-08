@@ -26,7 +26,7 @@ allprojects {
 
         // Add this line into `repositories` in `allprojects`
         mavenCentral()
-
+        maven { url 'https://jitpack.io' }
     }
 }
 
