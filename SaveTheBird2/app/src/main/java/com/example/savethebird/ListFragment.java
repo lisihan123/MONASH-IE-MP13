@@ -29,17 +29,17 @@ public class ListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fact_list, container, false);
+        initView(view);
         return view;
     }
 
     private void initView(View view){
         mcl1 = view.findViewById(R.id.factlist_image1);
         mcl2 = view.findViewById(R.id.factlist_image2);
-        mcl3 = view.findViewById(R.id.fact_list_3);
-        Listener ls = new Listener();
-        mcl1.setOnClickListener(ls);
-        mcl2.setOnClickListener(ls);
-        mcl2.setOnClickListener(ls);
+        mcl3 = view.findViewById(R.id.factlist_image3);
+        mcl1.setOnClickListener(new Listener());
+        mcl2.setOnClickListener(new Listener());
+        mcl2.setOnClickListener(new Listener());
 
 
     }
@@ -55,7 +55,7 @@ public class ListFragment extends Fragment {
                 case R.id.factlist_image2:
                     replaceFragment(new FactDogFragment());
                     break;
-                case R.id.fact_list_3:
+                case R.id.factlist_image3:
                     replaceFragment(new FactKidFragment());
                     break;
 
