@@ -1,5 +1,6 @@
 package com.example.savethebird.ui.home;
 
+
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import com.example.savethebird.ui.ComeSoonFragment;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
+import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
@@ -27,7 +29,11 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class HomeFragment extends Fragment {
+
+    List<Integer> lstImages = new ArrayList<>();
 
     private HomeViewModel homeViewModel;
 
@@ -44,6 +50,7 @@ public class HomeFragment extends Fragment {
        initView(view);
         return view;
     }
+
 
 //    private void initView(View view){
 //        mtg1 = view.findViewById(R.id.btn_tag_1);
