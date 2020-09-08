@@ -1,21 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager
         android:id="@+id/horizontal_cycle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:layout_height="250dp"
         app:icvp_center_page_scale_offset="30dp"
+        app:icvp_interpolator="@android:anim/accelerate_decelerate_interpolator"
         app:icvp_max_page_scale="0.8"
         app:icvp_medium_scaled="false"
         app:icvp_min_page_scale="0.5"
         app:icvp_min_page_scale_offset="5dp"
-        app:icvp_scroll_duration="250"/>
+        app:icvp_scroll_duration="250"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/tv_stage_1"
+        android:layout_width="278dp"
+        android:layout_height="313dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="115dp"
+        android:text="@string/stage_description_1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle" />
+
+
+    <TextView
+        android:id="@+id/tv_stage_2"
+        android:layout_width="278dp"
+        android:layout_height="313dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="115dp"
+        android:text="@string/stage_description_2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle" />
+
+
+    <TextView
+        android:id="@+id/tv_stage_3"
+        android:layout_width="278dp"
+        android:layout_height="313dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="115dp"
+        android:text="@string/stage_description_3"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

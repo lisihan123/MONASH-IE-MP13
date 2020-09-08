@@ -68,5 +68,8 @@
     <string name="fact_list_1">Only about 550 Hooded Plovers remain \nin Victoria, where 692 beaches are recorded. </string>
     <string name="fact_list_2">Hooded Plovers face threats from dog \nchasing and horseshoe trampling. </string>
     <string name="fact_list_3">For beach lovers: watch out for \nHoodies nests exposed on the beach. </string>
+    <string name="stage_description_1">Egg fact here </string>
+    <string name="stage_description_2">3 months fact here</string>
+    <string name="stage_description_3">6 months fact here</string>
 
 </resources>
