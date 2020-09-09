@@ -109,16 +109,20 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="79dp"
         android:layout_marginTop="426dp"
+        android:layout_marginEnd="439dp"
         android:layout_marginBottom="523dp"
         android:fontFamily="@font/roboto"
-
+        android:text="@string/a"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
+        app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
         app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintVertical_bias="0.301"
-        tools:layout_editor_absoluteX="27dp" />
+        app:layout_constraintVertical_bias="0.301" />
 
     <TextView
         android:id="@+id/tv_dog_content"
@@ -133,8 +137,6 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/fact_kid_bg_tv"
         app:layout_constraintEnd_toEndOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toStartOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv"
-        app:layout_constraintVertical_bias="0.525" />
+        app:layout_constraintTop_toTopOf="@+id/fact_kid_bg_tv" />
 </androidx.constraintlayout.widget.ConstraintLayout>
