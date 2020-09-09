@@ -43,19 +43,17 @@
         android:id="@+id/btn_life_cycle"
         android:layout_width="299dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/shape_capsule"
         android:backgroundTint="#7468BE"
         android:fontFamily="@font/roboto"
-        android:text="@string/view_life_cycle_of_hoody"
+        android:text="@string/home_page_button1"
         android:textAllCaps="false"
         android:textColor="#FDFDFD"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_page" />
 
     <Button
         android:id="@+id/btn_call_bird_life"
@@ -65,7 +63,7 @@
         android:background="@drawable/shape_capsule"
         android:backgroundTint="#7468BE"
         android:fontFamily="@font/roboto"
-        android:text="@string/call_bird_life"
+        android:text="@string/home_page_button2"
         android:textAllCaps="false"
         android:textColor="#FDFDFD"
         android:textSize="18sp"
