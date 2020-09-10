@@ -14,7 +14,6 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         getSupportFragmentManager().popBackStack();
-//        super.onBackPressed();
+        super.onBackPressed();
     }
 }
-
-
