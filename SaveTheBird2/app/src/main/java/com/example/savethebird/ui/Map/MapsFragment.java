@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.savethebird.R;
 import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
+import com.mapbox.mapboxsdk.maps.Style;
 
 public class MapsFragment extends Fragment {
 //    private WebView mwbMap;
@@ -22,7 +25,25 @@ public class MapsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_map, container, false);
 
 //        initView(root);
-        initView(root);
+        mapView = root.findViewById(R.id.wb_map);
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(@NonNull MapboxMap mapboxMap) {
+
+                mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
+                    @Override
+                    public void onStyleLoaded(@NonNull Style style) {
+
+                        // Map is set up and the style has loaded. Now you can add data or make other map adjustments
+
+
+                    }
+                });
+
+            }
+        });
+        //写在return root之前
         return root;
     }
 
@@ -72,7 +93,7 @@ public class MapsFragment extends Fragment {
 //        mwbMap.loadUrl(url);
 //    }
 
-    private void initView(View view){
-        mapView = view.findViewById();
-    }
+
+
+
 }
