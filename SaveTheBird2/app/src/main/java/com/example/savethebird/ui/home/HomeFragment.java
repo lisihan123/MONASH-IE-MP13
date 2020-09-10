@@ -14,15 +14,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.LifeCycleFragment;
+import com.example.savethebird.LifeCycleFragment;
 import com.bumptech.glide.Glide;
 import com.example.savethebird.ListFragment;
 import com.example.savethebird.R;
-import com.example.savethebird.ui.ComeSoonFragment;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
-import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;

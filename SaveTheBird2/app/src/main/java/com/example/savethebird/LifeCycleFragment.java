@@ -1,4 +1,4 @@
-package com;
+package com.example.savethebird;
 
 import android.os.Bundle;
 

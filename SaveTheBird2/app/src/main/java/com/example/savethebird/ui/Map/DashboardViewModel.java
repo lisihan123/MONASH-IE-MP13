@@ -1,4 +1,4 @@
-package com.example.savethebird.ui.dashboard;
+package com.example.savethebird.ui.Map;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
