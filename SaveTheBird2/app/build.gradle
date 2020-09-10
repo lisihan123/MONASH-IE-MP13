@@ -55,4 +55,10 @@ dependencies {
     implementation project(':mapbox-android-sdk-9.3.0')
 
     implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
+
+    implementation 'com.amazonaws:aws-android-sdk-core:2.3.2'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.3.2'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.3.2'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.3.2'
+    implementation 'com.amazonaws:aws-android-sdk-apigateway-core:2.3.2'
 }
