@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.savethebird.R;
+import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
@@ -22,27 +24,14 @@ public class MapsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        Mapbox.getInstance(getContext(), getString(R.string.mapbox_access_token));
         View root = inflater.inflate(R.layout.fragment_map, container, false);
 
 //        initView(root);
-        mapView = root.findViewById(R.id.wb_map);
-        mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(@NonNull MapboxMap mapboxMap) {
-
-                mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
-                    @Override
-                    public void onStyleLoaded(@NonNull Style style) {
-
-                        // Map is set up and the style has loaded. Now you can add data or make other map adjustments
+        initMap(root, savedInstanceState);
 
 
-                    }
-                });
 
-            }
-        });
         //写在return root之前
         return root;
     }
@@ -95,5 +84,25 @@ public class MapsFragment extends Fragment {
 
 
 
+  private void initMap(View view,Bundle savedInstanceState){
+      mapView = view.findViewById(R.id.mapView);
+      mapView.onCreate(savedInstanceState);
+      mapView.getMapAsync(new OnMapReadyCallback() {
+          @Override
+          public void onMapReady(@NonNull MapboxMap mapboxMap) {
+
+              mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
+                  @Override
+                  public void onStyleLoaded(@NonNull Style style) {
+
+                      // Map is set up and the style has loaded. Now you can add data or make other map adjustments
+
+
+                  }
+              });
+
+          }
+      });
+  }
 
 }
