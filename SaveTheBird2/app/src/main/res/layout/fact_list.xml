@@ -45,6 +45,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="@string/fact_list_1"
+            android:textColor="#2A2A2A"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -90,6 +91,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="@string/fact_list_2"
+            android:textColor="#2A2A2A"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -133,6 +135,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="@string/fact_list_3"
+            android:textColor="#2A2A2A"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
