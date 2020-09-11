@@ -38,7 +38,7 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="350dp"
+                android:layout_width="375dp"
                 android:layout_height="250dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="16dp"
@@ -50,9 +50,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_title_status"
                 app:srcCompat="@drawable/status_2" />
 
+
             <TextView
-                android:id="@+id/tv_dog_content"
-                android:layout_width="372dp"
+                android:id="@+id/textView19"
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/fact_citation1_status"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView5" />
+
+            <TextView
+                android:id="@+id/tv_dog_content1"
+                android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
@@ -65,37 +77,53 @@
                 app:layout_constraintBottom_toTopOf="@+id/imageView4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+                app:layout_constraintTop_toBottomOf="@id/textView19" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="350dp"
-                android:layout_height="250dp"
+                android:layout_width="375dp"
+                android:layout_height="275dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/tv_content_status_2"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView20"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.444"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_dog_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_dog_content1"
                 app:srcCompat="@drawable/kid" />
 
             <TextView
-                android:id="@+id/tv_content_status_2"
-                android:layout_width="372dp"
+                android:id="@+id/textView20"
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/fact_citation2_status"
+                android:textAlignment="viewStart"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_dog_content2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView4" />
+
+            <TextView
+                android:id="@+id/tv_dog_content2"
+                android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="65dp"
                 android:fontFamily="@font/roboto"
-                android:text="@string/fact_content_status_2"
+                android:text="@string/fact_content_status_1"
                 android:textColor="#2A2A2A"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintTop_toBottomOf="@id/textView20" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

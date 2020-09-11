@@ -22,9 +22,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="31dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
-                android:layout_marginBottom="9dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center_horizontal"
                 android:text="@string/fact_title_dog"
@@ -39,16 +39,19 @@
 
             <TextView
                 android:id="@+id/tv_dog_content"
-                android:layout_width="372dp"
+                android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/fact_content_dog"
                 android:textColor="#040404"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.589"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -57,6 +60,8 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_dog_title"
@@ -64,17 +69,47 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="375dp"
-                android:layout_height="240dp"
+                android:layout_width="376dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="65dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView17"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_dog_content"
                 app:srcCompat="@drawable/dog_2" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/fact_citation1_dog"
+                android:textAlignment="viewStart"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_dog_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.234" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="375dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="56dp"
+                android:text="@string/fact_citation2_dog"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
