@@ -30,8 +30,6 @@ public class MapsFragment extends Fragment {
 //        initView(root);
         initMap(root, savedInstanceState);
 
-
-
         //写在return root之前
         return root;
     }
