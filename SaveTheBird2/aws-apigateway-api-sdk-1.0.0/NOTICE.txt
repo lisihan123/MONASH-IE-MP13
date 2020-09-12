@@ -1,0 +1,23 @@
+Version 2 of AWS SDK for Android 
+
+Copyright 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+This product includes software developed by Amazon Technologies, Inc (http://www.amazon.com/).
+
+Licensed under the Apache License Version 2.0
+
+See the License for the specific language governing permissions and limitations under the License.
+
+**********************
+THIRD PARTY COMPONENTS
+**********************
+
+This software includes third party software subject to the following copyrights:
+- Apache Commons Codec - Copyright � 2002-2014 The Apache Software Foundation. All Rights Reserved. (Apache License Version 2.0, January 2004)
+- Apache Commons Logging - Copyright �  2002-2014 The Apache Software Foundation. All Rights Reserved. (Apache License Version 2.0, January 2004)
+- Apache HttpComponents Client - Copyright �  2002-2014 The Apache Software Foundation. All Rights Reserved. (Apache License Version 2.0, January 2004)
+- jackson-core - Copyright � 2009-2011 FasterXML, LLC. All rights reserved unless otherwise indicated.(Apache License Version 2.0, January 2004)
+- gson - Copyright � 2008 Google Inc. All Rights Reserved. (Apache License Version 2.0, January 2004)
+- Apache Maven - Copyright � 2002-2014 The Apache Software Foundation. All Rights Reserved. (Apache License Version 2.0, January 2004)
+
+The licenses for these third party components are included in License file.

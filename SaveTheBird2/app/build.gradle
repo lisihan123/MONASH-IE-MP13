@@ -62,6 +62,6 @@ dependencies {
     implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.3.2'
     implementation 'com.amazonaws:aws-android-sdk-cognito:2.3.2'
     implementation 'com.amazonaws:aws-android-sdk-apigateway-core:2.3.2'
-
+//    implementation project(':aws-apigateway-api-sdk-1.0.0')
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.3.0'
 }
