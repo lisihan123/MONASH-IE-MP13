@@ -145,6 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="5dp"
+        android:background="@drawable/fact_list_calendar"
         android:orientation="horizontal">
 
         <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
