@@ -22,7 +22,7 @@
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/hp_home_2" />
+            app:srcCompat="@drawable/status_2" />
 
         <TextView
             android:id="@+id/textView7"
