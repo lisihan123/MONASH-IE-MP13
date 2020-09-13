@@ -21,5 +21,7 @@ public class MyAmplifyApplication extends Application {
         } catch (AmplifyException e) {
             Log.e("Tutorial", "Could not initialize Amplify", e);
         }
+
+
     }
 }
