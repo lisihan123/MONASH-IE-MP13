@@ -2,8 +2,14 @@ package com.example.savethebird;
 
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.KeyEvent;
 
+import com.amazonaws.mobile.client.AWSMobileClient;
+import com.amplifyframework.AmplifyException;
+import com.amplifyframework.api.aws.AWSApiPlugin;
+import com.amplifyframework.api.rest.RestOptions;
+import com.amplifyframework.core.Amplify;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -90,5 +96,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void testApi(){
+//        AWSMobileClient.getInstance()
+
     }
 }
