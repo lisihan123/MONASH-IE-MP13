@@ -38,7 +38,7 @@ public class BannerFragment extends Fragment {
     private void initView(View view){
         mBanner = view.findViewById(R.id.mBanner);
         //图片资源
-        int[] imageResourceID = new int[]{R.drawable.f1,R.drawable.f2,R.drawable.f3};
+        int[] imageResourceID = new int[]{R.drawable.hp3,R.drawable.hp,R.drawable.hp2};
         List<Integer> imgeList = new ArrayList<>();
         //轮播标题
         String[] mtitle = new String[]{"fact1", "fact2", "fact3"};
