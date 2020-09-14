@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amplifyframework.AmplifyException;
@@ -24,6 +25,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     List<Distribution> list  = new ArrayList<>();
@@ -39,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
 //        if(getSupportActionBar() !=null){
 //            getSupportActionBar().hide();
 //        }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
          //menu should be considered as top level destinations.
@@ -62,9 +67,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            //Title bar back press triggers onBackPressed()
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onBackPressed() {
 //        getSupportFragmentManager().popBackStackImmediate();
-        super.onBackPressed();
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
     }
 
     public void readCSV(){
