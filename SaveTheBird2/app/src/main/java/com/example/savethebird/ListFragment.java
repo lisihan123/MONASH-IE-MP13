@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
 
+import com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
@@ -77,7 +78,7 @@ public class ListFragment extends Fragment {
 
     private void init(View view)
     {
-        final Button btnOpenPopup = view.findViewById(R.id.circle_button);
+        DragFloatActionButton btnOpenPopup = view.findViewById(R.id.circle_button);
         btnOpenPopup.setOnClickListener(new Button.OnClickListener(){
 
             @Override
@@ -105,5 +106,4 @@ public class ListFragment extends Fragment {
             }});
     }
 
-}
 }
