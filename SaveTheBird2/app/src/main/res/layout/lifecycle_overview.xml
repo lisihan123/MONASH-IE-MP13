@@ -10,9 +10,9 @@
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
+        android:layout_marginEnd="144dp"
         android:fontFamily="@font/roboto"
-        android:text="9 months"
+        android:text="@string/_9_months"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView18" />
@@ -21,11 +21,12 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:fontFamily="@font/roboto"
-        android:text="Annual"
+        android:text="@string/_10_12_months"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="13dp"
-        tools:layout_editor_absoluteY="487dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
 
     <ImageView
         android:id="@+id/imageView16"
@@ -95,7 +96,7 @@
         android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lifecycle_egg" />
+        app:srcCompat="@drawable/lifecycle_chick" />
 
     <ImageView
         android:id="@+id/imageView15"
@@ -128,6 +129,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="115dp"
         android:fontFamily="@font/roboto"
+        android:shadowColor="#FFFFFF"
         android:text="@string/chicks"
         android:textColor="#040404"
         android:textSize="18sp"
@@ -169,11 +171,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="109dp"
         android:fontFamily="@font/roboto"
-        android:text="26-28 days"
+        android:text="@string/_26_28_days"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView17"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="122dp" />
+        app:layout_constraintVertical_bias="0.166"
+        tools:layout_editor_absoluteX="109dp" />
 
     <TextView
         android:id="@+id/textView25"
@@ -181,10 +184,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="201dp"
         android:fontFamily="@font/roboto"
-        android:text="34-39 days"
+        android:text="@string/_34_39_days"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView20"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="335dp" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="332dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="250dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lifecycle_note"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

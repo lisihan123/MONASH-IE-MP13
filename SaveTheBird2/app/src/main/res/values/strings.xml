@@ -75,9 +75,10 @@
     <string name="fact_list_1">Only about 550 Hooded Plovers remain \nin Victoria, where 692 beaches are recorded. </string>
     <string name="fact_list_2">Hooded Plovers face threats from dog \nchasing and horseshoe trampling. </string>
     <string name="fact_list_3">For beach lovers: watch out for \nHoodies nests exposed on the beach. </string>
-    <string name="stage_description_1">Egg fact here </string>
-    <string name="stage_description_2">3 months fact here</string>
-    <string name="stage_description_3">6 months fact here</string>
+    <string name="stage_description_1">Egg:\n\nSurvival rate – 23% \n\nSize – approx. 37mm x 27mm \n\nTime required to hatch – 26 to 30 days \n\nHow many in a nest – 2 to 3 eggs \n\nWhere to look for– Open areas on the sandy beaches</string>
+    <string name="stage_description_2">Chick:\n\nSurvival rate – 20% \n\nCan they fly – No\n\nTime required to fly – 34 to 39 day\n\nMost important need – Shelter near the beach</string>
+    <string name="stage_description_3">Juvenile:\n\nSurvival rate – 55% \n\nCan they fly – Yes (not fully-fledged)\n\nTime required to become adults – 9 months</string>
+    <string name="stage_description_4">Adult:\n\nSurvival rate – 91% \n\nSize – 19cm to 23cm Can they fly – Yes\n\nBreeding frequency –	Usually once a year</string>
     <string name="ngo_1">BirdLife Australia manages Beach-nesting-bird program which is a volunteer program that studies the threats faced by hood plovers and monitors their population size to ensure that people are alerted to any decline in population and are able to respond to ensure effective results.</string>
     <string name="nog_2">The world’s largest birding community managed by the Cornell Lab of Ornithology. It offers a way to keep track of your bird lists, photos, and sounds and contribute to science and conservation.</string>
     <string name="call_bildlife">Contact Birdlife Australia if you want to report a Hooded Plover sighting/incident or are interested in being a part of the project.</string>
@@ -87,4 +88,9 @@
     <string name="chicks">Chicks</string>
     <string name="juveniles">Juveniles</string>
     <string name="adults">Adults</string>
+    <string name="_34_39_days">34-39 days</string>
+    <string name="_10_12_months">10-12 months</string>
+    <string name="_26_28_days">26-28 days</string>
+    <string name="_9_months">9 months</string>
+    <string name="lifecycle_note">Click Any Stage to See More Detials 👆</string>
 </resources>
