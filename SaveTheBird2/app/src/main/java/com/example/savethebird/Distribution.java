@@ -1,21 +1,21 @@
 package com.example.savethebird;
 
 public class Distribution {
-    private String longitude;
-    private String latitude;
+    private double longitude;
+    private double latitude;
     private String ObservationDate;
 
-    public Distribution(String longitude, String latitude, String ObservationDate){
+    public Distribution(double longitude, double latitude, String ObservationDate){
         this.longitude = longitude;
         this.latitude = latitude;
         this.ObservationDate = ObservationDate;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 

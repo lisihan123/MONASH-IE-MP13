@@ -9,10 +9,14 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.PopupWindow;
 
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +34,7 @@ public class ListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fact_list, container, false);
         initView(view);
+        init(view);
         return view;
     }
 
@@ -69,4 +74,36 @@ public class ListFragment extends Fragment {
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack("tag").commit();
     }
+
+    private void init(View view)
+    {
+        final Button btnOpenPopup = view.findViewById(R.id.circle_button);
+        btnOpenPopup.setOnClickListener(new Button.OnClickListener(){
+
+            @Override
+            public void onClick(View arg0) {
+                LayoutInflater layoutInflater
+                        = (LayoutInflater)getContext()
+                        .getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = layoutInflater.inflate(R.layout.button_popout, null);
+                final PopupWindow popupWindow = new PopupWindow(
+                        popupView,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+
+                Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
+                btnDismiss.setOnClickListener(new Button.OnClickListener(){
+
+                    @Override
+                    public void onClick(View v) {
+                        // TODO Auto-generated method stub
+                        popupWindow.dismiss();
+                    }});
+
+                popupWindow.showAsDropDown(btnOpenPopup, 50, -30);
+
+            }});
+    }
+
+}
 }
