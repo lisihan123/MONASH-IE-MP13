@@ -39,7 +39,7 @@ public class ListFragment extends Fragment {
         mcl3 = view.findViewById(R.id.factlist_image3);
         mcl1.setOnClickListener(new Listener());
         mcl2.setOnClickListener(new Listener());
-        mcl2.setOnClickListener(new Listener());
+        mcl3.setOnClickListener(new Listener());
 
 
     }
