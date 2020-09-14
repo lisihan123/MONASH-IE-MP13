@@ -66,6 +66,6 @@ public class ListFragment extends Fragment {
 
     public void replaceFragment(Fragment newFragment){
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack(null).commit();
     }
 }

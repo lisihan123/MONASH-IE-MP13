@@ -31,7 +31,6 @@ import com.google.android.youtube.player.YouTubePlayerView;
 public class NotificationsFragment extends Fragment {
 
     private NotificationsViewModel notificationsViewModel;
-    private Button mtbn_call, mtbn_explore,mbtn_about;
 
     public static final String API_KEY = "AIzaSyBai8hbR5hqPQEltv0pxK3WhB3CPtYnpx0";
 
@@ -69,10 +68,10 @@ public class NotificationsFragment extends Fragment {
     }
 
     private void initView(View view){
-        mtbn_call = view.findViewById(R.id.btn_more_support);
+        Button mtbn_call = view.findViewById(R.id.btn_more_support);
+        Button mtbn_explore = view.findViewById(R.id.btn_more_explore);
+        Button mbtn_about = view.findViewById(R.id.btn_more_about_us);
         mtbn_call.setOnClickListener(new Listener());
-        mtbn_explore = view.findViewById(R.id.btn_more_explore);
-        mbtn_about = view.findViewById(R.id.btn_more_about_us);
         mtbn_explore.setOnClickListener(new Listener());
         mbtn_about.setOnClickListener(new Listener());
 
@@ -115,7 +114,7 @@ public class NotificationsFragment extends Fragment {
         public void replaceFragment(Fragment newFragment){
 
             FragmentManager fragmentManager = getFragmentManager();
-            fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
+            fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack(null).commit();
 
         }
 
