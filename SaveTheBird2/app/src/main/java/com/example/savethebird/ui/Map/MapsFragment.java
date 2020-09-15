@@ -227,8 +227,8 @@ public class MapsFragment extends Fragment {
         // Use the earthquakes GeoJSON source to create three layers: One layer for each cluster category.
         // Each point range gets a different fill color.
         int[][] layers = new int[][] {
-                new int[] {150, ContextCompat.getColor(getContext(), R.color.colorAccent)},
-                new int[] {20, ContextCompat.getColor(getContext(), R.color.colorPrimary)},
+                new int[] {150, ContextCompat.getColor(getContext(), R.color.mapboxRed)},
+                new int[] {20, ContextCompat.getColor(getContext(), R.color.mapboxGreen)},
                 new int[] {0, ContextCompat.getColor(getContext(), R.color.mapbox_blue)}
         };
 
