@@ -30,7 +30,7 @@ public class FactDogFragment extends Fragment {
         super.onResume();
 
         ((MainActivity) getActivity())
-                .setActionBarTitle("Threats from Dogs & Horses");
+                .setActionBarTitle("Threats Hoodies Face");
 
     }
 

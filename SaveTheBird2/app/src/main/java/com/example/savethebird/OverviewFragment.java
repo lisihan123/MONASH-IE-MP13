@@ -34,6 +34,14 @@ public class OverviewFragment extends Fragment {
         return view;
     }
 
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Life Cycle Overview");
+
+    }
+
     private  void initView(View view){
         migl1=view.findViewById(R.id.imageView_egg);
         migl2=view.findViewById(R.id.imageView_chick);

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
 
@@ -26,5 +27,12 @@ public class FactNumberFragment extends Fragment {
 
     }
 
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Threats Hoodies Face");
+
+    }
 
 }
