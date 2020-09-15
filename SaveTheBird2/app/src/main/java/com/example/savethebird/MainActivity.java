@@ -18,8 +18,10 @@ import android.widget.Toast;
 import com.amazonaws.mobile.client.AWSMobileClient;
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
+import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.rest.RestOptions;
 import com.amplifyframework.core.Amplify;
+import com.amplifyframework.datastore.generated.model.Todo;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
         getMyLocation();
         double distance = compareDB(location);
         notifyLocation(4);
+
+        buildTodo();
 
 //        Amplify.DataStore.observe(Todo.class,
 //                started -> Log.i("Tutorial", "Observation began."),
@@ -281,4 +285,17 @@ public class MainActivity extends AppCompatActivity {
         return distance;
 
     }
+
+     private void buildTodo(){
+        Todo todo = Todo.builder()
+                .name("My first dodo")
+                .description("Db")
+                .build();
+        Amplify.API.mutate(
+                ModelMutation.create(todo),
+                response -> Log.i("MyAmplifyApp", "Added Todo with id: " + response.getData().getId()),
+                error -> Log.e("MyAmplifyApp", "Create failed", error)
+        );
+
+     }
 }
