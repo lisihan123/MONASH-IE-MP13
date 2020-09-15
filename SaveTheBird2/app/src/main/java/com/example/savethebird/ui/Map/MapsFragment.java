@@ -3,6 +3,7 @@ package com.example.savethebird.ui.Map;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -15,29 +16,73 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.savethebird.R;
+import com.mapbox.android.core.location.LocationEngine;
+import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.geojson.Feature;
+import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.camera.CameraUpdateFactory;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
+import com.mapbox.mapboxsdk.style.expressions.Expression;
+import com.mapbox.mapboxsdk.style.layers.CircleLayer;
+import com.mapbox.mapboxsdk.style.layers.SymbolLayer;
+import com.mapbox.mapboxsdk.style.layers.TransitionOptions;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonOptions;
+import com.mapbox.mapboxsdk.style.sources.GeoJsonSource;
+import com.mapbox.mapboxsdk.utils.BitmapUtils;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
+
+import timber.log.Timber;
+
+import static com.mapbox.mapboxsdk.style.expressions.Expression.all;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.division;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.exponential;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.get;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.gte;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.has;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.interpolate;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.literal;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.lt;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.rgb;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.stop;
+import static com.mapbox.mapboxsdk.style.expressions.Expression.toNumber;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.circleColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.circleRadius;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconImage;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconSize;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.textAllowOverlap;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.textColor;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.textField;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.textIgnorePlacement;
+import static com.mapbox.mapboxsdk.style.layers.PropertyFactory.textSize;
 
 public class MapsFragment extends Fragment {
 //    private WebView mwbMap;
 
-
     private MapView mapView;
+    private MapboxMap mapboxMap;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         Mapbox.getInstance(getContext(), getString(R.string.mapbox_access_token));
         View root = inflater.inflate(R.layout.fragment_map, container, false);
+
 
 //        initView(root);
         initMap(root, savedInstanceState);
@@ -95,84 +140,125 @@ public class MapsFragment extends Fragment {
 
     private void initMap(View view, Bundle savedInstanceState) {
         mapView = view.findViewById(R.id.mapView);
+
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
-            public void onMapReady(@NonNull MapboxMap mapboxMap) {
+            public void onMapReady(@NonNull MapboxMap map) {
 
-                mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
+                mapboxMap = map;
+
+                map.setStyle(Style.LIGHT, new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
 
-                        // Map is set up and the style has loaded. Now you can add data or make other map adjustments
+                        // Disable any type of fading transition when icons collide on the map. This enhances the visual
+                        // look of the data clustering together and breaking apart.
+                        style.setTransition(new TransitionOptions(0, 0, false));
 
+                        mapboxMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
+                                -37.8, 144.96), 3));
 
+                        addClusteredGeoJsonSource(style);
+                        style.addImage(
+                                "cross-icon-id",
+                                BitmapUtils.getBitmapFromDrawable(getResources().getDrawable(R.drawable.ic_cross)),
+                                true
+                        );
+
+                        Toast.makeText(getContext(), R.string.zoom_map_in_and_out_instruction,
+                                Toast.LENGTH_SHORT).show();
                     }
                 });
-
             }
         });
+
+
     }
 
-    public void getMyLocation() {
-        LocationManager locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+    private void addClusteredGeoJsonSource(@NonNull Style loadedMapStyle) {
 
-        // 获取所有可用的位置提供器
-        List<String> providerList = locationManager.getProviders(true);
-        String provider;
-        if (providerList.contains(LocationManager.GPS_PROVIDER)) {
-            provider = LocationManager.GPS_PROVIDER;
-        } else if (providerList.contains(LocationManager.NETWORK_PROVIDER)) {
-            provider = LocationManager.NETWORK_PROVIDER;
-        } else {
-            // 当没有可用的位置提供器时,弹出Toast提示用户
-            Toast.makeText(getContext(), "No location provider to use",
-                    Toast.LENGTH_SHORT).show();
-            return;
+        // Add a new source from the GeoJSON data and set the 'cluster' option to true.
+        try {
+            loadedMapStyle.addSource(
+                    // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes from
+                    // 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
+                    new GeoJsonSource("earthquakes",
+                            new URI("asset://hooded.json"),
+                            new GeoJsonOptions()
+                                    .withCluster(true)
+                                    .withClusterMaxZoom(14)
+                                    .withClusterRadius(50)
+                    )
+            );
+        } catch (URISyntaxException uriSyntaxException) {
+            Timber.e("Check the URL %s", uriSyntaxException.getMessage());
         }
-        Log.e("location", provider);
 
-        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
+        //Creating a marker layer for single data points
+        SymbolLayer unclustered = new SymbolLayer("unclustered-points", "earthquakes");
+
+        unclustered.setProperties(
+                iconImage("cross-icon-id"),
+                iconSize(
+                        division(
+                                get("count"), literal(4.0f)
+                        )
+                ),
+                iconColor(
+                        interpolate(exponential(1), get("count"),
+                                stop(2.0, rgb(0, 255, 0)),
+                                stop(4.5, rgb(0, 0, 255)),
+                                stop(7.0, rgb(255, 0, 0))
+                        )
+                )
+        );
+        unclustered.setFilter(has("count"));
+        loadedMapStyle.addLayer(unclustered);
+
+        // Use the earthquakes GeoJSON source to create three layers: One layer for each cluster category.
+        // Each point range gets a different fill color.
+        int[][] layers = new int[][] {
+                new int[] {150, ContextCompat.getColor(getContext(), R.color.colorAccent)},
+                new int[] {20, ContextCompat.getColor(getContext(), R.color.colorPrimary)},
+                new int[] {0, ContextCompat.getColor(getContext(), R.color.mapbox_blue)}
+        };
+
+        for (int i = 0; i < layers.length; i++) {
+            //Add clusters' circles
+            CircleLayer circles = new CircleLayer("cluster-" + i, "earthquakes");
+            circles.setProperties(
+                    circleColor(layers[i][1]),
+                    circleRadius(18f)
+            );
+
+            Expression pointCount = toNumber(get("point_count"));
+
+            // Add a filter to the cluster layer that hides the circles based on "point_count"
+            circles.setFilter(
+                    i == 0
+                            ? all(has("point_count"),
+                            gte(pointCount, literal(layers[i][0]))
+                    ) : all(has("point_count"),
+                            gte(pointCount, literal(layers[i][0])),
+                            lt(pointCount, literal(layers[i - 1][0]))
+                    )
+            );
+            loadedMapStyle.addLayer(circles);
         }
-        Location location = locationManager.getLastKnownLocation(provider);
-        if (location != null) {
-            // 显示当前设备的位置信息
-            showLocation(location);
-        }
-        locationManager.requestLocationUpdates(provider, 5000, 1, locationListener);
+
+        //Add the count labels
+        SymbolLayer count = new SymbolLayer("count", "earthquakes");
+        count.setProperties(
+                textField(Expression.toString(get("point_count"))),
+                textSize(12f),
+                textColor(Color.WHITE),
+                textIgnorePlacement(true),
+                textAllowOverlap(true)
+        );
+        loadedMapStyle.addLayer(count);
     }
 
-    LocationListener locationListener = new LocationListener() {
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle
-                extras) {
-        }
-        @Override
-        public void onProviderEnabled(String provider) {
-        }
-        @Override
-        public void onProviderDisabled(String provider) {
-        }
-        @Override
-        public void onLocationChanged(Location location) {
-            // 更新当前设备的位置信息
-            showLocation(location);
-        }
-    };
 
-
-    private void showLocation(Location location) {
-        String currentPosition = "latitude is " + location.getLatitude() + "\n"
-                + "longitude is " + location.getLongitude();
-        Log.e("location",currentPosition);
-    }
 
 }
