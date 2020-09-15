@@ -93,14 +93,14 @@ public class ListFragment extends Fragment {
                         ViewGroup.LayoutParams.WRAP_CONTENT);
                 popupWindow.setFocusable(true);
 
-                Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
-                btnDismiss.setOnClickListener(new Button.OnClickListener(){
-
-                    @Override
-                    public void onClick(View v) {
-                        // TODO Auto-generated method stub
-                        popupWindow.dismiss();
-                    }});
+//                Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
+//                btnDismiss.setOnClickListener(new Button.OnClickListener(){
+//
+//                    @Override
+//                    public void onClick(View v) {
+//                        // TODO Auto-generated method stub
+//                        popupWindow.dismiss();
+//                    }});
 
                 popupWindow.showAsDropDown(btnOpenPopup, 50, -30);
 
