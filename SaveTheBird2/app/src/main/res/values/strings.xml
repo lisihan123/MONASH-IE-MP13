@@ -120,4 +120,6 @@
     <string name="new_location">new location here</string>
     <string name="capital">capital</string>
     <string name="tap_on_marker_instruction">instruction</string>
+    <string name="life">instruction</string>
+    <string name="lifecycle_note">Click any stage to see more details 👆</string>
 </resources>
