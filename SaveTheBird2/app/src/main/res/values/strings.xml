@@ -115,4 +115,7 @@
     <string name="_26_28_days">26-28 days</string>
     <string name="_9_months">9 months</string>
     <string name="lifecycle_note">Click on any stage to see more details 👆</string>
+    <string name="zoom_map_in_and_out_instruction">instruction</string>
+
+
 </resources>
