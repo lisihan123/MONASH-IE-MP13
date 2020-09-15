@@ -115,4 +115,9 @@
     <string name="_26_28_days">26-28 days</string>
     <string name="_9_months">9 months</string>
     <string name="zoom_map_in_and_out_instruction">zoom in instruction</string>
+    <string name="user_location_permission_explanation">Give permission?</string>
+    <string name="user_location_permission_not_granted">you __</string>
+    <string name="new_location">new location here</string>
+    <string name="capital">capital</string>
+    <string name="tap_on_marker_instruction">instruction</string>
 </resources>
