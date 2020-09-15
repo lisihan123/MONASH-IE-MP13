@@ -2,31 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="#CCD7BDE2">
+    android:background="#D7BDE2"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_margin="1dp"
-        android:background="@android:color/transparent">
+        android:orientation="vertical">
         >
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:text="@string/text_floating_button"
-                android:background="@android:color/transparent" />
-<!--            <Button-->
-<!--                android:id="@+id/dismiss"-->
-<!--                android:layout_width="fill_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:drawableLeft="@drawable/ic_cross"-->
-<!--                android:background="@android:color/transparent" />-->
+                android:textColor="#2A2A2A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <!--            <Button-->
+            <!--                android:id="@+id/dismiss"-->
+            <!--                android:layout_width="fill_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:drawableLeft="@drawable/ic_cross"-->
+            <!--                android:background="@android:color/transparent" />-->
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
