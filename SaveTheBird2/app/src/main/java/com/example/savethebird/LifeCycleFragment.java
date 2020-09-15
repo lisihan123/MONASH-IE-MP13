@@ -43,50 +43,40 @@ public class LifeCycleFragment extends Fragment {
         MyAdapter adapter = new MyAdapter(lstImages, getContext());
         pager.setAdapter(adapter);
         pager.setCurrentItem(position);
-        initText(pager);
-        pager.setOnTouchListener(new View.OnTouchListener() {
+//        initText();
+        pager.setOnInfiniteCyclePageTransformListener(new OnInfiniteCyclePageTransformListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
+            public void onPreTransform(View page, float position) {
 
-                switch (motionEvent.getAction()){
-                    case MotionEvent.ACTION_DOWN:
+            }
 
-                        break ;
-                    case MotionEvent.ACTION_MOVE:
-                        //滑动置为false
+            @Override
+            public void onPostTransform(View page, float position) {
+                if(pager.getRealItem()==0){
+            msg1.setVisibility(View.VISIBLE);
+            msg2.setVisibility(View.GONE);
+            msg3.setVisibility(View.GONE);
+            msg4.setVisibility(View.GONE);
+        }
 
-                        break ;
-                    case  MotionEvent.ACTION_UP :
-
-                            int item = pager.getRealItem();
-                            Log.e("VerticalPagerFragment", "item:" + item);
-                            if (item == 0) {
-                                msg1.setVisibility(View.VISIBLE);
-               msg2.setVisibility(View.GONE);
-              msg3.setVisibility(View.GONE);
-           msg4.setVisibility(View.GONE);
-
-                            } else if (item == 1) {
-                                msg1.setVisibility(View.GONE);
-                                msg2.setVisibility(View.VISIBLE);
-                                msg3.setVisibility(View.GONE);
-                                msg4.setVisibility(View.GONE);
-                            } else if (item == 2) {
-                                msg1.setVisibility(View.GONE);
-                                msg2.setVisibility(View.GONE);
-                                msg3.setVisibility(View.VISIBLE);
-                                msg4.setVisibility(View.GONE);
-                            }else if (item == 3) {
-                                msg1.setVisibility(View.GONE);
-                                msg2.setVisibility(View.GONE);
-                                msg3.setVisibility(View.GONE);
-                                msg4.setVisibility(View.VISIBLE);
-                            }
-
-                        break ;
-                }
-
-                return false;
+        if(pager.getRealItem()==1){
+            msg1.setVisibility(View.GONE);
+            msg2.setVisibility(View.VISIBLE);
+            msg3.setVisibility(View.GONE);
+            msg4.setVisibility(View.GONE);
+        }
+        if(pager.getRealItem()==2){
+            msg1.setVisibility(View.GONE);
+            msg2.setVisibility(View.GONE);
+            msg3.setVisibility(View.VISIBLE);
+            msg4.setVisibility(View.GONE);
+        }
+        if(pager.getRealItem()==3){
+            msg1.setVisibility(View.GONE);
+            msg2.setVisibility(View.GONE);
+            msg3.setVisibility(View.GONE);
+            msg4.setVisibility(View.VISIBLE);
+        }
             }
         });
 
@@ -108,60 +98,6 @@ public class LifeCycleFragment extends Fragment {
 
     }
 
-    private void initText(HorizontalInfiniteCycleViewPager pager){
-        if(position==0){
-            msg1.setVisibility(View.VISIBLE);
-            msg2.setVisibility(View.GONE);
-            msg3.setVisibility(View.GONE);
-            msg4.setVisibility(View.GONE);
-        }
 
-        if(position==1){
-            msg1.setVisibility(View.GONE);
-            msg2.setVisibility(View.VISIBLE);
-            msg3.setVisibility(View.GONE);
-            msg4.setVisibility(View.GONE);
-        }
-        if(position==2){
-            msg1.setVisibility(View.GONE);
-            msg2.setVisibility(View.GONE);
-            msg3.setVisibility(View.VISIBLE);
-            msg4.setVisibility(View.GONE);
-        }
-        if(position==3){
-            msg1.setVisibility(View.GONE);
-            msg2.setVisibility(View.GONE);
-            msg3.setVisibility(View.GONE);
-            msg4.setVisibility(View.VISIBLE);
-        }
-
-//        if(pager.getRealItem()==0){
-//            msg1.setVisibility(View.VISIBLE);
-//            msg2.setVisibility(View.GONE);
-//            msg3.setVisibility(View.GONE);
-//            msg4.setVisibility(View.GONE);
-//        }
-//
-//        if(pager.getRealItem()==1){
-//            msg1.setVisibility(View.GONE);
-//            msg2.setVisibility(View.VISIBLE);
-//            msg3.setVisibility(View.GONE);
-//            msg4.setVisibility(View.GONE);
-//        }
-//        if(pager.getRealItem()==2){
-//            msg1.setVisibility(View.GONE);
-//            msg2.setVisibility(View.GONE);
-//            msg3.setVisibility(View.VISIBLE);
-//            msg4.setVisibility(View.GONE);
-//        }
-//        if(pager.getRealItem()==3){
-//            msg1.setVisibility(View.GONE);
-//            msg2.setVisibility(View.GONE);
-//            msg3.setVisibility(View.GONE);
-//            msg4.setVisibility(View.VISIBLE);
-//        }
-
-
-    }
 
 }
