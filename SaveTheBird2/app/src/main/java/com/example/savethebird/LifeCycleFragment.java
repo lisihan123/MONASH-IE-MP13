@@ -89,7 +89,7 @@ public class LifeCycleFragment extends Fragment {
         super.onResume();
 
         ((MainActivity) getActivity())
-                .setActionBarTitle("Life Cycle");
+                .setActionBarTitle("Life Cycle of Hooded Plover");
 
     }
 

@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.ComeSoonFragment;
 import com.example.savethebird.ui.ExploreFragment;
@@ -42,6 +43,14 @@ public class NotificationsFragment extends Fragment {
         initYoutube();
         
         return root;
+    }
+
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("More Info");
+
     }
 
     private void initYoutube() {

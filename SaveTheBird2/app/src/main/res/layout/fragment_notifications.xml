@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFDFD"
     tools:context=".ui.notifications.NotificationsFragment">
 
 
@@ -20,6 +21,8 @@
         android:paddingVertical="@dimen/activity_vertical_margin"
         android:text="@string/report_sighting"
         android:textAllCaps="false"
+        android:textColor="#2A2A2A"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/youtube_layout" />
@@ -37,6 +40,8 @@
         android:paddingVertical="@dimen/activity_vertical_margin"
         android:text="@string/connect"
         android:textAllCaps="false"
+        android:textColor="#2A2A2A"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_more_support" />
@@ -55,6 +60,8 @@
         android:paddingVertical="@dimen/activity_vertical_margin"
         android:text="@string/about_us"
         android:textAllCaps="false"
+        android:textColor="#2A2A2A"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

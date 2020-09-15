@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
 //            getSupportActionBar().hide();
 //        }
 
-
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
          //menu should be considered as top level destinations.
@@ -98,11 +96,13 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
     }
 
+    public void setActionBarTitleHome(String title) {
+        getSupportActionBar().setTitle(title);
+    }
+
     @Override
     public void onResume(){
         super.onResume();
-
-        getSupportActionBar().setTitle("Save The Hoody");
 
         Fragment myFragment = getSupportFragmentManager().findFragmentById(R.id.homelayout);
         if (myFragment != null && myFragment.isVisible()) {

@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.savethebird.LifeCycleFragment;
 import com.bumptech.glide.Glide;
 import com.example.savethebird.ListFragment;
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.OverviewFragment;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.FactDogFragment;
@@ -50,6 +51,14 @@ public class HomeFragment extends Fragment {
 
        initView(view);
         return view;
+    }
+
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitleHome("Save The Hoody");
+
     }
 
 

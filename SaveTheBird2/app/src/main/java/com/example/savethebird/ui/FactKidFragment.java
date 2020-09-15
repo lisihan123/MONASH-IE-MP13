@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
 
@@ -21,4 +22,13 @@ public class FactKidFragment extends Fragment {
         return rootView;
 
     }
+
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Threats Hoodies Face");
+
+    }
+
 }

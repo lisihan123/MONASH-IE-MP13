@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
 //https://blog.csdn.net/qq_41545435/article/details/88601716
@@ -34,6 +35,14 @@ public class ExploreFragment extends Fragment {
 //                  .build();
 //
 //      }
+
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Connect with Organisations");
+
+    }
 
     private void initView(View view){
         mig1 = view.findViewById(R.id.bilrdlife_logo);

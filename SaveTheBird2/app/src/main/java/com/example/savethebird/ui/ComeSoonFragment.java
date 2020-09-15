@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.notifications.NotificationsFragment;
 
@@ -43,7 +44,12 @@ public class ComeSoonFragment extends Fragment {
         return view;
     }
 
+    public void onResume() {
+        super.onResume();
 
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Coming Soon");
 
+    }
 
 }

@@ -70,6 +70,14 @@ public class ListFragment extends Fragment {
         }
     }
 
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Threats Hoodies Face");
+
+    }
+
     @SuppressWarnings("deprecation")
     public void replaceFragment(Fragment newFragment){
         FragmentManager fragmentManager = getFragmentManager();
@@ -105,14 +113,6 @@ public class ListFragment extends Fragment {
                 popupWindow.showAsDropDown(btnOpenPopup, 50, -30);
 
             }});
-    }
-
-    public void onResume() {
-        super.onResume();
-
-        ((MainActivity) getActivity())
-                .setActionBarTitle("Life Cycle");
-
     }
 
 }

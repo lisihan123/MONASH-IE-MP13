@@ -19,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 import com.mapbox.android.core.location.LocationEngine;
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -137,6 +138,13 @@ public class MapsFragment extends Fragment {
 //        mwbMap.loadUrl(url);
 //    }
 
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Distribution of Hooded Plovers");
+
+    }
 
     private void initMap(View view, Bundle savedInstanceState) {
         mapView = view.findViewById(R.id.mapView);
