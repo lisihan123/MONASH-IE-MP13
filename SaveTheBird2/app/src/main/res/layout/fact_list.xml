@@ -11,9 +11,10 @@
         android:id="@+id/factlist_image1"
         android:layout_width="match_parent"
         android:layout_height="140sp"
+        android:layout_marginTop="5dp"
+        android:background="#FFFDFD"
         android:clickable="true"
-        android:elevation="4dp"
-        android:layout_marginTop="5dp">
+        android:elevation="4dp">
 
 
         <ImageView
@@ -58,12 +59,13 @@
         android:id="@+id/factlist_image2"
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:layout_marginTop="5dp"
+        android:background="#FFFDFD"
         android:clickable="true"
-        android:elevation="30dp"
-        android:layout_marginTop="5dp">
+        android:elevation="30dp">
 
         <ImageView
-            android:id="@+id/imageView11"
+            android:id="@+id/fact_kid_image2"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
@@ -104,9 +106,10 @@
         android:id="@+id/factlist_image3"
         android:layout_width="match_parent"
         android:layout_height="140dp"
+        android:layout_marginTop="5dp"
+        android:background="#FFFDFD"
         android:clickable="true"
-        android:elevation="30dp"
-        android:layout_marginTop="5dp">
+        android:elevation="30dp">
 
         <ImageView
             android:id="@+id/imageView12"
@@ -148,6 +151,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
+        android:id="@+id/factlist_calendar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="5dp"

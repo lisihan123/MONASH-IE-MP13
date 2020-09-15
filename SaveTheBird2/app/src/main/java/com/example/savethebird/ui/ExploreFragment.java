@@ -36,8 +36,8 @@ public class ExploreFragment extends Fragment {
 //      }
 
     private void initView(View view){
-        mig1 = view.findViewById(R.id.imageView7);
-        mig2 = view.findViewById(R.id.imageView8);
+        mig1 = view.findViewById(R.id.bilrdlife_logo);
+        mig2 = view.findViewById(R.id.ebird_logo);
         mig1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
