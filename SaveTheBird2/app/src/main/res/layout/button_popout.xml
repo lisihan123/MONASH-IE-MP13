@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@android:color/transparent">
+    android:background="#CCD7BDE2">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,18 +19,13 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="It's a PopupWindow"
-                android:background="@android:color/transparent" />
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_cross"
+                android:text="@string/text_floating_button"
                 android:background="@android:color/transparent" />
             <Button
                 android:id="@+id/dismiss"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Dismiss"
+                android:drawableLeft="@drawable/ic_cross"
                 android:background="@android:color/transparent" />
         </LinearLayout>
     </LinearLayout>
