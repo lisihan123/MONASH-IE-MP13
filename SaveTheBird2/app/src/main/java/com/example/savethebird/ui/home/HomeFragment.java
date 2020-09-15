@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.savethebird.LifeCycleFragment;
 import com.bumptech.glide.Glide;
 import com.example.savethebird.ListFragment;
+import com.example.savethebird.OverviewFragment;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
@@ -159,7 +160,7 @@ public class HomeFragment extends Fragment {
                     replaceFragment(new ListFragment());
                     break;
                 case R.id.btn_life_cycle:
-                    replaceFragment(new LifeCycleFragment());
+                    replaceFragment(new OverviewFragment());
                     break;
             }
         }

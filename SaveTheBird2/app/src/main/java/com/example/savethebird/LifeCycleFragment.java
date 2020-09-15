@@ -19,6 +19,12 @@ import java.util.List;
 public class LifeCycleFragment extends Fragment {
     List<Integer> lstImages = new ArrayList<>();
 
+    private int position = 0;
+
+    public LifeCycleFragment(int position){
+        this.position = position;
+    }
+
 
 
 
@@ -31,6 +37,7 @@ public class LifeCycleFragment extends Fragment {
         HorizontalInfiniteCycleViewPager pager = view.findViewById(R.id.horizontal_cycle);
         MyAdapter adapter = new MyAdapter(lstImages, getContext());
         pager.setAdapter(adapter);
+        pager.setCurrentItem(position);
 
         return view;
     }
