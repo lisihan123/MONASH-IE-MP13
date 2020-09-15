@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
 //            getSupportActionBar().hide();
 //        }
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -95,9 +93,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(title);
+    }
+
     @Override
     public void onResume(){
         super.onResume();
+
+        getSupportActionBar().setTitle("Save The Hoody");
 
         Fragment myFragment = getSupportFragmentManager().findFragmentById(R.id.homelayout);
         if (myFragment != null && myFragment.isVisible()) {

@@ -101,7 +101,7 @@ public class HomeFragment extends Fragment {
         int[] imageResourceID = new int[]{R.drawable.hp3,R.drawable.hp,R.drawable.hp2};
         List<Integer> imgeList = new ArrayList<>();
         //轮播标题
-        String[] mtitle = new String[]{"\"Hooded Plover at Haycock Beach, near Eden.\" by Leo ", "\"Hooded Plover\" by Laurie R B", "\"Hooded Plover foraging at Haycock Beach\" by Leo "};
+        String[] mtitle = new String[]{"\"Hooded Plover at Haycock Beach, near Eden\" by Leo ", "\"Hooded Plover\" by Laurie R B", "\"Hooded Plover foraging at Haycock Beach\" by Leo"};
         List<String> titleList = new ArrayList<>();
 
         for (int i = 0; i < imageResourceID.length; i++) {

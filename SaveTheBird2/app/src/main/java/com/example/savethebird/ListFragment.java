@@ -107,4 +107,12 @@ public class ListFragment extends Fragment {
             }});
     }
 
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Life Cycle");
+
+    }
+
 }

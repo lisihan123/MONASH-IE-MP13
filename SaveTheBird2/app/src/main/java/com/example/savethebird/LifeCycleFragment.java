@@ -85,6 +85,14 @@ public class LifeCycleFragment extends Fragment {
         return view;
     }
 
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Life Cycle");
+
+    }
+
     private void initData(View view) {
         lstImages.add(R.drawable.lifecycle_bg_eggs);
         lstImages.add(R.drawable.lifecycle_bg_chick);
