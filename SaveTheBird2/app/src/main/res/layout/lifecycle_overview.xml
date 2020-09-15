@@ -32,8 +32,8 @@
         android:id="@+id/imageView_adult"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginBottom="362dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="276dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/lifecycle_adult" />
@@ -72,8 +72,8 @@
         android:id="@+id/imageView18"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="340dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="224dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/arrow_1" />
@@ -82,8 +82,8 @@
         android:id="@+id/imageView19"
         android:layout_width="60dp"
         android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="416dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="324dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/arrow_2" />
@@ -102,8 +102,8 @@
         android:id="@+id/imageView_juvenie"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="400dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="284dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/lifecycle_juvenie" />
@@ -197,7 +197,7 @@
         android:id="@+id/textView28"
         android:layout_width="332dp"
         android:layout_height="28dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="148dp"
         android:fontFamily="@font/roboto"
         android:text="@string/lifecycle_note"
         android:textAlignment="center"
@@ -205,7 +205,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
