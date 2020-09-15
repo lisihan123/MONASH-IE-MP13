@@ -41,6 +41,7 @@ dependencies {
     implementation 'com.github.wangfeng19930909:DragFloatingActionButton:1.0.1'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 //    implementation files('/Users/sihanli/Downloads/YouTubeAndroidPlayerApi-1/libs/YouTubeAndroidPlayerApi.jar')
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
