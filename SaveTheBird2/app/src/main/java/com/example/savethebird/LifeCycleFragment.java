@@ -36,10 +36,10 @@ public class LifeCycleFragment extends Fragment {
     }
 
     private void initData() {
-        lstImages.add(R.drawable.lifecycle_egg);
-        lstImages.add(R.drawable.lifecycle_chick);
-        lstImages.add(R.drawable.lifecycle_juvenie);
-        lstImages.add(R.drawable.lifecycle_adult);
+        lstImages.add(R.drawable.lifecycle_bg_eggs);
+        lstImages.add(R.drawable.lifecycle_bg_chick);
+        lstImages.add(R.drawable.lifecycle_bg_juvenie);
+        lstImages.add(R.drawable.lifecycle_bg_adult);
 
     }
 
