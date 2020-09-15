@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.home.MyAdapter;
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
+import com.gigamole.infinitecycleviewpager.OnInfiniteCyclePageTransformListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +42,7 @@ public class LifeCycleFragment extends Fragment {
         pager.setAdapter(adapter);
         pager.setCurrentItem(position);
         initText();
+        
 
         return view;
     }
