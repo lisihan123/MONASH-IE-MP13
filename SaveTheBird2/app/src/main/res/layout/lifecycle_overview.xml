@@ -202,6 +202,7 @@
         android:fontFamily="@font/roboto"
         android:text="@string/lifecycle_note"
         android:textAlignment="center"
+        android:textColor="#2D2D2D"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
