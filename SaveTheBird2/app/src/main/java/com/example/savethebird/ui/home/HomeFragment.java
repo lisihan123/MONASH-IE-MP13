@@ -131,23 +131,23 @@ public class HomeFragment extends Fragment {
             //设置指示器位置（即图片下面的那个小圆点）
             mBanner.setIndicatorGravity(BannerConfig.CENTER);
             mBanner.setDelayTime(5000);//设置轮播时间3秒切换下一图
-            mBanner.setOnBannerListener(new OnBannerListener() {
-                @Override
-                public void OnBannerClick(int position) {
-//                    Toast.makeText(getContext(), "你点击了第" + (position + 1) + "张轮播图", Toast.LENGTH_SHORT).show();
-                    if(position == 0){
-
-                        replaceFragment(new FactNumberFragment());
-                    }
-                    if (position==1){
-                        replaceFragment(new FactDogFragment());
-                    }
-                    if (position==2){
-                        replaceFragment(new FactKidFragment());
-
-                    }
-                }
-            });//设置监听
+//            mBanner.setOnBannerListener(new OnBannerListener() {
+//                @Override
+//                public void OnBannerClick(int position) {
+////                    Toast.makeText(getContext(), "你点击了第" + (position + 1) + "张轮播图", Toast.LENGTH_SHORT).show();
+//                    if(position == 0){
+//
+//                        replaceFragment(new FactNumberFragment());
+//                    }
+//                    if (position==1){
+//                        replaceFragment(new FactDogFragment());
+//                    }
+//                    if (position==2){
+//                        replaceFragment(new FactKidFragment());
+//
+//                    }
+//                }
+//            });//设置监听
             mBanner.start();//开始进行banner渲染
             mBanner.startAutoPlay();
 
