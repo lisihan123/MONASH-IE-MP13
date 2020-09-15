@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
         android:layout_marginStart="5dp"
         android:fontFamily="@font/roboto"
         android:text="@string/_10_12_months"
@@ -32,8 +32,8 @@
         android:id="@+id/imageView_adult"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginBottom="268dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginBottom="276dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/lifecycle_adult" />
@@ -42,8 +42,8 @@
         android:id="@+id/imageView_egg"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lifecycle_egg" />
@@ -52,8 +52,8 @@
         android:id="@+id/imageView17"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="140dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_4" />
@@ -62,8 +62,8 @@
         android:id="@+id/imageView20"
         android:layout_width="60dp"
         android:layout_height="100dp"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow_3" />
@@ -72,7 +72,7 @@
         android:id="@+id/imageView18"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginEnd="120dp"
         android:layout_marginBottom="224dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,8 +92,8 @@
         android:id="@+id/imageView_chick"
         android:layout_width="120dp"
         android:layout_height="100dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/lifecycle_chick" />
@@ -126,8 +126,8 @@
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="140dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="115dp"
         android:fontFamily="@font/roboto"
         android:shadowColor="#FFFFFF"
         android:text="@string/chicks"
@@ -176,24 +176,23 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView17"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="61dp"
+        android:layout_width="70dp"
         android:layout_height="19dp"
         android:layout_marginTop="201dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="5dp"
         android:fontFamily="@font/roboto"
         android:text="@string/_34_39_days"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView20"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView28"
