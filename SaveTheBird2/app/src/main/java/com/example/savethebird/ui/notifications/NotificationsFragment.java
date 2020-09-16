@@ -79,10 +79,10 @@ public class NotificationsFragment extends Fragment {
     private void initView(View view){
         Button mtbn_call = view.findViewById(R.id.btn_more_support);
         Button mtbn_explore = view.findViewById(R.id.btn_more_explore);
-        Button mbtn_about = view.findViewById(R.id.btn_more_about_us);
+//        Button mbtn_about = view.findViewById(R.id.btn_more_about_us);
         mtbn_call.setOnClickListener(new Listener());
         mtbn_explore.setOnClickListener(new Listener());
-        mbtn_about.setOnClickListener(new Listener());
+//        mbtn_about.setOnClickListener(new Listener());
 
 
 
@@ -114,9 +114,9 @@ public class NotificationsFragment extends Fragment {
                 case R.id.btn_more_explore:
                     replaceFragment(new ExploreFragment());
                     break;
-                case R.id.btn_more_about_us:
-                    replaceFragment(new ComeSoonFragment());
-                    break;
+//                case R.id.btn_more_about_us:
+//                    replaceFragment(new ComeSoonFragment());
+//                    break;
 
             }
         }
