@@ -22,6 +22,7 @@ import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.rest.RestOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Todo;
+import com.example.savethebird.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -99,6 +100,51 @@ public class MainActivity extends AppCompatActivity {
     public void setActionBarTitleHome(String title) {
         getSupportActionBar().setTitle(title);
     }
+
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        Fragment myFragment = getSupportFragmentManager().findFragmentById(R.id.homelayout);
+        if (myFragment != null && myFragment.isVisible()) {
+//            getSupportFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            FragmentManager fm = getSupportFragmentManager();
+            int count = fm.getBackStackEntryCount();
+            for(int i = 0; i < count; ++i) {
+                fm.popBackStack();
+            }
+        }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            //Title bar back press triggers onBackPressed()
+            onBackPressed();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+      public void onBackPressed() {
+//        getSupportFragmentManager().popBackStackImmediate();
+        Fragment current = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        }
+
+        if(current != null && current instanceof HomeFragment){
+
+            super.onBackPressed();
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
+
 
     public void readCSV(){
         int i = 0;// 用于标记打印的条数
@@ -267,15 +313,6 @@ public class MainActivity extends AppCompatActivity {
 
      }
 
-    @Override
-    public void onBackPressed() {
-//        getSupportFragmentManager().popBackStackImmediate();
 
-        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-            getSupportFragmentManager().popBackStack();
-        } else {
-            super.onBackPressed();
-        }
-    }
 
 }
