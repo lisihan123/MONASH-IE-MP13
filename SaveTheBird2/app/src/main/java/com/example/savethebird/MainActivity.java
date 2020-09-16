@@ -22,6 +22,7 @@ import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.rest.RestOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Todo;
+import com.example.savethebird.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -129,10 +130,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 //        getSupportFragmentManager().popBackStackImmediate();
-
+        Fragment current = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
-        } else {
+        }
+
+        if(current != null && current instanceof HomeFragment){
+
+            super.onBackPressed();
+        }
+        else {
             super.onBackPressed();
         }
     }
