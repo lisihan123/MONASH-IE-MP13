@@ -100,43 +100,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-
-        Fragment myFragment = getSupportFragmentManager().findFragmentById(R.id.homelayout);
-        if (myFragment != null && myFragment.isVisible()) {
-//            getSupportFragmentManager().popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            FragmentManager fm = getSupportFragmentManager();
-            int count = fm.getBackStackEntryCount();
-            for(int i = 0; i < count; ++i) {
-                fm.popBackStack();
-            }
-        }
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            //Title bar back press triggers onBackPressed()
-            onBackPressed();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-//        getSupportFragmentManager().popBackStackImmediate();
-
-        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-            getSupportFragmentManager().popBackStack();
-        } else {
-            super.onBackPressed();
-        }
-    }
-
     public void readCSV(){
         int i = 0;// 用于标记打印的条数
         try {
@@ -262,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
             if(distance <=5){
                 Toast.makeText(MainActivity.this, "Warning", Toast.LENGTH_LONG);
                 AlertDialog.Builder build = new AlertDialog.Builder(MainActivity.this);
-                build.setTitle("WARNING").setMessage("Hooded Plover are near you in 5km").setPositiveButton("UnderStand", new DialogInterface.OnClickListener() {
+                build.setTitle("Alert!").setMessage("You are near a Hooded Plover habitat. Please be aware.").setPositiveButton("I Understand", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Log.d("Ok","aok");
@@ -303,4 +266,16 @@ public class MainActivity extends AppCompatActivity {
         );
 
      }
+
+    @Override
+    public void onBackPressed() {
+//        getSupportFragmentManager().popBackStackImmediate();
+
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }
