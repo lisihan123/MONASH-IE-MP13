@@ -56,7 +56,7 @@ public class NotificationsFragment extends Fragment {
     private void initYoutube() {
         YouTubePlayerSupportFragment youTubePlayerFragment = YouTubePlayerSupportFragment.newInstance();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-//        transaction.add(R.id.youtube_layout,  youTubePlayerFragment).commit();
+        transaction.add(R.id.youtube_layout,  youTubePlayerFragment).commit();
         youTubePlayerFragment.initialize(API_KEY, new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
