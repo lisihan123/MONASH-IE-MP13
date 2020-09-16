@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
     }
 
-<<<<<<< HEAD
+
     @Override
     public void onResume(){
         super.onResume();
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
+      public void onBackPressed() {
 //        getSupportFragmentManager().popBackStackImmediate();
         Fragment current = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
@@ -145,8 +145,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-=======
->>>>>>> master
+
     public void readCSV(){
         int i = 0;// 用于标记打印的条数
         try {
@@ -314,15 +313,6 @@ public class MainActivity extends AppCompatActivity {
 
      }
 
-    @Override
-    public void onBackPressed() {
-//        getSupportFragmentManager().popBackStackImmediate();
 
-        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-            getSupportFragmentManager().popBackStack();
-        } else {
-            super.onBackPressed();
-        }
-    }
 
 }
