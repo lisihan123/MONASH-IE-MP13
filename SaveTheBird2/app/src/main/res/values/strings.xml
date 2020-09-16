@@ -61,7 +61,7 @@
     <string name="map">Hoodies\' Habitat</string>
     <string name="support_menu">More Info</string>
     <string name="do_you_know">Do you know?</string>
-    <string name="only_550">Only around 550 Hooded Plovers left in Victoria,\n where are 692 recorded beaches </string>
+    <string name="only_550">Only about 550 Hooded Plovers remain in Victoria, where 692 beaches are recorded </string>
     <string name="use_app">Try using our app to help them</string>
     <string name="explore_link_1">https://birdlife.org.au/bird-profile/hooded-plover</string>
     <string name="explore_link_2">https://ebird.org/species/hooplo2</string>
@@ -76,41 +76,44 @@
     <string name="fact_list_2">Hooded Plovers face threats from dog \nchasing and horseshoe trampling. </string>
     <string name="fact_list_3">For beach lovers: watch out for \nHoodies nests exposed on the beach. </string>
     <string name="stage_description_1">
-        Eggs:\n\n\t\t
+        Egg:\n\n\t\t
         •Survival rate – 23%\n\n\t\t
+        •Major threat – Natural predators and kids\n\n\t\t
         •Size – approx. 37mm x 27mm\n\n\t\t
         •Time required to hatch 	– 26 to 30 days\n\n\t\t
         •How many in a nest 		– 2 to 3 eggs\n\n\t\t
-        •Where to look for		– open areas on the sandy beaches</string>
+        •Where to find		– Open areas on the beaches</string>
     <string name="stage_description_2">
         Chick:\n\n\t\t
         •Survival rate 		– 	20%\n\n\t\t
+        •Major threat – Silver gulls and horses\n\n\t\t
         •Can they fly 		– 	No\n\n\t\t
         •Time required to fly 	– 	34 to 39 days\n\n\t\t
         •Most important need	– 	Shelter near the beach</string>
     <string name="stage_description_3">
         Juvenile: \n\n\t\t
         •Survival rate		– 	55%\n\n\t\t
+        •Major threat – Natural predators\n\n\t\t
         •Can they fly 		– 	Yes (not fully-fledged) \n\n\t\t
-        •Time required to 	\n\n\t\t
-        •become adults		–	9 months</string>
+        •Time required to become adults		–	9 months</string>
     <string name="stage_description_4">
         Adult: \n\n\t\t
         •Survival rate		–	91%\n\n\t\t
         •Size 			    – 	19cm to 23cm\n\n\t\t
         •Can they fly 		– 	Yes\n\n\t\t
+        •Sound – Piping and deep \'chook-chook\' call\n\n\t\t
         •Breeding frequency 	–	Usually once a year
 </string>
-    <string name="ngo_1">BirdLife Australia manages Beach-nesting-bird program which is a volunteer program that studies the threats faced by hood plovers and monitors their population size to ensure that people are alerted to any decline in population and are able to respond to ensure effective results.</string>
-    <string name="nog_2">The world’s largest birding community managed by the Cornell Lab of Ornithology. It offers a way to keep track of your bird lists, photos, and sounds and contribute to science and conservation.</string>
+    <string name="ngo_1">BirdLife Australia manages Beach-Nesting-Bird(BNB) program which is a volunteer program that studies the threats faced by Hooded Plovers and monitors their population size to ensure that people are alerted to any decline in population and are able to respond to ensure effective results.</string>
+    <string name="nog_2">eBird is the world’s largest birding community managed by the Cornell Lab of Ornithology. It offers a way to keep track of your bird lists, photos, and sounds and contribute to science and conservation.</string>
     <string name="call_bildlife">Contact Birdlife Australia if you want to report a Hooded Plover sighting/incident or are interested in being a part of the project.</string>
     <string name="bildlife_tel">0452604988</string>
     <string name="text_floating_button">If you encounter any of the above incidents, kindly click on \'More Info\'
                                         to get in touch with the organisations protecting the Hooded Plovers. 😊</string>
-    <string name="eggs">Eggs</string>
-    <string name="chicks">Chicks</string>
-    <string name="juveniles">Juveniles</string>
-    <string name="adults">Adults</string>
+    <string name="eggs">Egg</string>
+    <string name="chicks">Chick</string>
+    <string name="juveniles">Juvenile</string>
+    <string name="adults">Adult</string>
     <string name="_34_39_days">34-39 days</string>
     <string name="_10_12_months">10-12 months</string>
     <string name="_26_28_days">26-28 days</string>

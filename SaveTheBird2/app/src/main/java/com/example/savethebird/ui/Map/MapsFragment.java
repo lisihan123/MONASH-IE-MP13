@@ -156,7 +156,7 @@ public class MapsFragment extends Fragment {
 
                 mapboxMap = map;
 
-                map.setStyle(Style.LIGHT, new Style.OnStyleLoaded() {
+                map.setStyle(new Style.Builder().fromUri("mapbox://styles/mapbox/streets-v11"), new Style.OnStyleLoaded() {
                     @Override
                     public void onStyleLoaded(@NonNull Style style) {
 

@@ -50,6 +50,16 @@ public class HomeFragment extends Fragment {
 
 
        initView(view);
+
+        Fragment myFragment = getFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        if (myFragment != null && myFragment.isVisible()) {
+            int count = getFragmentManager().getBackStackEntryCount();
+            for(int i = 0; i < count; ++i) {
+                FragmentManager.BackStackEntry b = getFragmentManager().getBackStackEntryAt(i);
+                getFragmentManager().popBackStack();
+                int a = getFragmentManager().getBackStackEntryCount();
+            }
+        }
         return view;
     }
 
@@ -58,6 +68,7 @@ public class HomeFragment extends Fragment {
 
         ((MainActivity) getActivity())
                 .setActionBarTitleHome("Save The Hoody");
+
 
     }
 

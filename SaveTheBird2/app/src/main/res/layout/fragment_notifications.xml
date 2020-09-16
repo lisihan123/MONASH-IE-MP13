@@ -46,27 +46,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_more_support" />
 
-    <Button
-        android:id="@+id/btn_more_about_us"
-        android:layout_width="197dp"
-        android:layout_height="85dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="136dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/shape_capsule"
-        android:drawableTop="@drawable/ic_info"
-        android:fontFamily="@font/roboto"
-        android:paddingVertical="@dimen/activity_vertical_margin"
-        android:text="@string/about_us"
-        android:textAllCaps="false"
-        android:textColor="#2A2A2A"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_more_explore"
-        app:layout_constraintVertical_bias="0.111" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_more_about_us"-->
+<!--        android:layout_width="197dp"-->
+<!--        android:layout_height="85dp"-->
+<!--        android:layout_marginStart="136dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="136dp"-->
+<!--        android:layout_marginBottom="50dp"-->
+<!--        android:background="@drawable/shape_capsule"-->
+<!--        android:drawableTop="@drawable/ic_info"-->
+<!--        android:fontFamily="@font/roboto"-->
+<!--        android:paddingVertical="@dimen/activity_vertical_margin"-->
+<!--        android:text="@string/about_us"-->
+<!--        android:textAllCaps="false"-->
+<!--        android:textColor="#2A2A2A"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_more_explore"-->
+<!--        app:layout_constraintVertical_bias="0.111" />-->
 
     <FrameLayout
         android:id="@+id/youtube_layout"
