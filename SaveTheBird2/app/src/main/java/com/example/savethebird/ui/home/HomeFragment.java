@@ -53,6 +53,9 @@ public class HomeFragment extends Fragment {
 
         Fragment myFragment = getFragmentManager().findFragmentById(R.id.nav_host_fragment);
         if (myFragment != null && myFragment instanceof HomeFragment) {
+
+            ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
             int count = getFragmentManager().getBackStackEntryCount();
             for(int i = 0; i < count; ++i) {
                 FragmentManager.BackStackEntry b = getFragmentManager().getBackStackEntryAt(i);
