@@ -43,6 +43,7 @@ dependencies {
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
 //    implementation files('/Users/sihanli/Downloads/YouTubeAndroidPlayerApi-1/libs/YouTubeAndroidPlayerApi.jar')
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
