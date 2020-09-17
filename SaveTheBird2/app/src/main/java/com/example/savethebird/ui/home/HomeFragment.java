@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
        initView(view);
 
         Fragment myFragment = getFragmentManager().findFragmentById(R.id.nav_host_fragment);
-        if (myFragment != null && myFragment.isVisible()) {
+        if (myFragment != null && myFragment instanceof HomeFragment) {
             int count = getFragmentManager().getBackStackEntryCount();
             for(int i = 0; i < count; ++i) {
                 FragmentManager.BackStackEntry b = getFragmentManager().getBackStackEntryAt(i);
