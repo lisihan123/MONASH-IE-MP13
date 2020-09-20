@@ -13,7 +13,7 @@
         android:layout_width="197dp"
         android:layout_height="85dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="136dp"
         android:background="@drawable/shape_capsule"
         android:drawableTop="@drawable/ic_phone"
@@ -25,14 +25,14 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youtube_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/support_comingSoon" />
 
     <Button
         android:id="@+id/btn_more_explore"
         android:layout_width="197dp"
         android:layout_height="85dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="136dp"
         android:background="@drawable/shape_capsule"
         android:drawableTop="@drawable/ic_search"
@@ -73,9 +73,26 @@
         android:layout_width="400dp"
         android:layout_height="270dp"
         android:layout_marginTop="16dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteY="16dp">
 
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/support_comingSoon"
+        android:layout_width="388dp"
+        android:layout_height="334dp"
+        android:layout_marginTop="16dp"
+        android:background="#FBF7DA"
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
+        android:text="@string/coming_soon"
+        android:textColor="#4D4D4D"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
