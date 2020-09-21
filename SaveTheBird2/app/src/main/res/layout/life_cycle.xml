@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -20,78 +21,179 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_stage_1"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="110dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/stage_description_1"
-        android:textColor="#2D2D2D"
-        android:textSize="14sp"
-        android:textStyle="bold"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/eggs_details"
+        android:layout_width="411dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle">
+
+        <TextView
+            android:id="@+id/tv_eggs_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/eggs"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#2D2D2D"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_stage_1"
+            android:layout_width="340dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/stage_description_1"
+            android:textColor="#2D2D2D"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_eggs_title" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chick_details"
+        android:layout_width="411dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle">
 
+        <TextView
+            android:id="@+id/tv_chick_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/chick"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#2D2D2D"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_stage_2"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="110dp"
-        android:text="@string/stage_description_2"
-        android:textColor="#2D2D2D"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        <TextView
+            android:id="@+id/tv_stage_2"
+            android:layout_width="340dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/stage_description_1"
+            android:textColor="#2D2D2D"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_chick_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/juvenile_details"
+        android:layout_width="411dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle">
 
+        <TextView
+            android:id="@+id/tv_juvenile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/juvenile"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#2D2D2D"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_stage_3"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="110dp"
-        android:text="@string/stage_description_3"
-        android:textColor="#2D2D2D"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        <TextView
+            android:id="@+id/tv_stage_3"
+            android:layout_width="340dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/stage_description_1"
+            android:textColor="#2D2D2D"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_juvenile_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/adult_details"
+        android:layout_width="411dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle">
 
-    <TextView
-        android:id="@+id/tv_stage_4"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="110dp"
-        android:text="@string/stage_description_4"
-        android:textColor="#2D2D2D"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_cycle" />
+        <TextView
+            android:id="@+id/tv_adult_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/adult"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#2D2D2D"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_stage_4"
+            android:layout_width="340dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/stage_description_1"
+            android:textColor="#2D2D2D"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_adult_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
