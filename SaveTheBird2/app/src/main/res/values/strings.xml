@@ -105,11 +105,12 @@
     <string name="call_bildlife">Contact Birdlife Australia if you want to report a Hooded Plover sighting/incident or are interested in being a part of the project.</string>
     <string name="bildlife_tel">0452604988</string>
     <string name="text_floating_button">If you encounter any of the above incidents, kindly click on \'More Info\'
-                                        to get in touch with the organisations protecting the Hooded Plovers. 😊</string>
+        to get in touch with the organisations protecting the Hooded Plovers. 😊</string>
+
     <string name="eggs">Eggs</string>
-    <string name="chicks">Chick</string>
-    <string name="juveniles">Juvenile</string>
-    <string name="adults">Adult</string>
+    <string name="chick">Chick</string>
+    <string name="juvenile">Juvenile</string>
+    <string name="adult">Adult</string>
     <string name="_34_39_days">34-39 days</string>
     <string name="_10_12_months">10-12 months</string>
     <string name="_26_28_days">26-28 days</string>
