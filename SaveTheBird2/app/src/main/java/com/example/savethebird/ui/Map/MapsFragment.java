@@ -99,7 +99,7 @@ public class MapsFragment extends Fragment {
     }
 
     private void initView(View view){
-        String url = "file:///android_asset/ebird.html";
+        String url = "file:///android_asset/index.html";
         mwbMap = view.findViewById(R.id.wb_map);
         mwbMap.getSettings().setJavaScriptEnabled(true);
         mwbMap.getSettings().setSupportZoom(true);

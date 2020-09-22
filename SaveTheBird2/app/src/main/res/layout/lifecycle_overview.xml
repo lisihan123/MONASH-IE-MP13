@@ -9,11 +9,11 @@
 
 
     <ImageView
-        android:id="@+id/calendarerOverview"
+        android:id="@+id/eBirld_poster"
         android:layout_width="412dp"
-        android:layout_height="183dp"
+        android:layout_height="250dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,7 +137,7 @@
             app:srcCompat="@drawable/lifecycle_juvenie" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/tv_egg_overview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
@@ -151,14 +151,14 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView_egg" />
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/tv_chick_overview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="152dp"
             android:fontFamily="@font/roboto"
             android:shadowColor="#FFFFFF"
-            android:text="@string/chicks"
+            android:text="@string/chick"
             android:textColor="#040404"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -166,13 +166,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView_chick" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/tv_juvenile_overview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="45dp"
             android:fontFamily="@font/roboto"
-            android:text="@string/juveniles"
+            android:text="@string/juvenile"
             android:textColor="#040404"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -180,13 +180,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView_juvenie" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/tv_adult_overview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="136dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/roboto"
-            android:text="@string/adults"
+            android:text="@string/adult"
             android:textColor="#040404"
             android:textSize="18sp"
             android:textStyle="bold"
