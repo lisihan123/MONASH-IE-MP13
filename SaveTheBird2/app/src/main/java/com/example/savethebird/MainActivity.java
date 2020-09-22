@@ -97,11 +97,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(title);
     }
 
-    public void setActionBarTitleHome(String title) {
-        getSupportActionBar().setTitle(title);
-    }
-
-
     @Override
     public void onResume(){
         super.onResume();
