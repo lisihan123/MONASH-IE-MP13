@@ -76,30 +76,33 @@
     <string name="fact_list_2">Hooded Plovers face threats from dog \nchasing and horseshoe trampling. </string>
     <string name="fact_list_3">For beach lovers: watch out for \nHoodies nests exposed on the beach. </string>
     <string name="stage_description_1">
-        •Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t– 23%
-        \n\n•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t– Natural predators and kids
-        \n\n•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– approx. 37mm x 27mm
-        \n\n•Time required to hatch\t\t– 26 to 30 days
-        \n\n•How many in a nest \t\t\t\t\t– 2 to 3 eggs
-        \n\n•Where to find\t\t\t\t\t\t\t\t\t\t\t\t– Open areas on beaches</string>
+        \t\t\t\t\t•Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t– 23%
+        \n\n\t\t\t\t\t•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t– Natural predators and
+        \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\kids
+        \n\n\t\t\t\t\t•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– approx. 37mm x
+        \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\27mm
+        \n\n\t\t\t\t\t•Time required to hatch\t\t– 26 to 30 days
+        \n\n\t\t\t\t\t•How many in a nest \t\t\t\t\t– 2 to 3 eggs
+        \n\n\t\t\t\t\t•Where to find\t\t\t\t\t\t\t\t\t\t\t\t– Open areas on beach</string>
     <string name="stage_description_2">
-        •Survival rate\t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	20%
-        \n\n•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t\t– Silver gulls and horses
-        \n\n•Can they fly \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	No
-        \n\n•Time required to fly \t\t\t\t\t\t– 34 to 39 days
-        \n\n•Most important need \t\t\t\t– 	Shelter near the beach</string>
+        \t\t\t\t\t•Survival rate\t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	20%
+        \n\n\t\t\t\t\t•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t\t– Silver gulls and
+        \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\horses
+        \n\n\t\t\t\t\t•Can they fly \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	No
+        \n\n\t\t\t\t\t•Time required to fly \t\t\t\t\t\t– 34 to 39 days
+        \n\n\t\t\t\t\t•Most important need \t\t\t\t– 	Shelter on the beach</string>
     <string name="stage_description_3">
-        •Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	55%
-        \n\n•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t\t– Natural predators
-        \n\n•Can they fly \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	Yes (not fully-fledged)
-        \n\n•Time to become adult \t\t\t–	9 months</string>
+        \t\t\t\t\t•Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	55%
+        \n\n\t\t\t\t\t•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t\t– Natural predators
+        \n\n\t\t\t\t\t•Can they fly \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	Yes (not fully-fledged)
+        \n\n\t\t\t\t\t•Time to become adult \t\t\t–	9 months</string>
     <string name="stage_description_4">
-        •Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	91%
-        \n\n•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– 9cm to 23cm
-        \n\n•Can they fly \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	Yes
-        \n\n•Breeding frequency \t\t\t\t\t\t–	Usually once a year
-        \n\n•Sound \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– Piping and deep
-        \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\'chook-chook\' call\n\n\t\t</string>
+        \t\t\t\t\t•Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	91%
+        \n\n\t\t\t\t\t•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– 9cm to 23cm
+        \n\n\t\t\t\t\t•Can they fly \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	Yes
+        \n\n\t\t\t\t\t•Breeding frequency \t\t\t\t\t\t–	Usually once a year
+        \n\n\t\t\t\t\t•Sound \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– Piping and deep
+        \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\'chook-chook\' call\n\n\t\t</string>
     <string name="ngo_1">BirdLife Australia manages Beach-Nesting-Bird(BNB) program which is a volunteer program that studies the threats faced by Hooded Plovers and monitors their population size to ensure that people are alerted to any decline in population and are able to respond to ensure effective results.</string>
     <string name="nog_2">eBird is the world’s largest birding community managed by the Cornell Lab of Ornithology. It offers a way to keep track of your bird lists, photos, and sounds and contribute to science and conservation.</string>
     <string name="call_bildlife">Contact Birdlife Australia if you want to report a Hooded Plover sighting/incident or are interested in being a part of the project.</string>
