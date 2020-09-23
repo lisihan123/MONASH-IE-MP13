@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,15 @@ import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 import com.example.savethebird.ui.ExploreFragment;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 
 
 public class MoreInfoFragment extends Fragment {
@@ -35,7 +41,8 @@ public class MoreInfoFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
         initView(root);
 
-        initVideo(root);
+//        initVideo(root);
+
         
         return root;
     }
@@ -83,22 +90,24 @@ public class MoreInfoFragment extends Fragment {
 
     }
 
-    private void initVideo(View view){
-        mvideo = view.findViewById(R.id.youtube_layout);
-        String path = "file:///android_asset/HoodedPloverSongVideo.mp4";
-        mvideo.setVideoPath(path);
-        mvideo.setMediaController(new MediaController(getContext()));
-        mvideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                mvideo.start();
-            }
-        });
-
-
-
-
-    }
+//    private void initVideo(View view){
+//        mvideo = view.findViewById(R.id.youtube_layout);
+//        String path = "file:///android_asset/HoodedPloverSongVideo.mp4";
+//        String url = "android.resource://" + getContext().getPackageName()+"/"+
+//        Uri uri = Uri.parse(url);
+//        mvideo.setVideoURI(uri);
+//        mvideo.setMediaController(new MediaController(getContext()));
+//        mvideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//            @Override
+//            public void onPrepared(MediaPlayer mediaPlayer) {
+//                mvideo.start();
+//            }
+//        });
+//
+//
+//
+//
+//    }
 
     private class Listener implements View.OnClickListener {
         @Override

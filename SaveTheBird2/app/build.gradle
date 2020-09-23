@@ -68,5 +68,6 @@ dependencies {
     implementation 'com.amazonaws:aws-android-sdk-cognito:2.18.0'
     implementation 'com.amazonaws:aws-android-sdk-apigateway-core:2.18.0'
     implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.1.0'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
 }

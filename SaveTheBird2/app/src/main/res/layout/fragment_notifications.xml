@@ -7,6 +7,20 @@
     android:background="#FFFDFD"
     tools:context=".ui.MoreInfo.MoreInfoFragment">
 
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_layout"
+        android:layout_width="400dp"
+        android:layout_height="270dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp"
+        app:videoId="u7wJPZtBdWQ"
+        app:autoPlay="true"
+        tools:ignore="MissingConstraints">
+
+    </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>>
+
 
     <Button
         android:id="@+id/btn_more_support"
@@ -68,17 +82,7 @@
 <!--        app:layout_constraintTop_toBottomOf="@+id/btn_more_explore"-->
 <!--        app:layout_constraintVertical_bias="0.111" />-->
 
-    <VideoView
-        android:id="@+id/youtube_layout"
-        android:layout_width="400dp"
-        android:layout_height="270dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints">
 
-    </VideoView>
 
     <TextView
         android:id="@+id/support_comingSoon"
