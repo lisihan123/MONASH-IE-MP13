@@ -26,6 +26,7 @@
         android:id="@+id/tv_stage_3"
         android:layout_width="340dp"
         android:layout_height="270dp"
+        android:layout_marginTop="5dp"
         android:fontFamily="@font/roboto"
         android:text="@string/stage_description_4"
         android:textColor="#2D2D2D"
@@ -33,9 +34,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tv_juvenile_title"
+        app:layout_constraintVertical_bias="0.052" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
