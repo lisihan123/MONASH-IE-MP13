@@ -66,6 +66,13 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setHomeActionBarTitle("Save The Hoody");
+
+    }
 
 //    private void initView(View view){
 //        mtg1 = view.findViewById(R.id.btn_tag_1);

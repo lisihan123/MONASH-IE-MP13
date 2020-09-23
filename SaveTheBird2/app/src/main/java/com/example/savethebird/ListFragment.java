@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -33,10 +36,35 @@ public class ListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        setHasOptionsMenu(true);
         View view = inflater.inflate(R.layout.fact_list, container, false);
         initView(view);
         init(view);
         return view;
+    }
+
+    // create the info icon button on the top right corner of the screen
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        Fragment myFragment = getFragmentManager().findFragmentById(R.id.nav_host_fragment);
+
+        if (myFragment != null && myFragment instanceof ListFragment) {
+            inflater.inflate(R.menu.mymenu, menu);
+        }
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    // handle info icon button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.mybutton) {
+            // do something here
+
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initView(View view){
