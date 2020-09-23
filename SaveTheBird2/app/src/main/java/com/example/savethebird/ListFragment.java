@@ -132,7 +132,7 @@ public class ListFragment extends Fragment {
         super.onResume();
 
         ((MainActivity) getActivity())
-                .setActionBarTitle("Threats Hoodies Face");
+                .setActionBarTitle("Threats To Hoodies");
 
     }
 
@@ -142,7 +142,7 @@ public class ListFragment extends Fragment {
         fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack("tag").commit();
     }
 
-    private void init(View view)
+ private void init(View view)
     {
         DragFloatActionButton btnOpenPopup = view.findViewById(R.id.circle_button);
         btnOpenPopup.setOnClickListener(new Button.OnClickListener(){

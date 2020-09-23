@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Save The Hoody</string>
+    <string name="app_name">Save The Hoodie</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -67,7 +67,7 @@
     <string name="explore_link_2">https://ebird.org/species/hooplo2</string>
     <string name="explore">Explore some facts</string>
     <string name="coming_soon">Coming Soon ....</string>
-    <string name="page_bar_home">\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSave the Hoody</string>
+    <string name="page_bar_home">\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tSave the Hoodie</string>
     <string name="page_bar_map">\t\t\t\t\t\t\t Distribution of Hooded Plovers</string>
     <string name="page_bar_support">\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t Support </string>
     <string name="home">Home</string>

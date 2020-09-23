@@ -70,7 +70,7 @@ public class HomeFragment extends Fragment {
         super.onResume();
 
         ((MainActivity) getActivity())
-                .setHomeActionBarTitle("Save The Hoody");
+                .setHomeActionBarTitle("Save The Hoodie");
 
     }
 

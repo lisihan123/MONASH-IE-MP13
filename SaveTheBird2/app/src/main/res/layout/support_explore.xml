@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="#FFFDFD">
 
     <ImageView
         android:id="@+id/bilrdlife_logo"
@@ -17,7 +16,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/birdlife_logo" />
+        app:srcCompat="@drawable/birdlife_logo"
+        android:elevation="4dp"
+        android:background="#FFFDFD"/>
 
     <ImageView
         android:id="@+id/ebird_logo"
@@ -29,7 +30,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/birdlife_intro"
-        app:srcCompat="@drawable/ebird_logo" />
+        app:srcCompat="@drawable/ebird_logo"
+        android:elevation="4dp"
+        android:background="#FFFDFD"/>
 
     <TextView
         android:id="@+id/birdlife_intro"

@@ -153,14 +153,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
-        android:id="@+id/factlist_calendar"
-        android:layout_width="410dp"
+        android:id="@+id/factlist_poster"
+        android:layout_width="411dp"
         android:layout_height="300dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/ebird_poster"
         android:orientation="horizontal">
 
-        <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
+       <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
             android:id="@+id/circle_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -169,7 +169,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:clickable="true"
-            android:src="@drawable/ic_info" />
+            android:src="@drawable/ic_info"/>
     </LinearLayout>
 
 </LinearLayout>
