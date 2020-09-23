@@ -3,12 +3,14 @@ package com.example.savethebird.ui.MoreInfo;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -85,7 +87,13 @@ public class MoreInfoFragment extends Fragment {
         mvideo = view.findViewById(R.id.youtube_layout);
         String path = "file:///android_asset/HoodedPloverSongVideo.mp4";
         mvideo.setVideoPath(path);
-        mvideo.start();
+        mvideo.setMediaController(new MediaController(getContext()));
+        mvideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mvideo.start();
+            }
+        });
 
 
 
