@@ -117,6 +117,5 @@
     <string name="_9_months">9 months</string>
     <string name="lifecycle_note">Click on any stage to see more details 👆</string>
     <string name="zoom_map_in_and_out_instruction">instruction</string>
-
-
+    <string name="go_to_more_info">Go to \'More Info\'</string>
 </resources>
