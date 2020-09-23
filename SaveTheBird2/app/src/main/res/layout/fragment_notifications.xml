@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFDFD"
-    tools:context=".ui.notifications.NotificationsFragment">
+    tools:context=".ui.MoreInfo.MoreInfoFragment">
 
 
     <Button
@@ -68,17 +68,17 @@
 <!--        app:layout_constraintTop_toBottomOf="@+id/btn_more_explore"-->
 <!--        app:layout_constraintVertical_bias="0.111" />-->
 
-    <FrameLayout
+    <VideoView
         android:id="@+id/youtube_layout"
         android:layout_width="400dp"
         android:layout_height="270dp"
         android:layout_marginTop="16dp"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp">
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="MissingConstraints">
 
-    </FrameLayout>
+    </VideoView>
 
     <TextView
         android:id="@+id/support_comingSoon"
@@ -92,6 +92,7 @@
         android:textColor="#4D4D4D"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

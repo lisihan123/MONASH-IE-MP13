@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         double distance = compareDB(location);
         notifyLocation(4);
 
-        buildTodo();
+//        buildTodo();
 
 //        Amplify.DataStore.observe(Todo.class,
 //                started -> Log.i("Tutorial", "Observation began."),

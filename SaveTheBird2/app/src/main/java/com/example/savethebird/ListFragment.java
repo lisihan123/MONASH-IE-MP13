@@ -2,6 +2,7 @@ package com.example.savethebird;
 
 import android.os.Bundle;
 
+import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -19,8 +20,10 @@ import com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton;
 import com.example.savethebird.ui.FactDogFragment;
 import com.example.savethebird.ui.FactKidFragment;
 import com.example.savethebird.ui.FactNumberFragment;
+import com.example.savethebird.ui.MoreInfo.MoreInfoFragment;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+import static android.view.View.*;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +31,7 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
  */
 public class ListFragment extends Fragment {
     ConstraintLayout mcl1, mcl2, mcl3;
+    ActionMenuItemView btnMore;
 
 
 
@@ -40,6 +44,7 @@ public class ListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fact_list, container, false);
         initView(view);
         init(view);
+
         return view;
     }
 
@@ -50,6 +55,7 @@ public class ListFragment extends Fragment {
 
         if (myFragment != null && myFragment instanceof ListFragment) {
             inflater.inflate(R.menu.mymenu, menu);
+
         }
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -58,9 +64,30 @@ public class ListFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.mybutton) {
+
             // do something here
+            btnMore = getActivity().findViewById(R.id.mybutton);
+            LayoutInflater layoutInflater
+                    = (LayoutInflater)getContext()
+                    .getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popupView = layoutInflater.inflate(R.layout.button_popout, null);
+            final PopupWindow popupWindow = new PopupWindow(
+                    popupView,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            popupWindow.setFocusable(true);
+            popupWindow.setTouchable(true);
+            popupWindow.showAsDropDown(btnMore, 50, -30);
+            Button more = popupView.findViewById(R.id.more_info);
+            more.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    replaceFragment(new MoreInfoFragment());
+                    popupWindow.dismiss();
+                }
+            });
+
 
 
         }
@@ -78,7 +105,7 @@ public class ListFragment extends Fragment {
 
     }
 
-    private class Listener implements View.OnClickListener{
+    private class Listener implements OnClickListener{
 
         @Override
         public void onClick(View view) {
@@ -91,6 +118,9 @@ public class ListFragment extends Fragment {
                     break;
                 case R.id.factlist_image3:
                     replaceFragment(new FactKidFragment());
+                    break;
+                case R.id.more_info:
+                    replaceFragment(new MoreInfoFragment());
                     break;
 
 
@@ -139,6 +169,15 @@ public class ListFragment extends Fragment {
 //                    }});
 
                 popupWindow.showAsDropDown(btnOpenPopup, 50, -30);
+
+                Button more = popupView.findViewById(R.id.more_info);
+                more.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        replaceFragment(new MoreInfoFragment());
+                        popupWindow.dismiss();
+                    }
+                });
 
             }});
     }
