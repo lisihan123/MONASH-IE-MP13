@@ -113,9 +113,6 @@ public class LifeCycleFragment extends Fragment {
         }
             }
         });
-
-
-
         return view;
     }
 

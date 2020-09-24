@@ -76,14 +76,14 @@
     <string name="fact_list_2">Hooded Plovers face threats from dog \nchasing and horseshoe trampling. </string>
     <string name="fact_list_3">For beach lovers: watch out for \nHoodies nests exposed on the beach. </string>
     <string name="stage_description_1">
-        \t\t\t\t\t•Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t– 23%
-        \n\n\t\t\t\t\t•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t– Natural predators and
+        \t\t\t\t\t•Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 23%
+        \n\n\t\t\t\t\t•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t\t– Natural predators and
         \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\kids
-        \n\n\t\t\t\t\t•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– approx. 37mm x
+        \n\n\t\t\t\t\t•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– approx. 37mm x
         \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\27mm
-        \n\n\t\t\t\t\t•Time required to hatch\t\t– 26 to 30 days
-        \n\n\t\t\t\t\t•How many in a nest \t\t\t\t\t– 2 to 3 eggs
-        \n\n\t\t\t\t\t•Where to find\t\t\t\t\t\t\t\t\t\t\t\t– Open areas on beach</string>
+        \n\n\t\t\t\t\t•Time required to hatch\t\t\t– 26 to 30 days
+        \n\n\t\t\t\t\t•How many in a nest \t\t\t\t\t\t– 2 to 3 eggs
+        \n\n\t\t\t\t\t•Where to find\t\t\t\t\t\t\t\t\t\t\t\t\t– Open areas on beach</string>
     <string name="stage_description_2">
         \t\t\t\t\t•Survival rate\t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	20%
         \n\n\t\t\t\t\t•Major threat \t\t\t\t\t\t\t\t\t\t\t\t\t\t– Silver gulls and
@@ -98,7 +98,7 @@
         \n\n\t\t\t\t\t•Time to become adult \t\t\t–	9 months</string>
     <string name="stage_description_4">
         \t\t\t\t\t•Survival rate \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	91%
-        \n\n\t\t\t\t\t•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– 9cm to 23cm
+        \n\n\t\t\t\t\t•Size \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– 9cm to 23cm
         \n\n\t\t\t\t\t•Can they fly \t\t\t\t\t\t\t\t\t\t\t\t\t\t– 	Yes
         \n\n\t\t\t\t\t•Breeding frequency \t\t\t\t\t\t–	Usually once a year
         \n\n\t\t\t\t\t•Sound \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– Piping and deep
@@ -121,4 +121,5 @@
     <string name="lifecycle_note">Click on any stage to see more details 👆</string>
     <string name="zoom_map_in_and_out_instruction">instruction</string>
     <string name="go_to_more_info">More Info</string>
+    <string name="youtube_heading">A Song for the Hoodies!</string>
 </resources>
