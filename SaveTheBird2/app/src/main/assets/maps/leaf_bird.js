@@ -15,8 +15,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 var myURL = jQuery( 'script[src$="leaf_bird.js"]' ).attr( 'src' ).replace( 'leaf_bird.js', '' );
 
 var myIcon = L.icon({
-  iconUrl: myURL + 'images/pin24.png',
-  iconRetinaUrl: myURL + 'images/pin48.png',
+  iconUrl: myURL + 'images/red_mark.png',
+  iconRetinaUrl: myURL + 'images/red_mark.png',
   iconSize: [29, 24],
   iconAnchor: [9, 21],
   popupAnchor: [0, -14]
