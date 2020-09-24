@@ -8,20 +8,21 @@
     tools:context=".ui.MoreInfo.MoreInfoFragment">
 
     <TextView
-        android:id="@+id/tv_home_page"
+        android:id="@+id/tv_vedio"
         android:layout_width="375sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/roboto"
         android:gravity="center"
         android:text="@string/youtube_heading"
-        android:textColor="#040404"
+        android:textColor="#2D2D2D"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/youtube_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
         android:id="@+id/youtube_layout"
@@ -39,29 +40,29 @@
     </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
     <TextView
-        android:id="@+id/tv_home_page"
+        android:id="@+id/tv_getintough"
         android:layout_width="375sp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/roboto"
         android:gravity="center"
         android:text="@string/get_in_touch"
-        android:textColor="#040404"
+        android:textColor="#2D2D2D"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_more_support"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintTop_toBottomOf="@+id/youtube_layout"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btn_more_support"
         android:layout_width="197dp"
         android:layout_height="85dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/shape_capsule"
         android:drawableTop="@drawable/ic_phone"
         android:fontFamily="@font/roboto"
@@ -72,15 +73,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youtube_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_getintough" />
 
     <Button
         android:id="@+id/btn_more_explore"
         android:layout_width="197dp"
         android:layout_height="85dp"
-        android:layout_marginStart="136dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/shape_capsule"
         android:drawableTop="@drawable/ic_search"
         android:fontFamily="@font/roboto"

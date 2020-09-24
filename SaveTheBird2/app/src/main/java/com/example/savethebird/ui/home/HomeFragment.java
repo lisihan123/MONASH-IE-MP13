@@ -14,18 +14,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.savethebird.LifeCycleFragment;
 import com.bumptech.glide.Glide;
 import com.example.savethebird.ListFragment;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.OverviewFragment;
 import com.example.savethebird.R;
-import com.example.savethebird.ui.FactDogFragment;
-import com.example.savethebird.ui.FactKidFragment;
-import com.example.savethebird.ui.FactNumberFragment;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
-import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -163,7 +158,7 @@ public class HomeFragment extends Fragment {
             mBanner.start();//开始进行banner渲染
             mBanner.startAutoPlay();
 
-            mcall = view.findViewById(R.id.btn_call_bird_life);
+            mcall = view.findViewById(R.id.btn_factlist);
             mlc = view.findViewById(R.id.btn_life_cycle);
             Listener ls = new Listener();
             mcall.setOnClickListener(ls);
@@ -177,7 +172,7 @@ public class HomeFragment extends Fragment {
         @Override
         public void onClick(View view) {
             switch(view.getId()){
-                case R.id.btn_call_bird_life:
+                case R.id.btn_factlist:
                     replaceFragment(new ListFragment());
                     break;
                 case R.id.btn_life_cycle:

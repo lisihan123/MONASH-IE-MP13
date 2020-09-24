@@ -9,11 +9,32 @@
     tools:background="#FFFDFD">
 
 <!-- ADD 3 LAYOUTS FOR 3 FACTS-->
+    <LinearLayout
+        android:id="@+id/factlist_poster"
+        android:layout_width="match_parent"
+        android:layout_height="286dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ebird_poster"
+        android:orientation="horizontal"
+        android:elevation="4dp">
+
+        <!--       <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton-->
+        <!--            android:id="@+id/circle_button"-->
+        <!--            android:layout_width="48dp"-->
+        <!--            android:layout_height="48dp"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginRight="20dp"-->
+        <!--            android:layout_marginBottom="20dp"-->
+        <!--            android:clickable="true"-->
+        <!--            android:src="@drawable/ic_info"/>-->
+    </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/factlist_image1"
         android:layout_width="match_parent"
         android:layout_height="105sp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="#FFFDFD"
         android:clickable="true"
         android:elevation="4dp">
@@ -64,7 +85,7 @@
         android:layout_marginTop="5dp"
         android:background="#FFFDFD"
         android:clickable="true"
-        android:elevation="30dp">
+        android:elevation="4dp">
 
         <ImageView
             android:id="@+id/fact_kid_image2"
@@ -111,7 +132,7 @@
         android:layout_marginTop="5dp"
         android:background="#FFFDFD"
         android:clickable="true"
-        android:elevation="30dp">
+        android:elevation="4dp">
 
         <ImageView
             android:id="@+id/imageView12"
@@ -151,25 +172,5 @@
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/factlist_poster"
-        android:layout_width="411dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/ebird_poster"
-        android:orientation="horizontal">
-
-<!--       <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton-->
-<!--            android:id="@+id/circle_button"-->
-<!--            android:layout_width="48dp"-->
-<!--            android:layout_height="48dp"-->
-<!--            android:layout_alignParentRight="true"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:layout_marginBottom="20dp"-->
-<!--            android:clickable="true"-->
-<!--            android:src="@drawable/ic_info"/>-->
-    </LinearLayout>
 
 </LinearLayout>
