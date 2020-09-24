@@ -160,16 +160,16 @@
         android:background="@drawable/ebird_poster"
         android:orientation="horizontal">
 
-       <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton
-            android:id="@+id/circle_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:clickable="true"
-            android:src="@drawable/ic_info"/>
+<!--       <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton-->
+<!--            android:id="@+id/circle_button"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:clickable="true"-->
+<!--            android:src="@drawable/ic_info"/>-->
     </LinearLayout>
 
 </LinearLayout>

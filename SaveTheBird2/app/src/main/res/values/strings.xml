@@ -107,7 +107,7 @@
     <string name="nog_2">eBird is the world’s largest birding community managed by the Cornell Lab of Ornithology. It offers a way to keep track of your bird lists, photos, and sounds and contribute to science and conservation.</string>
     <string name="call_bildlife">Contact Birdlife Australia if you want to report a Hooded Plover sighting/incident or are interested in being a part of the project.</string>
     <string name="bildlife_tel">0452604988</string>
-    <string name="text_floating_button">If you encounter any of the above incidents, kindly click on \'More Info\'
+    <string name="text_floating_button">If you encounter any of the given incidents, kindly click on the button below
         to get in touch with the organisations protecting the Hooded Plovers. 😊</string>
 
     <string name="eggs">Eggs</string>
@@ -120,5 +120,5 @@
     <string name="_9_months">9 months</string>
     <string name="lifecycle_note">Click on any stage to see more details 👆</string>
     <string name="zoom_map_in_and_out_instruction">instruction</string>
-    <string name="go_to_more_info">Go to \'More Info\'</string>
+    <string name="go_to_more_info">More Info</string>
 </resources>

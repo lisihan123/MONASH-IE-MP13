@@ -19,19 +19,24 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="370dp"
+                android:layout_height="97dp"
+                android:gravity="center"
                 android:background="@android:color/transparent"
                 android:text="@string/text_floating_button"
                 android:textColor="#2A2A2A"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/more_info"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/go_to_more_info"
-                android:background="@android:color/transparent" />
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="95dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:background="@drawable/shape_capsule"
+                android:text="@string/go_to_more_info" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
