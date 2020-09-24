@@ -121,32 +121,32 @@ public class HomeFragment extends Fragment {
         //Image resource
         int[] imageResourceID = new int[]{R.drawable.hp3,R.drawable.hp,R.drawable.hp2};
         List<Integer> imgeList = new ArrayList<>();
-        //轮播标题
+        //slide title
         String[] mtitle = new String[]{"\"Hooded Plover at Haycock Beach, near Eden\" by Leo ", "\"Hooded Plover\" by Laurie R B", "\"Hooded Plover foraging at Haycock Beach\" by Leo"};
         List<String> titleList = new ArrayList<>();
 
         for (int i = 0; i < imageResourceID.length; i++) {
-            imgeList.add(imageResourceID[i]);//把图片资源循环放入list里面
-            titleList.add(mtitle[i]);//把标题循环设置进列表里面
-            //设置图片加载器，通过Glide加载图片
+            imgeList.add(imageResourceID[i]);//Put image resources into list
+            titleList.add(mtitle[i]);//Put slides title into list
+            //Set image loader using glide
             mBanner.setImageLoader(new ImageLoader() {
                 @Override
                 public void displayImage(Context context, Object path, ImageView imageView) {
                     Glide.with(getContext()).load(path).into(imageView);
                 }
             });
-            //设置轮播的动画效果,里面有很多种特效,可以到GitHub上查看文档。
+            //Set the effect of slides
 //          mBanner.setBannerAnimation(Transformer.accordion);
-            mBanner.setImages(imgeList);//设置图片资源
-            mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);//设置banner显示样式（带标题的样式）
-            mBanner.setBannerTitles(titleList); //设置标题集合（当banner样式有显示title时）
-            //设置指示器位置（即图片下面的那个小圆点）
+            mBanner.setImages(imgeList);//Set image resources
+            mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);//Set banner style
+            mBanner.setBannerTitles(titleList); //Set titles
+            //Set the notification position
             mBanner.setIndicatorGravity(BannerConfig.CENTER);
-            mBanner.setDelayTime(5000);//设置轮播时间3秒切换下一图
+            mBanner.setDelayTime(5000);//Slide time
 //            mBanner.setOnBannerListener(new OnBannerListener() {
 //                @Override
 //                public void OnBannerClick(int position) {
-////                    Toast.makeText(getContext(), "你点击了第" + (position + 1) + "张轮播图", Toast.LENGTH_SHORT).show();
+////                    Toast.makeText(getContext(), "You click the no." + (position + 1) + "slide", Toast.LENGTH_SHORT).show();
 //                    if(position == 0){
 //
 //                        replaceFragment(new FactNumberFragment());
@@ -159,8 +159,8 @@ public class HomeFragment extends Fragment {
 //
 //                    }
 //                }
-//            });//设置监听
-            mBanner.start();//开始进行banner渲染
+//            });//Set listener
+            mBanner.start();
             mBanner.startAutoPlay();
 
             mcall = view.findViewById(R.id.btn_call_bird_life);
@@ -307,10 +307,10 @@ public class HomeFragment extends Fragment {
 //    }
 
     /**
-     * 执行翻转第一阶段翻转动画
-     * @param tag view索引
-     * @param start 起始角度
-     * @param end 结束角度
+     * Tag effect
+     * @param tag view index
+     * @param start angle
+     * @param end angle
      */
 //    private void applyRotation(int tag, float start, float end, Button front, Button back) {
 //        // 得到中心点(以中心翻转)
@@ -331,7 +331,7 @@ public class HomeFragment extends Fragment {
 //    }
 
     /**
-     * 第一阶段动画监听器
+     * Listener in first stage
      *
      */
 //    private final class DisplayNextView implements Animation.AnimationListener {

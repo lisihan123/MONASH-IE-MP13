@@ -9,17 +9,17 @@ import android.view.animation.Transformation;
 //https://blog.csdn.net/marrn/article/details/51758500?utm_medium=distribute.pc_relevant_download.none-task-blog-baidujs-1.nonecase&depth_1-utm_source=distribute.pc_relevant_download.none-task-blog-baidujs-1.nonecase
 
 public class Rotate3d extends Animation {
-    // 开始角度
+    // Start angle
     private final float mFromDegrees;
-    // 结束角度
+    // End angle
     private final float mToDegrees;
-    // 中心点
+    // Middle point
     private final float mCenterX;
     private final float mCenterY;
     private final float mDepthZ;
-    // 是否需要扭曲
+    // Reverse effect
     private final boolean mReverse;
-    // 摄像头
+    // Camera
     private Camera mCamera;
 
     public Rotate3d(float fromDegrees, float toDegrees, float centerX,
@@ -39,11 +39,11 @@ public class Rotate3d extends Animation {
         mCamera = new Camera();
     }
 
-    // 生成Transformation
+    // Generate Transformation
     @Override
     protected void applyTransformation(float interpolatedTime, Transformation t) {
         final float fromDegrees = mFromDegrees;
-        // 生成中间角度
+        // Generate degrees
         float degrees = fromDegrees
                 + ((mToDegrees - fromDegrees) * interpolatedTime);
 
@@ -60,7 +60,7 @@ public class Rotate3d extends Animation {
             camera.translate(0.0f, 0.0f, mDepthZ * (1.0f - interpolatedTime));
         }
         camera.rotateY(degrees);
-        // 取得变换后的矩阵
+        // get transform matrix
         camera.getMatrix(matrix);
         camera.restore();
 
