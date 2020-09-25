@@ -63,7 +63,7 @@
         android:background="@drawable/shape_capsule"
         android:backgroundTint="#7468BE"
         android:fontFamily="@font/roboto"
-        android:text="@string/home_button_2"
+        android:text="@string/home_button_3"
         android:textAllCaps="false"
         android:textColor="#FDFDFD"
         android:textSize="18sp"
