@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/eBirld_poster"
-        android:layout_width="414dp"
+        android:layout_width="400dp"
         android:layout_height="180dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
@@ -19,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/fact_list_calendar" />
+        app:srcCompat="@drawable/calendar_v3" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
