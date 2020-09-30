@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "monashiemp13",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authmonashiemp139f481107",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
