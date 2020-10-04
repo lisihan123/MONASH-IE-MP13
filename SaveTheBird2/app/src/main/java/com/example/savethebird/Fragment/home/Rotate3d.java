@@ -1,4 +1,4 @@
-package com.example.savethebird.ui.home;
+package com.example.savethebird.Fragment.home;
 
 import android.graphics.Camera;
 import android.graphics.Matrix;

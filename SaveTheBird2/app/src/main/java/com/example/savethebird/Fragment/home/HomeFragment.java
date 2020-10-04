@@ -1,4 +1,4 @@
-package com.example.savethebird.ui.home;
+package com.example.savethebird.Fragment.home;
 
 
 import android.content.Context;
@@ -15,9 +15,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
-import com.example.savethebird.ListFragment;
+import com.example.savethebird.Fragment.ListFragment;
 import com.example.savethebird.MainActivity;
-import com.example.savethebird.OverviewFragment;
+import com.example.savethebird.Fragment.OverviewFragment;
 import com.example.savethebird.R;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;

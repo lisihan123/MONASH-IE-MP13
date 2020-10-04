@@ -1,4 +1,4 @@
-package com.example.savethebird.ui.home;
+package com.example.savethebird.Fragment.home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
