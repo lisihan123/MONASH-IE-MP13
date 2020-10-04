@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFDFD"
-    tools:context=".ui.MoreInfo.MoreInfoFragment">
+    tools:context=".Fragment.MoreInfo.MoreInfoFragment">
 
     <TextView
         android:id="@+id/tv_vedio"
