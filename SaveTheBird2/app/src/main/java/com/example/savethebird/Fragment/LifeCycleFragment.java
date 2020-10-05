@@ -1,18 +1,17 @@
 package com.example.savethebird.Fragment;
 
 import android.os.Bundle;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+
+//import com.example.savethebird.Fragment.home.MyAdapter;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
-import com.example.savethebird.Fragment.home.MyAdapter;
 import com.gigamole.infinitecycleviewpager.HorizontalInfiniteCycleViewPager;
 import com.gigamole.infinitecycleviewpager.OnInfiniteCyclePageTransformListener;
 
@@ -41,7 +40,7 @@ public class LifeCycleFragment extends Fragment {
         View view= inflater.inflate(R.layout.life_cycle, container, false);
         initData(view);
         HorizontalInfiniteCycleViewPager pager = view.findViewById(R.id.horizontal_cycle);
-        MyAdapter adapter = new MyAdapter(lstImages, getContext());
+        com.example.savethebird.ui.home.MyAdapter adapter = new com.example.savethebird.ui.home.MyAdapter(lstImages, getContext());
         pager.setAdapter(adapter);
         pager.setCurrentItem(position);
         initText(pager);
