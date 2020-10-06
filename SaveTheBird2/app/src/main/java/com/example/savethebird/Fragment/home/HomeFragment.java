@@ -16,16 +16,13 @@ import androidx.fragment.app.ListFragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.bumptech.glide.Glide;
-<<<<<<< HEAD
-import com.example.savethebird.Fragment.ListFragment;
+
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.Fragment.OverviewFragment;
-=======
-//import com.example.savethebird.ListFragment;
+
 import com.example.savethebird.Fragment.OverviewFragment;
 import com.example.savethebird.MainActivity;
-//import com.example.savethebird.OverviewFragment;
->>>>>>> master
+
 import com.example.savethebird.R;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
