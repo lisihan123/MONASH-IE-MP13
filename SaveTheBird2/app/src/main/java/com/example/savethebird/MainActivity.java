@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Todo;
-import com.example.savethebird.Fragment.home.HomeFragment;
+//import com.example.savethebird.Fragment.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().popBackStack();
         }
 
-        if(current != null && current instanceof HomeFragment){
+        if(current != null && current instanceof com.example.savethebird.ui.home.HomeFragment){
 
             super.onBackPressed();
         }
