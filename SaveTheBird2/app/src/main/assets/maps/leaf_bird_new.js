@@ -1,6 +1,6 @@
 // See post: http://asmaloney.com/2015/06/code/clustering-markers-on-leaflet-maps
 
-var map = L.map('map').setView([-37.8, 144.96], 8);
+var map = L.map('map').setView([-37.8, 144.96], 5);
 
 mapboxgl.accessToken = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
 
