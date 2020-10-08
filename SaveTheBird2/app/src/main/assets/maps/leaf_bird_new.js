@@ -4,17 +4,6 @@ var map = L.map('map').setView([-37.8, 144.96], 8);
 
 mapboxgl.accessToken = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
 
-<<<<<<< HEAD
-
-//var mapboxmap = new mapboxgl.Map({
-//    container: 'mymap', // Container ID
-//    style: 'mapbox://styles/mapbox/streets-v11', // Map style to use
-//    center: [-122.25948, 37.87221], // Starting position [lng, lat]
-//    zoom: 12, // Starting zoom level
-//  });
-
-=======
->>>>>>> master
 var geocoder = new MapboxGeocoder({ // Initialize the geocoder
   accessToken: mapboxgl.accessToken, // Set the access token
   mapboxgl: mapboxgl, // Set the mapbox-gl instance
