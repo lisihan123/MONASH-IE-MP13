@@ -25,49 +25,39 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="40dp"
-                android:layout_marginBottom="10dp"
                 android:fontFamily="@font/roboto"
                 android:gravity="center_horizontal"
                 android:text="@string/fact_title_status"
                 android:textColor="#040404"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/fact_status_image1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/fact_status_image1"
-                android:layout_width="375dp"
-                android:layout_height="250dp"
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtube_layout"
+                android:layout_width="374dp"
+                android:layout_height="261dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                app:autoPlay="false"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.454"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title_status"
-                app:srcCompat="@drawable/status_2" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:showFullScreenButton="false"
+                app:videoId="L31yWS7NnVc"
+                tools:ignore="MissingClass"></com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
-
-            <TextView
-                android:id="@+id/fact_status_citation1"
-                android:layout_width="375dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="@string/fact_citation1_status"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fact_status_image1" />
 
             <TextView
                 android:id="@+id/tv_dog_content1"
                 android:layout_width="375dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="290dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="15dp"
                 android:fontFamily="@font/roboto"
@@ -77,7 +67,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/fact_status_image2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fact_status_citation1" />
+                app:layout_constraintTop_toBottomOf="@id/tv_title_status" />
 
             <ImageView
                 android:id="@+id/fact_status_image2"
@@ -90,7 +80,7 @@
                 app:layout_constraintHorizontal_bias="0.444"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_dog_content1"
-                app:srcCompat="@drawable/ebird_poster" />
+                app:srcCompat="@drawable/status_2" />
 
             <TextView
                 android:id="@+id/fact_status_citation2"
