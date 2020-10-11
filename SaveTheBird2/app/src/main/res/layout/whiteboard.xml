@@ -28,18 +28,21 @@
         tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_favorite"
             android:text="@string/tab_1" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_music"
             android:text="@string/tab_2" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/ic_search"
