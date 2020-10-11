@@ -8,28 +8,21 @@
     android:orientation="vertical"
     tools:background="#FFFDFD">
 
-    <LinearLayout
-        android:id="@+id/factlist_poster"
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_layout"
         android:layout_width="match_parent"
-        android:layout_height="286dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/ebird_poster"
-        android:orientation="horizontal"
-        android:elevation="4dp">
+        android:layout_height="274dp"
+        android:layout_marginTop="16dp"
+        app:autoPlay="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showFullScreenButton="false"
+        app:videoId="aah6VCIBbQc"
+        tools:ignore="MissingClass"></com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
-        <!--       <com.barnettwong.dragfloatactionbuttonlibrary.view.DragFloatActionButton-->
-        <!--            android:id="@+id/circle_button"-->
-        <!--            android:layout_width="48dp"-->
-        <!--            android:layout_height="48dp"-->
-        <!--            android:layout_alignParentRight="true"-->
-        <!--            android:layout_alignParentBottom="true"-->
-        <!--            android:layout_marginRight="20dp"-->
-        <!--            android:layout_marginBottom="20dp"-->
-        <!--            android:clickable="true"-->
-        <!--            android:src="@drawable/ic_info"/>-->
-    </LinearLayout>
-
-<!-- ADD 3 LAYOUTS FOR 3 FACTS-->
+    <!-- ADD 3 LAYOUTS FOR 3 FACTS-->
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -175,4 +168,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</LinearLayout>
+</LinearLayout><?xml version="1.0" encoding="utf-8"?>

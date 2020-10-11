@@ -4,14 +4,6 @@ var map = L.map('map').setView([-37.8, 144.96], 8);
 
 mapboxgl.accessToken = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
 
-
-var mapboxmap = new mapboxgl.Map({
-    container: 'map', // Container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // Map style to use
-    center: [-122.25948, 37.87221], // Starting position [lng, lat]
-    zoom: 12, // Starting zoom level
-  });
-
 var geocoder = new MapboxGeocoder({ // Initialize the geocoder
   accessToken: mapboxgl.accessToken, // Set the access token
   mapboxgl: mapboxgl, // Set the mapbox-gl instance
@@ -22,7 +14,7 @@ var geocoder = new MapboxGeocoder({ // Initialize the geocoder
 var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
 
 // Add the geocoder to the map
-mapboxmap.addControl(geocoder);
+//mapboxmap.addControl(geocoder);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw', {
 		maxZoom: 18,
@@ -49,15 +41,15 @@ var markerClusters = L.markerClusterGroup();
 //d3.csv("./hooded.csv", function(data) {
 ////    console.log(data);
 //    data.forEach(function(row){
-//        
+//
 //        var popup = '<b>Observation date:</b> ' + row['OBSERVATION DATE'] +
 //                    '<br/><b>Count of Hoodies:</b> ' + row['OBSERVATION COUNT']+
 //                    '<br/><b>State:</b> ' + row['STATE'];
-//                                                           
-//                                                           
+//
+//
 //        var m = L.marker( [row.LATITUDE, row.LONGITUDE], {icon: myIcon} )
 //                  .bindPopup( popup );
-////        
+////
 ////        var m = L.circle([row.LATITUDE, row.LONGITUDE], 500, {
 ////            color: 'red',
 ////            fillColor: '#f03',
@@ -71,11 +63,11 @@ var markerClusters = L.markerClusterGroup();
 
 
 $.getJSON('http://13.210.103.77/api/data', function(data) {
-        
+
 
         var alldata = data['data'];
         alldata.forEach(function(row){
-            
+
             var dateAll = row['observation_date'].split("-");
             var newformat = dateAll[1] +"/" + dateAll[2] + "/" + dateAll[0]
             mapboxClient.geocoding
@@ -85,7 +77,7 @@ $.getJSON('http://13.210.103.77/api/data', function(data) {
                   .send()
                   .then(response => {
                     // GeoJSON document with geocoding matches
-                    var match = response.body;                
+                    var match = response.body;
                     var popup = '<b>Observation date:</b> ' + newformat +
                     '<br/><b>Count of Hoodies:</b> ' + row['observation_count']+
                     '<br/><b>Location:</b> ' + match['features'][0]['place_name'];
@@ -94,7 +86,7 @@ $.getJSON('http://13.210.103.77/api/data', function(data) {
                     markerClusters.addLayer( m );
                   });
         })
-    
+
 });
 
 
