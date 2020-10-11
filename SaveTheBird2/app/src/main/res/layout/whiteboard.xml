@@ -8,46 +8,42 @@
 
     <ImageView
         android:id="@+id/white_board_image_view"
-        android:layout_width="382dp"
-        android:layout_height="573dp"
+        android:layout_width="365dp"
+        android:layout_height="411dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.218"
         app:srcCompat="@android:drawable/screen_background_light" />
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/white_board_image_view"
+        app:layout_constraintVertical_bias="0.401"
         app:tabMode="fixed"
-        android:id="@+id/tab_layout"
-        app:layout_constraintBottom_toTopOf="pager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/white_board_image_view">
+        tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_1"
             android:icon="@drawable/ic_favorite"
-            />
+            android:text="@string/tab_1" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_2"
             android:icon="@drawable/ic_music"
-            />
+            android:text="@string/tab_2" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tab_3"
             android:icon="@drawable/ic_search"
-            />
+            android:text="@string/tab_3" />
 
     </com.google.android.material.tabs.TabLayout>
 
