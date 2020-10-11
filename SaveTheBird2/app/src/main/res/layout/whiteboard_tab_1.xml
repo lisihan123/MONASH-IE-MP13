@@ -17,26 +17,31 @@
         app:tabMode="scrollable">
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_1_item_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_1" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_1_item_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_2" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_1_item_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_3" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_1_item_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_4" />
 
         <com.google.android.material.tabs.TabItem
+            android:id="@+id/white_board_tab_1_item_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/item_5" />
