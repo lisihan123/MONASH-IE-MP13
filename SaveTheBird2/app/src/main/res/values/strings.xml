@@ -13,7 +13,6 @@
     <string name="home_button_3">Warning Sign for Hoodies</string>
 
 
-
     <!-- FACT_LIST & FACTS PAGE-->
     <string name="fact_list_1">Only about 550 Hooded Plovers remain \nin Victoria, where 692 beaches are recorded. </string>
     <string name="fact_list_2">Hooded Plovers face threats from dog \nchasing and horseshoe trampling. </string>
@@ -63,7 +62,6 @@
         \nSource from http://www.birdlife.org.au/documents/BNB_2019_Beach-nesting_Birds_Conference_summary_report.pdf</string>
     <string name="fact_citation2_kid">\"Charadriidae - Hooded Plover\" by julie burgher is licensed under CC BY-NC 2.0
         \nSource from https://www.flickr.com/photos/55310085@N06/23668668046</string>
-
 
 
     <string name="call_bird_life">Call for Birdlife</string>
@@ -123,7 +121,6 @@
         \n\n\t\t\t\t\t•Breeding frequency \t\t\t\t\t\t–	Usually once a year
         \n\n\t\t\t\t\t•Sound \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t– Piping and deep
         \n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\'chook-chook\' call\n\n\t\t</string>
-
 
 
     <!-- SUPPORT PAGE-->

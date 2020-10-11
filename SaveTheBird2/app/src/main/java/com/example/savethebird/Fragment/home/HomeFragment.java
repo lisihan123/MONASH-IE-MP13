@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.bumptech.glide.Glide;
 
 import com.example.savethebird.Fragment.ListFragment;
+import com.example.savethebird.Fragment.WhiteBoradFragment;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.Fragment.OverviewFragment;
 
@@ -39,7 +40,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
 
     private Banner mBanner;
-    private Button mcall, mlc;
+    private Button mcall, mlc, mwhite;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -167,6 +168,8 @@ public class HomeFragment extends Fragment {
             Listener ls = new Listener();
             mcall.setOnClickListener(ls);
             mlc.setOnClickListener(ls);
+            mwhite = view.findViewById(R.id.btn_poster);
+            mwhite.setOnClickListener(ls);
         }
 
 
@@ -181,6 +184,9 @@ public class HomeFragment extends Fragment {
                     break;
                 case R.id.btn_life_cycle:
                     replaceFragment(new OverviewFragment());
+                    break;
+                case R.id.btn_poster:
+                    replaceFragment(new WhiteBoradFragment());
                     break;
             }
         }
