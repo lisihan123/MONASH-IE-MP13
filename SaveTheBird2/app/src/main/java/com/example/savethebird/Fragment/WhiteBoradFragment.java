@@ -8,14 +8,18 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 
 import com.example.savethebird.R;
 import com.google.android.material.tabs.TabItem;
+import com.google.android.material.tabs.TabLayout;
 
 
 public class WhiteBoradFragment extends Fragment {
 
     TabItem ti1, ti2, ti3;
+    TabLayout tl1;
+
 
 
 
@@ -30,13 +34,42 @@ public class WhiteBoradFragment extends Fragment {
     }
 
     private void initView(View view){
-        ti1 = view. findViewById(R.id.white_board_tab_1);
-        ti2 = view.findViewById(R.id.white_board_tab_2);
-        ti3 = view.findViewById(R.id.white_board_tab_3);
-        TiListner tl = new TiListner();
-        ti1.setOnClickListener(tl);
-        ti2.setOnClickListener(tl);
-        ti3.setOnClickListener(tl);
+//        ti1 = view.findViewById(R.id.white_board_tab_1);
+//        ti2 = view.findViewById(R.id.white_board_tab_2);
+//        ti3 = view.findViewById(R.id.white_board_tab_3);
+//        TiListner tl = new TiListner();
+//        ti1.setOnClickListener(tl);
+//        ti2.setOnClickListener(tl);
+//        ti3.setOnClickListener(tl);
+
+        tl1 = view.findViewById(R.id.tab_layout);
+        tl1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch(tab.getPosition()){
+                    case 1:
+                        replaceFragment(new Tab1Fragment());
+                        break;
+                    case 2:
+                        replaceFragment(new Tab2Fragment());
+                        break;
+                    case 3:
+                        replaceFragment(new Tab3Fragment());
+                        break;
+
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     class TiListner implements View.OnClickListener{

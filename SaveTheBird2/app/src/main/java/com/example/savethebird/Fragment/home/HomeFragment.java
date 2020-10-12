@@ -181,6 +181,7 @@ public class HomeFragment extends Fragment {
             switch(view.getId()){
                 case R.id.btn_factlist:
                     replaceFragment(new ListFragment());
+//                    replaceFragment(new WhiteBoradFragment());
                     break;
                 case R.id.btn_life_cycle:
                     replaceFragment(new OverviewFragment());
