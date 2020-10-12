@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/white_board_image_view"
-        android:layout_width="365dp"
-        android:layout_height="411dp"
+        android:layout_width="361dp"
+        android:layout_height="320dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218"
+        app:layout_constraintVertical_bias="0.102"
         app:srcCompat="@android:drawable/screen_background_light" />
 
     <com.google.android.material.tabs.TabLayout
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view"
-        app:layout_constraintVertical_bias="0.401"
+        app:layout_constraintVertical_bias="0.198"
         app:tabMode="fixed"
         tools:layout_editor_absoluteX="0dp">
 
@@ -49,5 +49,161 @@
             android:text="@string/tab_3" />
 
     </com.google.android.material.tabs.TabLayout>
+
+    <HorizontalScrollView
+    android:id="@+id/tab_1_layout"
+    android:layout_width="411dp"
+    android:layout_height="103dp"
+        android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.333"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+    app:layout_constraintVertical_bias="0.0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/item_1" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/item_2" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/item_3" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/item_4" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/item_5" />
+
+    </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/tab_2_layout"
+        android:layout_width="411dp"
+        android:layout_height="103dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/white_board_tab_2_item_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_1" />
+
+            <Button
+                android:id="@+id/white_board_tab_2_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_2" />
+
+            <Button
+                android:id="@+id/white_board_tab_2_item_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_3" />
+
+            <Button
+                android:id="@+id/white_board_tab_2_item_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_4" />
+
+            <Button
+                android:id="@+id/white_board_tab_2_item_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_5" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/tab_3_layout"
+        android:layout_width="411dp"
+        android:layout_height="103dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/white_board_tab_3_item_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_1" />
+
+            <Button
+                android:id="@+id/white_board_tab_3_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_2" />
+
+            <Button
+                android:id="@+id/white_board_tab_3_item_3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_3" />
+
+            <Button
+                android:id="@+id/white_board_tab_3_item_4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_4" />
+
+            <Button
+                android:id="@+id/white_board_tab_3_item_5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/item_5" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

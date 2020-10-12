@@ -15,6 +15,36 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <Button
+        android:id="@+id/white_board_tab_1_item_1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Button" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/white_board_tab_1_item_5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Button" />
+
     </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
