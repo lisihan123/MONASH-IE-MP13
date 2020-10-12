@@ -8,7 +8,9 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import com.example.savethebird.R;
 import com.google.android.material.tabs.TabItem;
@@ -17,8 +19,9 @@ import com.google.android.material.tabs.TabLayout;
 
 public class WhiteBoradFragment extends Fragment {
 
-    TabItem ti1, ti2, ti3;
+    TabLayout.Tab ti1, ti2, ti3;
     TabLayout tl1;
+    HorizontalScrollView h1, h2, h3;
 
 
 
@@ -41,20 +44,31 @@ public class WhiteBoradFragment extends Fragment {
 //        ti1.setOnClickListener(tl);
 //        ti2.setOnClickListener(tl);
 //        ti3.setOnClickListener(tl);
+        h1=view.findViewById(R.id.tab_1_layout);
+        h2=view.findViewById(R.id.tab_2_layout);
+        h3=view.findViewById(R.id.tab_3_layout);
+
 
         tl1 = view.findViewById(R.id.tab_layout);
         tl1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch(tab.getPosition()){
+                    case 0:
+                        h1.setVisibility(View.VISIBLE);
+                        h2.setVisibility(View.GONE);
+                        h3.setVisibility(View.GONE);
+
+                        break;
                     case 1:
-                        replaceFragment(new Tab1Fragment());
+                        h1.setVisibility(View.GONE);
+                        h2.setVisibility(View.VISIBLE);
+                        h3.setVisibility(View.GONE);
                         break;
                     case 2:
-                        replaceFragment(new Tab2Fragment());
-                        break;
-                    case 3:
-                        replaceFragment(new Tab3Fragment());
+                        h1.setVisibility(View.GONE);
+                        h2.setVisibility(View.GONE);
+                        h3.setVisibility(View.VISIBLE);
                         break;
 
                 }

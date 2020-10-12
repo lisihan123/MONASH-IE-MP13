@@ -72,7 +72,7 @@
             android:id="@+id/white_board_tab_1_item_1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/item_1" />
+            android:text="Tab1" />
 
         <Button
             android:id="@+id/white_board_tab_1_item_2"
@@ -124,7 +124,7 @@
                 android:id="@+id/white_board_tab_2_item_1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/item_1" />
+                android:text="Tab2" />
 
             <Button
                 android:id="@+id/white_board_tab_2_item_2"
@@ -176,7 +176,7 @@
                 android:id="@+id/white_board_tab_3_item_1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/item_1" />
+                android:text="Tab3" />
 
             <Button
                 android:id="@+id/white_board_tab_3_item_2"
