@@ -6,15 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
         android:id="@+id/white_board_image_view"
-        android:layout_width="361dp"
-        android:layout_height="320dp"
+        android:layout_width="304dp"
+        android:layout_height="278dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102"
+        app:layout_constraintVertical_bias="0.348"
         app:srcCompat="@android:drawable/screen_background_light" />
 
     <com.google.android.material.tabs.TabLayout
@@ -72,7 +74,7 @@
             android:id="@+id/white_board_tab_1_item_1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Tab1" />
+            android:text="@string/item_1" />
 
         <Button
             android:id="@+id/white_board_tab_1_item_2"
@@ -124,7 +126,7 @@
                 android:id="@+id/white_board_tab_2_item_1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Tab2" />
+                android:text="@string/item_1" />
 
             <Button
                 android:id="@+id/white_board_tab_2_item_2"
@@ -176,7 +178,7 @@
                 android:id="@+id/white_board_tab_3_item_1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Tab3" />
+                android:text="@string/item_1" />
 
             <Button
                 android:id="@+id/white_board_tab_3_item_2"
@@ -205,5 +207,7 @@
         </LinearLayout>
 
     </HorizontalScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
