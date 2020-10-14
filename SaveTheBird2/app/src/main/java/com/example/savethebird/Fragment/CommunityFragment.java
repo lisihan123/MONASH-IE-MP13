@@ -13,7 +13,7 @@ import android.widget.Toast;
 import com.example.savethebird.R;
 
 
-public class Tab1Fragment extends Fragment {
+public class CommunityFragment extends Fragment {
 
 
 
@@ -22,8 +22,12 @@ public class Tab1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.whiteboard_tab_1, container, false);
-        Toast.makeText(getContext(),"Tab1.fragment",Toast.LENGTH_LONG).show();
+        View view =  inflater.inflate(R.layout.community_list, container, false);
+        initView(view);
         return view;
+    }
+
+    private  void initView(View view){
+
     }
 }

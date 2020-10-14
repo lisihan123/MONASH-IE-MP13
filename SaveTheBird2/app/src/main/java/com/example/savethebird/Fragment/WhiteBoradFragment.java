@@ -1,29 +1,23 @@
 package com.example.savethebird.Fragment;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.OvershootInterpolator;
 import android.widget.HorizontalScrollView;
-import android.widget.TableLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import com.example.savethebird.R;
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-
-import net.cachapa.expandablelayout.ExpandableLayout;
 
 
 public class WhiteBoradFragment extends Fragment {
@@ -31,6 +25,7 @@ public class WhiteBoradFragment extends Fragment {
     TabLayout.Tab ti1, ti2, ti3;
     TabLayout tl1;
     HorizontalScrollView h1, h2, h3;
+    ImageView miv;
 
 
  // Move it to Community
@@ -51,6 +46,7 @@ public class WhiteBoradFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.whiteboard, container, false);
         initView(view);
+        initWhiteBoard(view);
         return  view;
     }
 
@@ -111,12 +107,16 @@ public class WhiteBoradFragment extends Fragment {
         });
     }
 
-    class TiListner implements View.OnClickListener{
+    class TiListner implements View.OnClickListener, View.OnTouchListener {
+        Bitmap img;
+        Canvas canvas;
+        Paint p = new Paint();
+        float lastx, lasty;
         @Override
         public void onClick(View view) {
             switch(view.getId()){
                 case R.id.white_board_tab_1:
-                    replaceFragment(new Tab1Fragment());
+                    replaceFragment(new CommunityFragment());
                     break;
                 case R.id.white_board_tab_2:
                     replaceFragment(new Tab2Fragment());
@@ -127,11 +127,50 @@ public class WhiteBoradFragment extends Fragment {
 
             }
         }
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            if(img == null){//只创建一次对象
+                //创建Bitmap
+                img = Bitmap.createBitmap(v.getWidth(), v.getHeight(), Bitmap.Config.ARGB_8888);
+                //创建画布
+                canvas = new Canvas(img);
+            }
+            //获取动作类型
+            int action = event.getAction();
+            //按下
+            if(action == MotionEvent.ACTION_DOWN){
+                //记录坐标
+                lastx = event.getX();
+                lasty = event.getY();
+            }else if(action == MotionEvent.ACTION_MOVE){
+                //获取坐标
+                float curx = event.getX();
+                float cury = event.getY();
+                p.setColor(Color.RED);
+                //画线
+                canvas.drawLine(lastx, lasty, curx, cury, p);
+                //记录坐标
+                lastx = curx;
+                lasty = cury;
+                //显示Bitmap到ImageView上
+                ImageView showView = (ImageView)v;
+                showView.setImageBitmap(img);
+            }
+            return true;
+        }
     }
 
     public void replaceFragment(Fragment newFragment){
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
+    }
+
+
+    private void initWhiteBoard(View view){
+        miv=view.findViewById(R.id.white_board_image_view);
+        TiListner ls = new TiListner();
+        miv.setOnTouchListener(ls);
     }
 
 
@@ -215,4 +254,5 @@ public class WhiteBoradFragment extends Fragment {
 //            }
 //        }
 //    }
+
 }
