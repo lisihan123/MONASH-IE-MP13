@@ -144,6 +144,16 @@
     <!-- MAP PAGE-->
     <string name="zoom_map_in_and_out_instruction">instruction</string>
 
+    <!-- Whiteboard PAGES-->
+    <string name="tab_1">Hoodies</string>
+    <string name="tab_2">Threats</string>
+    <string name="tab_3">Warnings</string>
+    <string name="item_1">item1</string>
+    <string name="item_2">item2</string>
+    <string name="item_3">item3</string>
+    <string name="item_4">item4</string>
+    <string name="item_5">item5</string>
+
 
     <!-- OTHER PAGES-->
     <string name="title_home">Home</string>
@@ -162,14 +172,7 @@
         Their tiny sized eggs and chicks make them very hard to see for the people driving.
         These vehicles on and near the beaches highly contribute towards the low breeding success of Hooded Plovers.</string>
 
-    <string name="tab_1">Hoodie</string>
-    <string name="tab_2">Threat</string>
-    <string name="tab_3">Fact</string>
-    <string name="item_1">item1</string>
-    <string name="item_2">item2</string>
-    <string name="item_3">item3</string>
-    <string name="item_4">item4</string>
-    <string name="item_5">item5</string>
+
 
 
     <!--
