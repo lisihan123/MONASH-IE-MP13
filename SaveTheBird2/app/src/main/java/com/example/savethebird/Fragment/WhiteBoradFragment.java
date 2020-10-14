@@ -41,18 +41,6 @@ public class WhiteBoradFragment extends Fragment {
     ViewGroup containerVg;
 
 
- // Move it to Community
-//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        View rootView = inflater.inflate(R.layout.recycler_view_fragment, container, false);
-//
-//        RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerView.setAdapter(new SimpleAdapter(recyclerView));
-//
-//        return rootView;
-//    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,11 +53,6 @@ public class WhiteBoradFragment extends Fragment {
     }
 
     private void initView(View view){
-
-        // Move it to community
-//        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        recyclerView.setAdapter(new SimpleAdapter(recyclerView));
 
         h1=view.findViewById(R.id.tab_1_layout);
         h2=view.findViewById(R.id.tab_2_layout);
@@ -217,87 +200,5 @@ public class WhiteBoradFragment extends Fragment {
         }
         return result;
     }
-
-
-
-    // Move it to Community
-//    private static class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
-//        private static final int UNSELECTED = -1;
-//
-//        private RecyclerView recyclerView;
-//        private int selectedItem = UNSELECTED;
-//
-//        public SimpleAdapter(RecyclerView recyclerView) {
-//            this.recyclerView = recyclerView;
-//        }
-//
-//        @Override
-//        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//            View itemView = LayoutInflater.from(parent.getContext())
-//                    .inflate(R.layout.recycler_item, parent, false);
-//            return new ViewHolder(itemView);
-//        }
-//
-//        @Override
-//        public void onBindViewHolder(ViewHolder holder, int position) {
-//            holder.bind();
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return 100;
-//        }
-//
-//        public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, ExpandableLayout.OnExpansionUpdateListener {
-//            private ExpandableLayout expandableLayout;
-//            private TextView expandButton;
-//
-//            public ViewHolder(View itemView) {
-//                super(itemView);
-//
-//                expandableLayout = itemView.findViewById(R.id.expandable_layout);
-//                expandableLayout.setInterpolator(new OvershootInterpolator());
-//                expandableLayout.setOnExpansionUpdateListener(this);
-//                expandButton = itemView.findViewById(R.id.expand_button);
-//
-//                expandButton.setOnClickListener(this);
-//            }
-//
-//            public void bind() {
-//                int position = getAdapterPosition();
-//                boolean isSelected = position == selectedItem;
-//
-//                expandButton.setText(position + ". Tap to expand");
-//                expandButton.setSelected(isSelected);
-//                expandableLayout.setExpanded(isSelected, false);
-//            }
-//
-//            @Override
-//            public void onClick(View view) {
-//                ViewHolder holder = (ViewHolder) recyclerView.findViewHolderForAdapterPosition(selectedItem);
-//                if (holder != null) {
-//                    holder.expandButton.setSelected(false);
-//                    holder.expandableLayout.collapse();
-//                }
-//
-//                int position = getAdapterPosition();
-//                if (position == selectedItem) {
-//                    selectedItem = UNSELECTED;
-//                } else {
-//                    expandButton.setSelected(true);
-//                    expandableLayout.expand();
-//                    selectedItem = position;
-//                }
-//            }
-//
-//            @Override
-//            public void onExpansionUpdate(float expansionFraction, int state) {
-//                Log.d("ExpandableLayout", "State: " + state);
-//                if (state == ExpandableLayout.State.EXPANDING) {
-//                    recyclerView.smoothScrollToPosition(getAdapterPosition());
-//                }
-//            }
-//        }
-//    }
 
 }
