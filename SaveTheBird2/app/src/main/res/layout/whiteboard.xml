@@ -100,7 +100,7 @@
                 android:layout_width="105dp"
                 android:layout_height="105dp"
                 android:text="@string/item_5"
-                app:srcCompat="@drawable/item1_egg" />
+                app:srcCompat="@drawable/item1_hoodielogo" />
 
         </LinearLayout>
 
