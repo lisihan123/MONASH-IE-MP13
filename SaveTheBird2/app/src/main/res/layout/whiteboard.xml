@@ -7,17 +7,18 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
+    <RelativeLayout
         android:id="@+id/white_board_image_view"
         android:layout_width="304dp"
         android:layout_height="278dp"
+        android:background="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.348"
-        app:srcCompat="@android:drawable/screen_background_light" />
+         />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
