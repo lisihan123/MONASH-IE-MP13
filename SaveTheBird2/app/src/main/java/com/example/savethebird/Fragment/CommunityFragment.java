@@ -31,17 +31,12 @@ public class CommunityFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.community_list, container, false);
 
-        RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new SimpleAdapter(recyclerView));
-
-        initView(recyclerView);
+        initView(rootView);
         return rootView;
     }
 
 
     private  void initView(View view){
-        // Move it to community
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new SimpleAdapter(recyclerView));
