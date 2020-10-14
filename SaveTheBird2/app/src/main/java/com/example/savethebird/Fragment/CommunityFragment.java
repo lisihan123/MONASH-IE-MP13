@@ -23,9 +23,6 @@ import net.cachapa.expandablelayout.ExpandableLayout;
 
 public class CommunityFragment extends Fragment {
 
-
-
-    // Move it to Community
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,8 +39,6 @@ public class CommunityFragment extends Fragment {
         recyclerView.setAdapter(new SimpleAdapter(recyclerView));
     }
 
-
-    // Move it to Community
     private static class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
         private static final int UNSELECTED = -1;
 
