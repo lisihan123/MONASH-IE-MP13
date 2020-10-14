@@ -6,30 +6,18 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.OvershootInterpolator;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.savethebird.R;
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-
-import net.cachapa.expandablelayout.ExpandableLayout;
 
 
 public class WhiteBoradFragment extends Fragment {
@@ -128,7 +116,7 @@ public class WhiteBoradFragment extends Fragment {
         public void onClick(View view) {
             switch(view.getId()){
                 case R.id.white_board_tab_1:
-                    replaceFragment(new Tab1Fragment());
+                    replaceFragment(new CommunityFragment());
                     break;
                 case R.id.white_board_tab_2:
                     replaceFragment(new Tab2Fragment());
@@ -178,13 +166,13 @@ public class WhiteBoradFragment extends Fragment {
         fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
     }
 
-<<<<<<< HEAD
+
     private void initWhiteBoard(View view){
         miv=view.findViewById(R.id.white_board_image_view);
         TiListner ls = new TiListner();
         miv.setOnTouchListener(ls);
     }
-=======
+
 
 
     // Move it to Community
@@ -266,5 +254,5 @@ public class WhiteBoradFragment extends Fragment {
 //            }
 //        }
 //    }
->>>>>>> master
+
 }
