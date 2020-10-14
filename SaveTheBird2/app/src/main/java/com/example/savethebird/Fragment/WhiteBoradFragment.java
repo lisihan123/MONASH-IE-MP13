@@ -123,7 +123,28 @@ public class WhiteBoradFragment extends Fragment {
             }
         });
 
+        Button msave = view.findViewById(R.id.button_save_picture);
+        msave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveViewAsPic(getContext(),containerVg);
+            }
+        });
 
+
+    }
+
+    private void putWhiteBoard(int rid){
+        MovedImageView image = new MovedImageView(getContext());
+        image.setImageResource(rid);
+        image.setLongClickable(true);
+        image.setOnLongClick(new MovedImageView.OnLongClickListener() {
+            @Override
+            public void onLongClick(View view) {
+                questionDelete(view);
+            }
+        });
+        containerVg.addView(image);
     }
 
     private void questionDelete(final View view)

@@ -105,6 +105,9 @@ public class MainActivity extends AppCompatActivity {
 //                () -> Log.i("Tutorial", "Observation complete.")
 //        );
 //        navView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                100);
     }
 
     public void setActionBarTitle(String title) {
