@@ -4,27 +4,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
@@ -58,6 +51,8 @@ public class WhiteBoradFragment extends Fragment {
 
         return  view;
     }
+
+
 
     private void initView(View view){
 
@@ -193,19 +188,10 @@ public class WhiteBoradFragment extends Fragment {
                     putWhiteBoard(R.drawable.item3_fox);
                     break;
 
-<<<<<<< Updated upstream
-    public void onResume() {
-        super.onResume();
-=======
             }
         }
     }
->>>>>>> Stashed changes
 
-        ((MainActivity) getActivity())
-                .setActionBarTitle("Create Custom Poster");
-
-    }
 
 
 
@@ -318,7 +304,7 @@ public class WhiteBoradFragment extends Fragment {
                 intent.setData(uri);
                 context.sendBroadcast(intent);
                 context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(file.getPath()))));
-                Toast.makeText(context,"save to system image album success",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"save to system image album success", Toast.LENGTH_SHORT).show();
                 result = true;
                 Log.d("sss","save path:"+file.getAbsolutePath());
             }
