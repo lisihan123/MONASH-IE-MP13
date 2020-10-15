@@ -154,6 +154,8 @@
     <string name="item_4">item4</string>
     <string name="item_5">item5</string>
     <string name="save">Save Picture</string>
+    <string name="delete">Delete</string>
+    <string name="reset">Reset</string>
 
 
 

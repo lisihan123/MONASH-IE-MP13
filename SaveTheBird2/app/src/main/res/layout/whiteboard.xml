@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/button_save_picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/save"
@@ -18,21 +18,21 @@
 
     <Button
         android:id="@+id/button_delete_picture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
-        android:text="@string/save"
+        android:text="@string/delete"
         app:layout_constraintStart_toEndOf="@+id/button_save_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
     <Button
         android:id="@+id/button_save_picture3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
-        android:text="@string/save"
+        android:text="@string/reset"
         app:layout_constraintStart_toEndOf="@+id/button_delete_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
