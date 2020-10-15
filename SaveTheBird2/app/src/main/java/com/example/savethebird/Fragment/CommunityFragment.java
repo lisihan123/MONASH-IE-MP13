@@ -84,8 +84,29 @@ public class CommunityFragment extends Fragment {
             public void bind() {
                 int position = getAdapterPosition();
                 boolean isSelected = position == selectedItem;
+                switch (position){
+                    case 0:
+                        expandButton.setText( "Anna's Honours Fieldwork - Hooded Plover Research");
+                        break;
+                    case 1:
+                        expandButton.setText("Friends of the Hooded Plover Surfcoast- Victoria");
+                        break;
+                    case 2:
+                        expandButton.setText(  "Hooded Plover\n");
+                        break;
+                    case 3:
+                        expandButton.setText( "Hooded Plover Volunteers ");
+                        break;
+                    case 4:
+                        expandButton.setText( "Friends of the Hooded Plover - Mornington Peninsula");
+                        break;
 
-                expandButton.setText(position + ". Tap to expand");
+
+
+
+                }
+
+//                expandButton.setText(position + ". Tap to expand");
                 expandButton.setSelected(isSelected);
                 expandableLayout.setExpanded(isSelected, false);
             }
