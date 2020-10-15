@@ -10,17 +10,39 @@
         android:id="@+id/button_save_picture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:text="@string/save"
-        app:layout_constraintBottom_toTopOf="@+id/white_board_image_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
+
+    <Button
+        android:id="@+id/button_delete_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/save"
+        app:layout_constraintStart_toEndOf="@+id/button_save_picture"
+        app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
+
+    <Button
+        android:id="@+id/button_save_picture3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/save"
+        app:layout_constraintStart_toEndOf="@+id/button_delete_picture"
+        app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
     <RelativeLayout
         android:id="@+id/white_board_image_view"
-        android:layout_width="393dp"
-        android:layout_height="401dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="395dp"
+        android:layout_height="380dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
         android:background="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +53,12 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view"
-        app:tabMode="fixed"
-        tools:layout_editor_absoluteX="-2dp">
+        app:tabMode="fixed">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/white_board_tab_1"
@@ -63,7 +86,7 @@
     <HorizontalScrollView
         android:id="@+id/tab_1_layout"
         android:layout_width="409dp"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_marginTop="5dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,43 +95,43 @@
         app:layout_constraintTop_toBottomOf="@+id/tab_layout">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
 
             <ImageView
                 android:id="@+id/white_board_tab_1_item_1"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_1"
                 app:srcCompat="@drawable/item1_egg" />
 
             <ImageView
                 android:id="@+id/white_board_tab_1_item_2"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_2"
                 app:srcCompat="@drawable/item1_chick" />
 
             <ImageView
                 android:id="@+id/white_board_tab_1_item_3"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_3"
                 app:srcCompat="@drawable/item1_hoodiefamily" />
 
             <ImageView
                 android:id="@+id/white_board_tab_1_item_4"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_4"
                 app:srcCompat="@drawable/item1_hoodie" />
 
             <ImageView
                 android:id="@+id/white_board_tab_1_item_5"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_5"
                 app:srcCompat="@drawable/item1_hoodielogo" />
 
@@ -135,15 +158,15 @@
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_1"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_1"
                 app:srcCompat="@drawable/item2_beach1" />
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_2"
-                android:layout_width="105dp"
-                android:layout_height="match_parent"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_2"
                 app:srcCompat="@drawable/item2_trash" />
 
@@ -156,49 +179,49 @@
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_4"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_4"
                 app:srcCompat="@drawable/item2_man1" />
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_5"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_5"
                 app:srcCompat="@drawable/item2_man2" />
             <ImageView
                 android:id="@+id/white_board_tab_2_item_6"
-                android:layout_width="105dp"
-                android:layout_height="match_parent"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_1"
                 app:srcCompat="@drawable/item3_raven" />
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_7"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_2"
                 app:srcCompat="@drawable/item3_poster" />
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_8"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_3"
                 app:srcCompat="@drawable/item3_footprint" />
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_9"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_4"
                 app:srcCompat="@drawable/item3_horse" />
 
             <ImageView
                 android:id="@+id/white_board_tab_2_item_10"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_5"
                 app:srcCompat="@drawable/item3_fox" />
 
@@ -226,36 +249,36 @@
 
             <ImageView
                 android:id="@+id/white_board_tab_3_item_1"
-                android:layout_width="105dp"
-                android:layout_height="match_parent"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_1"
                 app:srcCompat="@drawable/item3_raven" />
 
             <ImageView
                 android:id="@+id/white_board_tab_3_item_2"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_2"
                 app:srcCompat="@drawable/item3_poster" />
 
             <ImageView
                 android:id="@+id/white_board_tab_3_item_3"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_3"
                 app:srcCompat="@drawable/item3_footprint" />
 
             <ImageView
                 android:id="@+id/white_board_tab_3_item_4"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_4"
                 app:srcCompat="@drawable/item3_horse" />
 
             <ImageView
                 android:id="@+id/white_board_tab_3_item_5"
-                android:layout_width="105dp"
-                android:layout_height="105dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:text="@string/item_5"
                 app:srcCompat="@drawable/item3_fox" />
 
