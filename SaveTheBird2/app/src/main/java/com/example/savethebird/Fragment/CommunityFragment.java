@@ -16,6 +16,7 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
@@ -37,6 +38,15 @@ public class CommunityFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new SimpleAdapter(recyclerView));
+    }
+
+
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Join Communities");
+
     }
 
     private static class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {

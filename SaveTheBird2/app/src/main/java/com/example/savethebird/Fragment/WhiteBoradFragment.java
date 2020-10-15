@@ -25,6 +25,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 import com.google.android.material.tabs.TabLayout;
 
@@ -99,7 +100,13 @@ public class WhiteBoradFragment extends Fragment {
 
 
 
+    public void onResume() {
+        super.onResume();
 
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Create Custom Poster");
+
+    }
 
 
 
@@ -166,6 +173,8 @@ public class WhiteBoradFragment extends Fragment {
         });
         builder.show();
     }
+
+
 
     /**
      * 将未显示在屏幕上的view存到sd卡
