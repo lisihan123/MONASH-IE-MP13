@@ -108,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 100);
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                100);
     }
 
     public void setActionBarTitle(String title) {
@@ -321,33 +323,9 @@ public class MainActivity extends AppCompatActivity {
                 }).show();
     }
 
-    private double compareDB(Location location){
-        readCSV();
-        boolean finish = false;
-        double distance = 0;
-        if(finish){
-            for(int i =0; i <list.size(); i++){
-                distance = getDistance(location.getLongitude(),location.getLatitude(),list.get(i).getLongitude(),list.get(i).getLatitude());
-                if(distance<5){
-                    break;
-                }
-            }
-            finish = true;
-        }
-        return distance;
-    }
 
-    private void buildTodo(){
-        Todo todo = Todo.builder()
-                .name("My first dodo")
-                .description("Db")
-                .build();
-        Amplify.API.mutate(
-                ModelMutation.create(todo),
-                response -> Log.i("MyAmplifyApp", "Added Todo with id: " + response.getData().getId()),
-                error -> Log.e("MyAmplifyApp", "Create failed", error)
-        );
-    }
+
+
 
     private void requestApi(double lng,double lat)
     {

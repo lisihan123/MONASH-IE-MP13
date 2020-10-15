@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -33,6 +34,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class WhiteBoradFragment extends Fragment {
@@ -40,6 +43,8 @@ public class WhiteBoradFragment extends Fragment {
     TabLayout tl1;
     HorizontalScrollView h1, h2, h3;
     ViewGroup containerVg;
+    List<ImageView> list = new ArrayList<ImageView>();
+    ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
 
 
     @Override
@@ -49,6 +54,7 @@ public class WhiteBoradFragment extends Fragment {
         View view =  inflater.inflate(R.layout.whiteboard, container, false);
         initWhiteBoard(view);
         initView(view);
+        addToImageList(view);
 
         return  view;
     }
@@ -98,6 +104,109 @@ public class WhiteBoradFragment extends Fragment {
     }
 
 
+    private void addToImageList(View view){
+        mtiA1 = view.findViewById(R.id.white_board_tab_1_item_1);
+        mtiA2 = view.findViewById(R.id.white_board_tab_1_item_2);
+        mtiA3= view.findViewById(R.id.white_board_tab_1_item_3);
+        mtiA4= view.findViewById(R.id.white_board_tab_1_item_4);
+        mtiA5 = view.findViewById(R.id.white_board_tab_1_item_5);
+        mtiB1 = view.findViewById(R.id.white_board_tab_2_item_1);
+        mtiB2 = view.findViewById(R.id.white_board_tab_2_item_2);
+        mtiB3= view.findViewById(R.id.white_board_tab_2_item_3);
+        mtiB4= view.findViewById(R.id.white_board_tab_2_item_4);
+        mtiB5 = view.findViewById(R.id.white_board_tab_2_item_5);
+        mtiC1 = view.findViewById(R.id.white_board_tab_3_item_1);
+        mtiC2 = view.findViewById(R.id.white_board_tab_3_item_2);
+        mtiC3= view.findViewById(R.id.white_board_tab_3_item_3);
+        mtiC4= view.findViewById(R.id.white_board_tab_3_item_4);
+        mtiC5 = view.findViewById(R.id.white_board_tab_3_item_5);
+        list.add(mtiA1);
+        list.add(mtiA2);
+        list.add(mtiA3);
+        list.add(mtiA4);
+        list.add(mtiA5);
+        list.add(mtiB1);
+        list.add(mtiB2);
+        list.add(mtiB3);
+        list.add(mtiB4);
+        list.add(mtiB5);
+        list.add(mtiC1);
+        list.add(mtiC2);
+        list.add(mtiC3);
+        list.add(mtiC4);
+        list.add(mtiC5);
+        ImageListener ls = new ImageListener();
+        for(int i=0; i<list.size(); i++){
+            list.get(i).setOnClickListener(ls);
+        }
+
+
+    }
+
+    private class ImageListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()){
+                case R.id.white_board_tab_1_item_1:
+                    putWhiteBoard(R.drawable.item1_egg);
+                    break;
+                case R.id.white_board_tab_1_item_2:
+                    putWhiteBoard(R.drawable.item1_chick);
+                    break;
+                case R.id.white_board_tab_1_item_3:
+                    putWhiteBoard(R.drawable.item1_hoodiefamily);
+                    break;
+                case R.id.white_board_tab_1_item_4:
+                    putWhiteBoard(R.drawable.item1_hoodie);
+                    break;
+                case R.id.white_board_tab_1_item_5:
+                    putWhiteBoard(R.drawable.item1_hoodielogo);
+                    break;
+                case R.id.white_board_tab_2_item_1:
+                    putWhiteBoard(R.drawable.item2_beach1);
+                    break;
+                case R.id.white_board_tab_2_item_2:
+                    putWhiteBoard(R.drawable.item2_trash);
+                    break;
+                case R.id.white_board_tab_2_item_3:
+                    putWhiteBoard(R.drawable.item2_dog1);
+                    break;
+                case R.id.white_board_tab_2_item_4:
+                    putWhiteBoard(R.drawable.item2_man1);
+                    break;
+                case R.id.white_board_tab_2_item_5:
+                    putWhiteBoard(R.drawable.item2_man2);
+                    break;
+                case R.id.white_board_tab_3_item_1:
+                    putWhiteBoard(R.drawable.item3_raven);
+                    break;
+                case R.id.white_board_tab_3_item_2:
+                    putWhiteBoard(R.drawable.item3_poster);
+                    break;
+                case R.id.white_board_tab_3_item_3:
+                    putWhiteBoard(R.drawable.item3_footprint);
+                    break;
+                case R.id.white_board_tab_3_item_4:
+                    putWhiteBoard(R.drawable.item3_horse);
+                    break;
+                case R.id.white_board_tab_3_item_5:
+                    putWhiteBoard(R.drawable.item3_fox);
+                    break;
+
+<<<<<<< Updated upstream
+    public void onResume() {
+        super.onResume();
+=======
+            }
+        }
+    }
+>>>>>>> Stashed changes
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("Create Custom Poster");
+
+    }
+
 
 
     public void onResume() {
@@ -112,23 +221,13 @@ public class WhiteBoradFragment extends Fragment {
 
 
     private void initWhiteBoard(View view){
-        ImageView egg = view.findViewById(R.id.white_board_tab_1_item_1);
+
+
+
+
+
         containerVg=view.findViewById(R.id.white_board_image_view);
-        egg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MovedImageView image = new MovedImageView(getContext());
-                image.setImageResource(R.drawable.item1_egg);
-                image.setLongClickable(true);
-                image.setOnLongClick(new MovedImageView.OnLongClickListener() {
-                    @Override
-                    public void onLongClick(View view) {
-                        questionDelete(view);
-                    }
-                });
-                containerVg.addView(image);
-            }
-        });
+
 
         Button msave = view.findViewById(R.id.button_save_picture);
         msave.setOnClickListener(new View.OnClickListener() {

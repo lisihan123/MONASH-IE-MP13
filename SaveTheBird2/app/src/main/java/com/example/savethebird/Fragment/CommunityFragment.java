@@ -94,6 +94,7 @@ public class CommunityFragment extends Fragment {
             public void bind() {
                 int position = getAdapterPosition();
                 boolean isSelected = position == selectedItem;
+                String[] title = new String[]{};
                 switch (position){
                     case 0:
                         expandButton.setText( "Anna's Honours Fieldwork - Hooded Plover Research");
