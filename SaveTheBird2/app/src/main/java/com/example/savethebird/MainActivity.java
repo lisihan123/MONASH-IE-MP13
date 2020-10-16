@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 100);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                 100);
+
     }
 
     public void setActionBarTitle(String title) {
@@ -367,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
             super.handleMessage(msg);
             if(msg.what == 111){
                 double d = (Double) msg.obj;
-                if(d<=5) {
+                if(d<=1) {
                     showNotice();
                 }
             }

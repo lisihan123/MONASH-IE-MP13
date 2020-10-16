@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -22,6 +23,17 @@ import androidx.fragment.app.Fragment;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 import com.google.android.material.tabs.TabLayout;
+import com.mapbox.api.geocoding.v5.GeocodingCriteria;
+import com.mapbox.api.geocoding.v5.MapboxGeocoding;
+import com.mapbox.api.geocoding.v5.models.CarmenFeature;
+import com.mapbox.api.geocoding.v5.models.GeocodingResponse;
+import com.mapbox.core.exceptions.ServicesException;
+import com.mapbox.geojson.Point;
+
+import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,6 +41,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import timber.log.Timber;
 
 
 public class WhiteBoradFragment extends Fragment {
@@ -38,6 +57,7 @@ public class WhiteBoradFragment extends Fragment {
     ViewGroup containerVg;
     List<ImageView> list = new ArrayList<ImageView>();
     ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
+    private static final String MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
 
 
     @Override
@@ -48,6 +68,7 @@ public class WhiteBoradFragment extends Fragment {
         initWhiteBoard(view);
         initView(view);
         addToImageList(view);
+        Geocoding();
 
         return  view;
     }
@@ -136,7 +157,10 @@ public class WhiteBoradFragment extends Fragment {
         }
 
 
+
+
     }
+
 
     private class ImageListener implements View.OnClickListener{
         @Override
@@ -282,17 +306,25 @@ public class WhiteBoradFragment extends Fragment {
 
     public static boolean saveBitmapToSdCard(Context context, Bitmap bitmap){
         boolean result = false;
-        String path = context.getExternalFilesDir("image").getAbsolutePath();
-        File sd = new File(path);
-        if (!sd.exists()){
-            sd.mkdirs();
-        }
-        File file = new File(path, System.currentTimeMillis()+".jpg");
+//        String path = context.getExternalFilesDir("image").getAbsolutePath();
+        String path = Environment.getExternalStorageDirectory()
+                + File.separator + Environment.DIRECTORY_DCIM
+                + File.separator + "Camera" + File.separator;
+        String imagePath = path + System.currentTimeMillis()+".jpeg";
+
+        Log.d("sss","image path:"+imagePath);
+        File file = new File(imagePath);
         FileOutputStream fileOutputStream = null;
         try {
             if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+                File tempPath = new File(file.getParent());
+                if (!tempPath.exists()) {
+                    boolean res = tempPath.mkdirs();
+                    Log.d("sss","create dir:"+ tempPath.getAbsolutePath()+",res="+res);
+                }
                 if(!file.exists()){
-                    file.createNewFile();
+                    boolean res = file.createNewFile();
+                    Log.d("sss","create file:"+ res);
                 }
                 fileOutputStream = new FileOutputStream(file);
                 bitmap.compress(Bitmap.CompressFormat.JPEG,100,fileOutputStream);
@@ -304,7 +336,7 @@ public class WhiteBoradFragment extends Fragment {
                 intent.setData(uri);
                 context.sendBroadcast(intent);
                 context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(file.getPath()))));
-                Toast.makeText(context,"save to system image album success", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"save to system image album success",Toast.LENGTH_SHORT).show();
                 result = true;
                 Log.d("sss","save path:"+file.getAbsolutePath());
             }
@@ -315,5 +347,40 @@ public class WhiteBoradFragment extends Fragment {
         }
         return result;
     }
+
+    private void Geocoding(){
+
+        String url = "https://api.mapbox.com/geocoding/v5/mapbox.places/-122.084000,37.421998.json?access_token=pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
+        OkHttpClient okHttpClient = new OkHttpClient();
+        final Request request = new Request.Builder().url(url).build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                Log.d("test","requestApi==>"+e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                String result = response.body().string();
+                Log.d("test","requestApi==>"+ result);
+                try{
+                    JSONObject jo = new JSONObject(result);
+                    String feature = jo.optString("features");
+                    JSONArray ja = new JSONArray(feature);
+                    JSONObject jo2 = (JSONObject) ja.get(0);
+                    String placeName = jo2.optString("place_name");
+
+                    Log.d("test","requestApi==>"+ placeName);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+    }
+
+
 
 }
