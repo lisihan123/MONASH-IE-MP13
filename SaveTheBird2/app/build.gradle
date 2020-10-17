@@ -31,9 +31,9 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    implementation 'androidx.navigation:navigation-fragment:2.3.0'
-    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.navigation:navigation-fragment:2.3.1'
+    implementation 'androidx.navigation:navigation-ui:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.youth.banner:banner:1.4.10'
@@ -44,20 +44,21 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'androidx.viewpager:viewpager:1.0.0'
 //    implementation files('/Users/sihanli/Downloads/YouTubeAndroidPlayerApi-1/libs/YouTubeAndroidPlayerApi.jar')
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Add these lines in `dependencies`
-    implementation 'com.amplifyframework:core:1.4.0'
-    implementation 'com.amplifyframework:aws-api:1.4.0'
-    implementation 'com.amplifyframework:aws-analytics-pinpoint:1.4.0'
-    implementation 'com.amplifyframework:aws-auth-cognito:1.4.0'
-    implementation 'com.amplifyframework:aws-datastore:1.4.0'
-    implementation 'com.amplifyframework:aws-predictions:1.4.0'
-    implementation 'com.amplifyframework:aws-storage-s3:1.4.0'
-    implementation 'com.facebook.android:facebook-share:7.1.0'
+    implementation 'com.amplifyframework:core:1.4.1'
+    implementation 'com.amplifyframework:aws-api:1.4.1'
+    implementation 'com.amplifyframework:aws-analytics-pinpoint:1.4.1'
+    implementation 'com.amplifyframework:aws-auth-cognito:1.4.1'
+    implementation 'com.amplifyframework:aws-datastore:1.4.1'
+    implementation 'com.amplifyframework:aws-predictions:1.4.1'
+    implementation 'com.amplifyframework:aws-storage-s3:1.4.1'
+    implementation 'com.facebook.android:facebook-share:8.1.0'
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
@@ -66,12 +67,29 @@ dependencies {
 
     implementation 'com.github.devlight:infinitecycleviewpager:1.0.2'
 
-    implementation 'com.amazonaws:aws-android-sdk-core:2.18.0'
-    implementation 'com.amazonaws:aws-android-sdk-s3:2.18.0'
-    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.18.0'
-    implementation 'com.amazonaws:aws-android-sdk-cognito:2.18.0'
-    implementation 'com.amazonaws:aws-android-sdk-apigateway-core:2.18.0'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.1.0'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.19.0'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.19.0'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.19.0'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.19.0'
+    implementation 'com.amazonaws:aws-android-sdk-apigateway-core:2.19.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-android-telemetry:6.2.1'
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+//    implementation 'com.android.support:support-v4:28.0.0'
+//    implementation 'com.android.support:design:28.0.0'
+    implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+
+
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:5.5.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-services:5.5.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:5.5.0'
+    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-core:5.5.0'
+
+//    implementation 'com.mapbox.mapboxsdk:DESIRED_JAVA_SDK_PACKAGE:5.5.0'
+
+    implementation 'androidx.annotation:annotation:1.0.0'
 }
