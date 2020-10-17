@@ -61,6 +61,8 @@ public class CommunityFragment extends Fragment {
 
         public SimpleAdapter(RecyclerView recyclerView) {
             this.recyclerView = recyclerView;
+
+
         }
 
         @Override
@@ -89,9 +91,6 @@ public class CommunityFragment extends Fragment {
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_4, parent, false);
                 return new ViewHolder(itemView);
             }
-
-
-
 
 //            View itemView = LayoutInflater.from(parent.getContext())
 //                    .inflate(R.layout.recycler_item_0, parent, false);
