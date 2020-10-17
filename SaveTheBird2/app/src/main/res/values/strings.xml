@@ -158,13 +158,13 @@
 
 
     <!-- COMMUNITIES PAGES-->
-    <string name="fb_bt">Go To FB</string>
+    <string name="fb_bt">\t\tGo To FB</string>
 
-    <string name="community_0_title">Anna\'s Honours Fieldwork - Hooded Plover Research</string>
-    <string name="community_1_title">Friends of the Hooded Plover Surfcoast- Victoria</string>
-    <string name="community_2_title">Hooded Plover</string>
-    <string name="community_3_title">Hooded Plover Volunteers</string>
-    <string name="community_4_title">Friends of the Hooded Plover - Mornington Peninsula</string>
+    <string name="community_0_title">Anna\'s Honours Fieldwork - Hooded Plover Research \n﹀ </string>
+    <string name="community_1_title">Friends of the Hooded Plover Surfcoast- Victoria ⬇ ️</string>
+    <string name="community_2_title">Hooded Plover ▼</string>
+    <string name="community_3_title">Hooded Plover Volunteers ⬇ ️</string>
+    <string name="community_4_title">Friends of the Hooded Plover - Mornington Peninsula ⬇</string>
 
     <string name="community_0_inrto">Looking for volunteers to help me out with fieldwork on the Victoria coastline
         as part of my honours project exploring the influence of food resource on breeding hooded plover habitat selection</string>
