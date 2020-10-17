@@ -13,7 +13,10 @@
         android:layout_height="wrap_content"
         android:elevation="6dp"
         android:foreground="?selectableItemBackground"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:textColor="#0E0E0E"/>
+
+
 
     <net.cachapa.expandablelayout.ExpandableLayout
         android:id="@+id/expandable_layout"
@@ -22,7 +25,7 @@
         android:background="@color/colorPrimaryDark"
         app:el_duration="300"
         app:el_expanded="false"
-        android:textColor="#0E0E0E">
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
