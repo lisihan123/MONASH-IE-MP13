@@ -65,9 +65,45 @@ public class CommunityFragment extends Fragment {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.recycler_item_0, parent, false);
-            return new ViewHolder(itemView);
+            View itemView;
+            if (viewType == 0) { // for call layout
+                itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_0, parent, false);
+                return new ViewHolder(itemView);
+
+            }
+            else if (viewType == 1) { // for call layout
+                itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_1, parent, false);
+                return new ViewHolder(itemView);
+
+            }
+            else if (viewType == 2) { // for call layout
+                itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_2, parent, false);
+                return new ViewHolder(itemView);
+
+            }
+            else if (viewType == 3) { // for call layout
+                itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_3, parent, false);
+                return new ViewHolder(itemView);
+
+            } else { // for email layout
+                itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_4, parent, false);
+                return new ViewHolder(itemView);
+            }
+
+
+
+
+//            View itemView = LayoutInflater.from(parent.getContext())
+//                    .inflate(R.layout.recycler_item_0, parent, false);
+
+
+//            return new ViewHolder(itemView);
+        }
+
+
+        @Override
+        public int getItemViewType(int position) {
+            return position;
         }
 
         @Override
