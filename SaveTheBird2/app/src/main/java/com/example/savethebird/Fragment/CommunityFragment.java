@@ -97,19 +97,19 @@ public class CommunityFragment extends Fragment {
                 String[] title = new String[]{};
                 switch (position){
                     case 0:
-                        expandButton.setText( "Anna's Honours Fieldwork - Hooded Plover Research");
+                        expandButton.setText(R.string.community_0_title);
                         break;
                     case 1:
-                        expandButton.setText("Friends of the Hooded Plover Surfcoast- Victoria");
+                        expandButton.setText(R.string.community_1_title);
                         break;
                     case 2:
-                        expandButton.setText(  "Hooded Plover\n");
+                        expandButton.setText(R.string.community_2_title);
                         break;
                     case 3:
-                        expandButton.setText( "Hooded Plover Volunteers ");
+                        expandButton.setText(R.string.community_3_title);
                         break;
                     case 4:
-                        expandButton.setText( "Friends of the Hooded Plover - Mornington Peninsula");
+                        expandButton.setText(R.string.community_4_title);
                         break;
 
 

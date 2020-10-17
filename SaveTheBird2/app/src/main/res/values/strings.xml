@@ -8,11 +8,10 @@
 
     <!-- HOME PAGE-->
     <string name="home_page">Know about Hooded Plovers (Hoodies)\nand let\'\s help save them!</string>
-    <string name="home_button_1">Threats to Hoodies</string>
-    <string name="home_button_2">Life Cycle of Hoodies</string>
-    <string name="home_button_3">Create Custom Poster</string>
-    <string name="home_button_4">Join Communities</string>
-
+    <string name="home_button_1">Find out about threats to Hoodies</string>
+    <string name="home_button_2">Understand the life cycle of Hoodies</string>
+    <string name="home_button_3">Create poster to tell people\nhoodies\' location</string>
+    <string name="home_button_4">Join communities\ndedicated to protecting hoodies</string>
 
     <!-- FACT_LIST & FACTS PAGE-->
     <string name="fact_list_1">Only about 550 Hooded Plovers remain \nin Victoria, where 692 beaches are recorded. </string>
@@ -156,6 +155,13 @@
     <string name="save">Save Picture</string>
     <string name="delete">Delete</string>
     <string name="reset">Reset</string>
+
+    <!-- COMMUNITIES PAGES-->
+    <string name="community_0_title">Anna\'s Honours Fieldwork - Hooded Plover Research</string>
+    <string name="community_1_title">Friends of the Hooded Plover Surfcoast- Victoria</string>
+    <string name="community_2_title">Hooded Plover</string>
+    <string name="community_3_title">Hooded Plover Volunteers</string>
+    <string name="community_4_title">Friends of the Hooded Plover - Mornington Peninsula</string>
 
 
 
