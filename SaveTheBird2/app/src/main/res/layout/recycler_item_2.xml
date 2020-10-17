@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:elevation="6dp"
         android:foreground="?selectableItemBackground"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:textColor="#0E0E0E"/>
 
     <net.cachapa.expandablelayout.ExpandableLayout
         android:id="@+id/expandable_layout"

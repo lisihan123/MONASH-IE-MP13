@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:elevation="6dp"
         android:foreground="?selectableItemBackground"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:textColor="#0E0E0E" />
 
     <net.cachapa.expandablelayout.ExpandableLayout
         android:id="@+id/expandable_layout"
@@ -44,7 +45,6 @@
                 android:id="@+id/community_0_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/fb_bt"
                 app:layout_constraintBottom_toBottomOf="parent"

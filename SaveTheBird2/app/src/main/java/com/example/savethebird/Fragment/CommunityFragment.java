@@ -153,8 +153,6 @@ public class CommunityFragment extends Fragment {
                         break;
 
 
-
-
                 }
 
 //                expandButton.setText(position + ". Tap to expand");
