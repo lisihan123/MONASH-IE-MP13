@@ -10,15 +10,21 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
@@ -49,9 +55,12 @@ import okhttp3.Request;
 import okhttp3.Response;
 import timber.log.Timber;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 
 public class WhiteBoradFragment extends Fragment {
 
+    ActionMenuItemView btnMore;
     TabLayout tl1;
     HorizontalScrollView h1, h2, h3;
     ViewGroup containerVg;
@@ -63,6 +72,7 @@ public class WhiteBoradFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.whiteboard, container, false);
         initWhiteBoard(view);
@@ -120,6 +130,52 @@ public class WhiteBoradFragment extends Fragment {
     }
 
 
+    // create the info icon button on the top right corner of the screen
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        Fragment myFragment = getFragmentManager().findFragmentById(R.id.nav_host_fragment);
+
+        if (myFragment != null && myFragment instanceof WhiteBoradFragment) {
+            inflater.inflate(R.menu.mymenu, menu);
+
+        }
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+    // handle info icon button activities
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.mybutton) {
+
+            // do something here
+            btnMore = getActivity().findViewById(R.id.mybutton);
+            LayoutInflater layoutInflater
+                    = (LayoutInflater)getContext()
+                    .getSystemService(LAYOUT_INFLATER_SERVICE);
+            View popupView = layoutInflater.inflate(R.layout.button_popout_whiteboard, null);
+            final PopupWindow popupWindow = new PopupWindow(
+                    popupView,
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            popupWindow.setFocusable(true);
+            popupWindow.setTouchable(true);
+            popupWindow.showAsDropDown(btnMore, 50, -30);
+//            Button more = popupView.findViewById(R.id.more_info);
+//            more.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    replaceFragment(new MoreInfoFragment());
+//                    popupWindow.dismiss();
+//                }
+//            });
+
+
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private void addToImageList(View view){
         mtiA1 = view.findViewById(R.id.white_board_tab_1_item_1);
         mtiA2 = view.findViewById(R.id.white_board_tab_1_item_2);
@@ -217,6 +273,10 @@ public class WhiteBoradFragment extends Fragment {
     }
 
 
+    public void replaceFragment(Fragment newFragment){
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack("tag").commit();
+    }
 
 
     public void onResume() {

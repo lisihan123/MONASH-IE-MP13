@@ -4,29 +4,42 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
+import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.savethebird.Fragment.MoreInfo.MoreInfoFragment;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 
 public class CommunityFragment extends Fragment {
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
         View rootView = inflater.inflate(R.layout.community_list, container, false);
 
         initView(rootView);
@@ -41,6 +54,7 @@ public class CommunityFragment extends Fragment {
     }
 
 
+
     public void onResume() {
         super.onResume();
 
@@ -48,6 +62,7 @@ public class CommunityFragment extends Fragment {
                 .setActionBarTitle("Join Communities");
 
     }
+
 
     private static class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
         private static final int UNSELECTED = -1;
