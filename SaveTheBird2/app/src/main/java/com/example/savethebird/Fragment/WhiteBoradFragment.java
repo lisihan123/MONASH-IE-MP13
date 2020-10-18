@@ -29,13 +29,17 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 import com.google.android.material.tabs.TabLayout;
-import com.mapbox.api.geocoding.v5.GeocodingCriteria;
-import com.mapbox.api.geocoding.v5.MapboxGeocoding;
-import com.mapbox.api.geocoding.v5.models.CarmenFeature;
-import com.mapbox.api.geocoding.v5.models.GeocodingResponse;
-import com.mapbox.core.exceptions.ServicesException;
-import com.mapbox.geojson.Point;
+
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -69,6 +73,7 @@ public class WhiteBoradFragment extends Fragment {
     ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiB6, mtiB7, mtiB8, mtiB9, mtiB10, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
     private static final String MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
     TextView mtextPlace;
+    Button mShare;
 
     String placeName;
 
@@ -78,16 +83,64 @@ public class WhiteBoradFragment extends Fragment {
         setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.whiteboard, container, false);
+        FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
         initWhiteBoard(view);
         initView(view);
         addToImageList(view);
         Geocoding();
+        initShare(view);
         Log.d("Place", "onCreateView: "+ placeName);
 
 
         return  view;
     }
 
+    private void initShare(View view){
+        mShare = view.findViewById(R.id.button_share_picture);
+        ShareDialog shareDialog = new ShareDialog(WhiteBoradFragment.this);
+        CallbackManager callM = CallbackManager.Factory.create();
+        shareDialog.registerCallback(callM, new FacebookCallback<Sharer.Result>() {
+            @Override
+            public void onSuccess(Sharer.Result result) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+
+        mShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final boolean drawingCacheEnabled = true;
+                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
+                containerVg.buildDrawingCache(drawingCacheEnabled);
+                final Bitmap drawingCache = containerVg.getDrawingCache();
+                Bitmap cacheBitmapFromView = null;
+                if (drawingCache != null) {
+                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
+                    containerVg.setDrawingCacheEnabled(false);
+                }
+
+                SharePhoto photo = new SharePhoto.Builder()
+                        .setBitmap(cacheBitmapFromView)
+                        .build();
+                SharePhotoContent content = new SharePhotoContent.Builder()
+                        .addPhoto(photo)
+                        .build();
+                shareDialog.show(content);
+            }
+        });
+
+    }
 
 
     private void initView(View view){
@@ -303,10 +356,7 @@ public class WhiteBoradFragment extends Fragment {
     }
 
 
-    public void replaceFragment(Fragment newFragment){
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack("tag").commit();
-    }
+
 
 
     public void onResume() {

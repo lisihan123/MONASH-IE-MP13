@@ -1,5 +1,7 @@
 package com.example.savethebird.Fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.OvershootInterpolator;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.savethebird.MainActivity;
@@ -53,7 +56,7 @@ public class CommunityFragment extends Fragment {
     }
 
 
-    private static class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
+    private class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.ViewHolder> {
         private static final int UNSELECTED = -1;
 
         private RecyclerView recyclerView;
@@ -70,25 +73,80 @@ public class CommunityFragment extends Fragment {
             View itemView;
             if (viewType == 0) { // for call layout
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_0, parent, false);
+                Button button = itemView.findViewById(R.id.community_0_bt);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.facebook.com/groups/1414036748815596"));
+                        startActivity(intent);
+                    }
+                });
                 return new ViewHolder(itemView);
 
             }
             else if (viewType == 1) { // for call layout
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_1, parent, false);
+                Button button = itemView.findViewById(R.id.community_1_bt);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("hhttps://www.facebook.com/groups/surfcoasthoodies/"));
+                        startActivity(intent);
+                    }
+                });
                 return new ViewHolder(itemView);
 
             }
             else if (viewType == 2) { // for call layout
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_2, parent, false);
+                Button button = itemView.findViewById(R.id.community_2_bt);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.facebook.com/hooded.plover.birdlife/?ref=page_internal"));
+                        startActivity(intent);
+                    }
+                });
                 return new ViewHolder(itemView);
 
             }
             else if (viewType == 3) { // for call layout
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_3, parent, false);
+                Button button = itemView.findViewById(R.id.community_2_bt);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.facebook.com/hoodedplover/ "));
+                        startActivity(intent);
+                    }
+                });
                 return new ViewHolder(itemView);
 
             } else { // for email layout
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_4, parent, false);
+                Button button = itemView.findViewById(R.id.community_2_bt);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                        intent.setData(Uri.parse("https://www.facebook.com/hoodedplovermornpen/ "));
+                        startActivity(intent);
+                    }
+                });
                 return new ViewHolder(itemView);
             }
 
