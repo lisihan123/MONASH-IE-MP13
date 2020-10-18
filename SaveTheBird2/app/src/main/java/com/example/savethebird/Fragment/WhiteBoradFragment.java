@@ -69,6 +69,7 @@ public class WhiteBoradFragment extends Fragment {
     ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiB6, mtiB7, mtiB8, mtiB9, mtiB10, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
     private static final String MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
     TextView mtextPlace;
+
     String placeName;
 
     @Override
@@ -81,8 +82,8 @@ public class WhiteBoradFragment extends Fragment {
         initView(view);
         addToImageList(view);
         Geocoding();
+        Log.d("Place", "onCreateView: "+ placeName);
 
-        mtextPlace.setText(placeName);
 
         return  view;
     }
@@ -459,7 +460,9 @@ public class WhiteBoradFragment extends Fragment {
                     JSONArray ja = new JSONArray(feature);
                     JSONObject jo2 = (JSONObject) ja.get(0);
                     placeName = jo2.optString("place_name");
-
+                    if(placeName != null){
+                        mtextPlace.setText(placeName);
+                    }
 
                     Log.d("test","requestApi==>"+ placeName);
 
@@ -468,6 +471,7 @@ public class WhiteBoradFragment extends Fragment {
                 }
             }
         });
+
 
     }
 
