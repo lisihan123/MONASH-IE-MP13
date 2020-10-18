@@ -352,7 +352,7 @@ public class WhiteBoradFragment extends Fragment {
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Prompt");
-        builder.setMessage("do you want delete this image?");
+        builder.setMessage("Do you want delete this image?");
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
