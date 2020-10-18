@@ -13,6 +13,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/save"
+        android:drawableLeft="@drawable/ic_save"
+        android:background="@drawable/shape_capsule"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
@@ -23,6 +25,8 @@
         android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
         android:text="@string/share"
+        android:drawableLeft="@drawable/ic_share"
+        android:background="@drawable/shape_capsule"
         app:layout_constraintStart_toEndOf="@+id/button_save_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
@@ -33,6 +37,7 @@
         android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
         android:text="@string/reset"
+        android:background="@drawable/shape_capsule"
         app:layout_constraintStart_toEndOf="@+id/button_share_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
