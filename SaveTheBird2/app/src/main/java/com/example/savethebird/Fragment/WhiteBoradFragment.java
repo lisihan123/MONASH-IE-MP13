@@ -38,6 +38,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareButton;
@@ -105,16 +106,20 @@ public class WhiteBoradFragment extends Fragment {
             @Override
             public void onSuccess(Sharer.Result result) {
 
+                Toast.makeText(getContext(),"Share successfully",Toast.LENGTH_LONG);
+                Log.d("Success", "onSuccess: ");
             }
 
             @Override
             public void onCancel() {
-
+                Toast.makeText(getContext(),"Cancel",Toast.LENGTH_LONG);
+                Log.d("Cancel","cancel");
             }
 
             @Override
             public void onError(FacebookException error) {
-
+                Toast.makeText(getContext(),error.getMessage(),Toast.LENGTH_LONG);
+                Log.d("Error", "onError: ");
             }
         });
 
@@ -138,7 +143,13 @@ public class WhiteBoradFragment extends Fragment {
                 SharePhotoContent content = new SharePhotoContent.Builder()
                         .addPhoto(photo)
                         .build();
-                shareDialog.show(content);
+                if(shareDialog.canShow(SharePhotoContent.class)){
+                    shareDialog.show(content);
+                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
+                }
+                else {
+                    Log.d("Fail", "Loading facebook fail");
+                }
             }
         });
 
