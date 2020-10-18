@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -67,7 +68,7 @@ public class WhiteBoradFragment extends Fragment {
     List<ImageView> list = new ArrayList<ImageView>();
     ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
     private static final String MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
-
+    TextView mtextPlace;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,7 +91,7 @@ public class WhiteBoradFragment extends Fragment {
         h1=view.findViewById(R.id.tab_1_layout);
         h2=view.findViewById(R.id.tab_2_layout);
         h3=view.findViewById(R.id.tab_3_layout);
-
+        mtextPlace = view.findViewById(R.id.white_board_location);
 
         tl1 = view.findViewById(R.id.tab_layout);
         tl1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -430,6 +431,7 @@ public class WhiteBoradFragment extends Fragment {
                     JSONArray ja = new JSONArray(feature);
                     JSONObject jo2 = (JSONObject) ja.get(0);
                     String placeName = jo2.optString("place_name");
+                    mtextPlace.setText(placeName);
 
                     Log.d("test","requestApi==>"+ placeName);
 
