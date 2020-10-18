@@ -155,6 +155,7 @@
     <string name="save">Save Picture</string>
     <string name="share">Share</string>
     <string name="reset">Reset</string>
+    <string name="text_view_init">Loading location ...</string>
 
 
     <!-- COMMUNITIES PAGES-->     <!-- ⬇ ▼ ﹀ -->
