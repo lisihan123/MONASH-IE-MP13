@@ -96,7 +96,7 @@ public class CommunityFragment extends Fragment {
                         Intent intent = new Intent();
                         intent.setAction(Intent.ACTION_VIEW);
                         intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                        intent.setData(Uri.parse("hhttps://www.facebook.com/groups/surfcoasthoodies/"));
+                        intent.setData(Uri.parse("https://www.facebook.com/groups/surfcoasthoodies/"));
                         startActivity(intent);
                     }
                 });
