@@ -79,6 +79,7 @@ public class WhiteBoradFragment extends Fragment {
     private static final String MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
     TextView mtextPlace;
     Button mShare;
+    List<View> viewList = new ArrayList<View>();
 
 
     @Override
@@ -404,7 +405,10 @@ public class WhiteBoradFragment extends Fragment {
         mReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                containerVg.removeAllViews();
+
+                for(int i = 0; i<viewList.size();i++){
+                    containerVg.removeView(viewList.get(i));
+                }
             }
         });
 
@@ -422,6 +426,7 @@ public class WhiteBoradFragment extends Fragment {
             }
         });
         containerVg.addView(image);
+        viewList.add(image);
     }
 
     private void questionDelete(final View view)
