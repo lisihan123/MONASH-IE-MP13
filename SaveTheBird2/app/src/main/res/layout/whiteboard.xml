@@ -61,18 +61,12 @@
 
         <TextView
             android:id="@+id/white_board_location"
-<<<<<<< HEAD
-            android:layout_width="249dp"
-            android:layout_height="209dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="TextView" />
-=======
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_location"
             android:text="text_view_init" />
->>>>>>> 65899cbac10a21b600a13d21794656073eb84ff5
     </RelativeLayout>
 
     <com.google.android.material.tabs.TabLayout
