@@ -387,6 +387,14 @@ public class WhiteBoradFragment extends Fragment {
             }
         });
 
+        Button mReset = view.findViewById(R.id.button_reset);
+        mReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                containerVg.removeAllViews();
+            }
+        });
+
 
     }
 
