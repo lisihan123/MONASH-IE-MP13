@@ -13,8 +13,10 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/save"
-        android:drawableLeft="@drawable/ic_save"
+        android:drawableLeft="@drawable/ic_save_white"
         android:background="@drawable/shape_capsule"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
@@ -25,8 +27,10 @@
         android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
         android:text="@string/share"
-        android:drawableLeft="@drawable/ic_share"
+        android:drawableLeft="@drawable/ic_share_white"
         android:background="@drawable/shape_capsule"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/button_save_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
@@ -37,6 +41,8 @@
         android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
         android:text="@string/reset"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
         android:background="@drawable/shape_capsule"
         app:layout_constraintStart_toEndOf="@+id/button_share_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
@@ -55,9 +61,10 @@
 
         <TextView
             android:id="@+id/white_board_location"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:text="TextView" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_location"
+            android:text="text_view_init" />
     </RelativeLayout>
 
     <com.google.android.material.tabs.TabLayout
