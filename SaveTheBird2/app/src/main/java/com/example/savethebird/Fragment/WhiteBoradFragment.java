@@ -1,5 +1,6 @@
 package com.example.savethebird.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,8 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -22,6 +25,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.fragment.app.Fragment;
@@ -75,7 +79,6 @@ public class WhiteBoradFragment extends Fragment {
     TextView mtextPlace;
     Button mShare;
 
-    String placeName;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -89,7 +92,6 @@ public class WhiteBoradFragment extends Fragment {
         addToImageList(view);
         Geocoding();
         initShare(view);
-        Log.d("Place", "onCreateView: "+ placeName);
 
 
         return  view;
@@ -517,11 +519,11 @@ public class WhiteBoradFragment extends Fragment {
                     String feature = jo.optString("features");
                     JSONArray ja = new JSONArray(feature);
                     JSONObject jo2 = (JSONObject) ja.get(0);
-                    placeName = jo2.optString("place_name");
-                    if(placeName != null){
-                        mtextPlace.setText(placeName);
-                    }
-
+                    String placeName = jo2.optString("place_name");
+                    Message msg = Message.obtain();
+                    msg.what = 111;
+                    msg.obj = placeName;
+                    mHandler.sendMessage(msg);
                     Log.d("test","requestApi==>"+ placeName);
 
                 } catch (JSONException e) {
@@ -531,7 +533,23 @@ public class WhiteBoradFragment extends Fragment {
         });
 
 
+
+
     }
+
+    private Handler mHandler = new Handler(){
+        @SuppressLint("HandlerLeak")
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if(msg.what == 111){
+                String d = (String) msg.obj;
+                if(d!=null) {
+                    mtextPlace.setText(d);
+                }
+            }
+        }
+    };
 
 
 
