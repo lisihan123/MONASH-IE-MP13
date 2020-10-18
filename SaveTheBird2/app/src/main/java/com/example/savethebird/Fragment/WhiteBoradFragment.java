@@ -66,7 +66,7 @@ public class WhiteBoradFragment extends Fragment {
     HorizontalScrollView h1, h2, h3;
     ViewGroup containerVg;
     List<ImageView> list = new ArrayList<ImageView>();
-    ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
+    ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiB6, mtiB7, mtiB8, mtiB9, mtiB10, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
     private static final String MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
     TextView mtextPlace;
 
@@ -187,7 +187,12 @@ public class WhiteBoradFragment extends Fragment {
         mtiB2 = view.findViewById(R.id.white_board_tab_2_item_2);
         mtiB3= view.findViewById(R.id.white_board_tab_2_item_3);
         mtiB4= view.findViewById(R.id.white_board_tab_2_item_4);
-        mtiB5 = view.findViewById(R.id.white_board_tab_2_item_5);
+        mtiB5 = view.findViewById(R.id.white_board_tab_2_item_6);
+        mtiB6 = view.findViewById(R.id.white_board_tab_2_item_7);
+        mtiB7 = view.findViewById(R.id.white_board_tab_2_item_8);
+        mtiB8= view.findViewById(R.id.white_board_tab_2_item_9);
+        mtiB9= view.findViewById(R.id.white_board_tab_2_item_10);
+        mtiB10 = view.findViewById(R.id.white_board_tab_2_item_5);
         mtiC1 = view.findViewById(R.id.white_board_tab_3_item_1);
         mtiC2 = view.findViewById(R.id.white_board_tab_3_item_2);
         mtiC3= view.findViewById(R.id.white_board_tab_3_item_3);
@@ -203,6 +208,11 @@ public class WhiteBoradFragment extends Fragment {
         list.add(mtiB3);
         list.add(mtiB4);
         list.add(mtiB5);
+        list.add(mtiB6);
+        list.add(mtiB7);
+        list.add(mtiB8);
+        list.add(mtiB9);
+        list.add(mtiB10);
         list.add(mtiC1);
         list.add(mtiC2);
         list.add(mtiC3);
@@ -253,20 +263,35 @@ public class WhiteBoradFragment extends Fragment {
                 case R.id.white_board_tab_2_item_5:
                     putWhiteBoard(R.drawable.item2_man2);
                     break;
-                case R.id.white_board_tab_3_item_1:
+                case R.id.white_board_tab_2_item_6:
                     putWhiteBoard(R.drawable.item3_raven);
                     break;
-                case R.id.white_board_tab_3_item_2:
+                case R.id.white_board_tab_2_item_7:
                     putWhiteBoard(R.drawable.item3_poster);
                     break;
-                case R.id.white_board_tab_3_item_3:
+                case R.id.white_board_tab_2_item_8:
                     putWhiteBoard(R.drawable.item3_footprint);
                     break;
-                case R.id.white_board_tab_3_item_4:
+                case R.id.white_board_tab_2_item_9:
                     putWhiteBoard(R.drawable.item3_horse);
                     break;
-                case R.id.white_board_tab_3_item_5:
+                case R.id.white_board_tab_2_item_10:
                     putWhiteBoard(R.drawable.item3_fox);
+                    break;
+                case R.id.white_board_tab_3_item_1:
+                    putWhiteBoard(R.drawable.slogan1);
+                    break;
+                case R.id.white_board_tab_3_item_2:
+                    putWhiteBoard(R.drawable.slogan2);
+                    break;
+                case R.id.white_board_tab_3_item_3:
+                    putWhiteBoard(R.drawable.slogan3);
+                    break;
+                case R.id.white_board_tab_3_item_4:
+                    putWhiteBoard(R.drawable.slogan4);
+                    break;
+                case R.id.white_board_tab_3_item_5:
+                    putWhiteBoard(R.drawable.slogan5);
                     break;
 
             }
@@ -328,7 +353,7 @@ public class WhiteBoradFragment extends Fragment {
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Prompt");
-        builder.setMessage("do you want delete this image?");
+        builder.setMessage("Do you want delete this image?");
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
