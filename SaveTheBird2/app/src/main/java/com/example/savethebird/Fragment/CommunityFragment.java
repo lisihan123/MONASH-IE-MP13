@@ -121,7 +121,7 @@ public class CommunityFragment extends Fragment {
             }
             else if (viewType == 3) { // for call layout
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_3, parent, false);
-                Button button = itemView.findViewById(R.id.community_2_bt);
+                Button button = itemView.findViewById(R.id.community_3_bt);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -136,7 +136,7 @@ public class CommunityFragment extends Fragment {
 
             } else { // for email layout
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_item_4, parent, false);
-                Button button = itemView.findViewById(R.id.community_2_bt);
+                Button button = itemView.findViewById(R.id.community_4_bt);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
