@@ -55,8 +55,10 @@
 
         <TextView
             android:id="@+id/white_board_location"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="249dp"
+            android:layout_height="209dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:text="TextView" />
     </RelativeLayout>
 
