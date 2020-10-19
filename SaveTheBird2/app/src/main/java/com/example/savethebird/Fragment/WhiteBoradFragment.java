@@ -37,6 +37,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.share.ShareApi;
 import com.facebook.share.Sharer;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
@@ -44,6 +45,7 @@ import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 import com.google.android.material.tabs.TabLayout;
+import com.squareup.picasso.Picasso;
 
 
 import org.jetbrains.annotations.NotNull;
@@ -128,38 +130,38 @@ public class WhiteBoradFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-//                final boolean drawingCacheEnabled = true;
-//                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
-//                containerVg.buildDrawingCache(drawingCacheEnabled);
-//                final Bitmap drawingCache = containerVg.getDrawingCache();
-//                Bitmap cacheBitmapFromView = null;
-//                if (drawingCache != null) {
-//                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
-//                    containerVg.setDrawingCacheEnabled(false);
-//                }
-
-//                SharePhoto photo = new SharePhoto.Builder()
-//                        .setBitmap(cacheBitmapFromView)
-//                        .build();
-//                SharePhotoContent content = new SharePhotoContent.Builder()
-//                        .addPhoto(photo)
-//                        .build();
-//
-//                if(shareDialog.canShow(SharePhotoContent.class)){
-//                    shareDialog.show(content);
-//                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
-//                }
-//                else {
-//                    Log.d("Fail", "Loading facebook fail");
-//                }
-
-                ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                        .setQuote("This is useful link\n From My App")
-                        .setContentUrl(Uri.parse("https://youtube.com"))
-                        .build();
-                if (ShareDialog.canShow(ShareLinkContent.class)) {
-                    shareDialog.show(linkContent);
+                final boolean drawingCacheEnabled = true;
+                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
+                containerVg.buildDrawingCache(drawingCacheEnabled);
+                final Bitmap drawingCache = containerVg.getDrawingCache();
+                Bitmap cacheBitmapFromView = null;
+                if (drawingCache != null) {
+                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
+                    containerVg.setDrawingCacheEnabled(false);
                 }
+
+                SharePhoto photo = new SharePhoto.Builder()
+                        .setBitmap(cacheBitmapFromView)
+                        .build();
+                SharePhotoContent content = new SharePhotoContent.Builder()
+                        .addPhoto(photo)
+                        .build();
+
+                if(shareDialog.canShow(SharePhotoContent.class)){
+                    shareDialog.show(content);
+                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
+                }
+                else {
+                    Log.d("Fail", "Loading facebook fail");
+                }
+//
+//                ShareLinkContent linkContent = new ShareLinkContent.Builder()
+//                        .setQuote("This is useful link\n From My App")
+//                        .setContentUrl(Uri.parse("https://youtube.com"))
+//                        .build();
+//                if (ShareDialog.canShow(ShareLinkContent.class)) {
+//                    shareDialog.show(linkContent);
+//                }
             }
         });
 
