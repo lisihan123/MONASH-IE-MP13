@@ -149,6 +149,9 @@ public class WhiteBoradFragment extends Fragment {
                     SharePhotoContent content = new SharePhotoContent.Builder()
                             .addPhoto(photo)
                             .build();
+                    if (content == null){
+                        Log.d("ERROr", " CONTENT IS NULL ");
+                    }
                     if(shareDialog.canShow(SharePhotoContent.class)){
                         shareDialog.show(content);
                         Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
