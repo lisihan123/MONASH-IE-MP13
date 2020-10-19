@@ -20,10 +20,10 @@
 
             <TextView
                 android:layout_width="370dp"
-                android:layout_height="97dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:background="@android:color/transparent"
-                android:text="@string/text_floating_button"
+                android:text="@string/text_pop_button"
                 android:textColor="#2A2A2A"
                 android:textSize="18sp"
                 android:textStyle="bold" />

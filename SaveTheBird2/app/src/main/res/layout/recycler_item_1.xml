@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FFFDFD"
     android:orientation="vertical">
 
     <TextView
@@ -12,10 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="6dp"
+        android:fontFamily="@font/roboto"
         android:foreground="?selectableItemBackground"
         android:padding="16dp"
-        android:textColor="#0E0E0E"/>
-
+        android:textColor="#0E0E0E"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 
     <net.cachapa.expandablelayout.ExpandableLayout
@@ -24,44 +27,53 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         app:el_duration="300"
-        app:el_expanded="false"
-        >
+        app:el_expanded="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/community_1_logo"
+                android:layout_width="100dp"
+                android:layout_height="144dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/community_1_logo" />
+
             <TextView
-                android:id="@+id/community_0_inrto"
-                android:layout_width="match_parent"
+                android:id="@+id/community_1_inrto"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:elevation="4dp"
+                android:fontFamily="@font/roboto"
                 android:padding="16dp"
                 android:text="@string/community_1_inrto"
                 android:textColor="#fff"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/community_1_logo"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/community_1_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/shape_capsule"
+                android:drawableStart="@drawable/fb_icon_2"
                 android:text="@string/fb_bt"
-                android:drawableLeft="@drawable/fb_icon_1"
+                android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.685"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/community_0_inrto" />
+                app:layout_constraintTop_toBottomOf="@+id/community_1_inrto" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </net.cachapa.expandablelayout.ExpandableLayout>
-
-
 
 
 </LinearLayout>

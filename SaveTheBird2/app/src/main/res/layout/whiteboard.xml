@@ -13,27 +13,39 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
         android:text="@string/save"
+        android:drawableLeft="@drawable/ic_save_white"
+        android:background="@drawable/shape_capsule"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
     <Button
-        android:id="@+id/button_delete_picture"
+        android:id="@+id/button_share_picture"
         android:layout_width="120dp"
         android:layout_height="45dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
-        android:text="@string/delete"
+        android:text="@string/share"
+        android:drawableLeft="@drawable/ic_share_white"
+        android:background="@drawable/shape_capsule"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/button_save_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
     <Button
-        android:id="@+id/button_save_picture3"
+        android:id="@+id/button_reset"
         android:layout_width="120dp"
         android:layout_height="45dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="5dp"
         android:text="@string/reset"
-        app:layout_constraintStart_toEndOf="@+id/button_delete_picture"
+        android:drawableLeft="@drawable/ic_reset_white"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:background="@drawable/shape_capsule"
+        app:layout_constraintStart_toEndOf="@+id/button_share_picture"
         app:layout_constraintTop_toBottomOf="@+id/white_board_image_view" />
 
     <RelativeLayout
@@ -41,18 +53,21 @@
         android:layout_width="395dp"
         android:layout_height="380dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="5dp"
-        android:background="#ffffff"
+        android:background="@drawable/whiteboard_board"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/white_board_location"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:drawableLeft="@drawable/ic_location"
+            android:text="text_view_init" />
     </RelativeLayout>
 
     <com.google.android.material.tabs.TabLayout

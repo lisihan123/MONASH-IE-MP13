@@ -1,5 +1,6 @@
 package com.example.savethebird.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +9,8 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,8 +22,10 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.fragment.app.Fragment;
@@ -28,13 +33,20 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.share.ShareApi;
+import com.facebook.share.Sharer;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 import com.google.android.material.tabs.TabLayout;
-import com.mapbox.api.geocoding.v5.GeocodingCriteria;
-import com.mapbox.api.geocoding.v5.MapboxGeocoding;
-import com.mapbox.api.geocoding.v5.models.CarmenFeature;
-import com.mapbox.api.geocoding.v5.models.GeocodingResponse;
-import com.mapbox.core.exceptions.ServicesException;
-import com.mapbox.geojson.Point;
+
+
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -65,8 +77,11 @@ public class WhiteBoradFragment extends Fragment {
     HorizontalScrollView h1, h2, h3;
     ViewGroup containerVg;
     List<ImageView> list = new ArrayList<ImageView>();
-    ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
+    ImageView mtiA1, mtiA2, mtiA3, mtiA4, mtiA5, mtiB1, mtiB2, mtiB3, mtiB4, mtiB5, mtiB6, mtiB7, mtiB8, mtiB9, mtiB10, mtiC1, mtiC2, mtiC3, mtiC4, mtiC5;
     private static final String MAPBOX_ACCESS_TOKEN = "pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
+    TextView mtextPlace;
+    Button mShare;
+    List<View> viewList = new ArrayList<View>();
 
 
     @Override
@@ -75,14 +90,85 @@ public class WhiteBoradFragment extends Fragment {
         setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.whiteboard, container, false);
+        FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
         initWhiteBoard(view);
         initView(view);
         addToImageList(view);
         Geocoding();
+        initShare(view);
+
 
         return  view;
     }
 
+    private void initShare(View view){
+        mShare = view.findViewById(R.id.button_share_picture);
+        ShareDialog shareDialog = new ShareDialog(WhiteBoradFragment.this);
+        CallbackManager callM = CallbackManager.Factory.create();
+        shareDialog.registerCallback(callM, new FacebookCallback<Sharer.Result>() {
+            @Override
+            public void onSuccess(Sharer.Result result) {
+
+                Toast.makeText(getContext(),"Share successfully",Toast.LENGTH_LONG);
+                Log.d("Success", "onSuccess: ");
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getContext(),"Cancel",Toast.LENGTH_LONG);
+                Log.d("Cancel","cancel");
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Toast.makeText(getContext(),error.getMessage(),Toast.LENGTH_LONG);
+                Log.d("Error", "onError: ");
+            }
+        });
+
+        mShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final boolean drawingCacheEnabled = true;
+                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
+                containerVg.buildDrawingCache(drawingCacheEnabled);
+                final Bitmap drawingCache = containerVg.getDrawingCache();
+                Bitmap cacheBitmapFromView = null;
+//                SharePhotoContent content = null;
+                if (drawingCache != null) {
+                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
+                    containerVg.setDrawingCacheEnabled(false);
+                }
+                if(cacheBitmapFromView!=null){
+                SharePhoto photo = new SharePhoto.Builder()
+                        .setBitmap(cacheBitmapFromView)
+                        .build();
+                SharePhotoContent content = new SharePhotoContent.Builder()
+                        .addPhoto(photo)
+                        .build();
+                    if(shareDialog.canShow(SharePhotoContent.class)){
+                        shareDialog.show(content);
+                        Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
+                    }
+                    else {
+                        Log.d("Fail", "Loading facebook fail");
+                    }
+                }
+
+
+//
+//                ShareLinkContent linkContent = new ShareLinkContent.Builder()
+//                        .setQuote("This is useful link\n From My App")
+//                        .setContentUrl(Uri.parse("https://youtube.com"))
+//                        .build();
+//                if (ShareDialog.canShow(ShareLinkContent.class)) {
+//                    shareDialog.show(linkContent);
+//                }
+            }
+        });
+
+    }
 
 
     private void initView(View view){
@@ -90,7 +176,7 @@ public class WhiteBoradFragment extends Fragment {
         h1=view.findViewById(R.id.tab_1_layout);
         h2=view.findViewById(R.id.tab_2_layout);
         h3=view.findViewById(R.id.tab_3_layout);
-
+        mtextPlace = view.findViewById(R.id.white_board_location);
 
         tl1 = view.findViewById(R.id.tab_layout);
         tl1.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -186,7 +272,12 @@ public class WhiteBoradFragment extends Fragment {
         mtiB2 = view.findViewById(R.id.white_board_tab_2_item_2);
         mtiB3= view.findViewById(R.id.white_board_tab_2_item_3);
         mtiB4= view.findViewById(R.id.white_board_tab_2_item_4);
-        mtiB5 = view.findViewById(R.id.white_board_tab_2_item_5);
+        mtiB5 = view.findViewById(R.id.white_board_tab_2_item_6);
+        mtiB6 = view.findViewById(R.id.white_board_tab_2_item_7);
+        mtiB7 = view.findViewById(R.id.white_board_tab_2_item_8);
+        mtiB8= view.findViewById(R.id.white_board_tab_2_item_9);
+        mtiB9= view.findViewById(R.id.white_board_tab_2_item_10);
+        mtiB10 = view.findViewById(R.id.white_board_tab_2_item_5);
         mtiC1 = view.findViewById(R.id.white_board_tab_3_item_1);
         mtiC2 = view.findViewById(R.id.white_board_tab_3_item_2);
         mtiC3= view.findViewById(R.id.white_board_tab_3_item_3);
@@ -202,6 +293,11 @@ public class WhiteBoradFragment extends Fragment {
         list.add(mtiB3);
         list.add(mtiB4);
         list.add(mtiB5);
+        list.add(mtiB6);
+        list.add(mtiB7);
+        list.add(mtiB8);
+        list.add(mtiB9);
+        list.add(mtiB10);
         list.add(mtiC1);
         list.add(mtiC2);
         list.add(mtiC3);
@@ -252,20 +348,35 @@ public class WhiteBoradFragment extends Fragment {
                 case R.id.white_board_tab_2_item_5:
                     putWhiteBoard(R.drawable.item2_man2);
                     break;
-                case R.id.white_board_tab_3_item_1:
+                case R.id.white_board_tab_2_item_6:
                     putWhiteBoard(R.drawable.item3_raven);
                     break;
-                case R.id.white_board_tab_3_item_2:
+                case R.id.white_board_tab_2_item_7:
                     putWhiteBoard(R.drawable.item3_poster);
                     break;
-                case R.id.white_board_tab_3_item_3:
+                case R.id.white_board_tab_2_item_8:
                     putWhiteBoard(R.drawable.item3_footprint);
                     break;
-                case R.id.white_board_tab_3_item_4:
+                case R.id.white_board_tab_2_item_9:
                     putWhiteBoard(R.drawable.item3_horse);
                     break;
-                case R.id.white_board_tab_3_item_5:
+                case R.id.white_board_tab_2_item_10:
                     putWhiteBoard(R.drawable.item3_fox);
+                    break;
+                case R.id.white_board_tab_3_item_1:
+                    putWhiteBoard(R.drawable.slogan1);
+                    break;
+                case R.id.white_board_tab_3_item_2:
+                    putWhiteBoard(R.drawable.slogan2);
+                    break;
+                case R.id.white_board_tab_3_item_3:
+                    putWhiteBoard(R.drawable.slogan3);
+                    break;
+                case R.id.white_board_tab_3_item_4:
+                    putWhiteBoard(R.drawable.slogan4);
+                    break;
+                case R.id.white_board_tab_3_item_5:
+                    putWhiteBoard(R.drawable.slogan5);
                     break;
 
             }
@@ -273,10 +384,7 @@ public class WhiteBoradFragment extends Fragment {
     }
 
 
-    public void replaceFragment(Fragment newFragment){
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack("tag").commit();
-    }
+
 
 
     public void onResume() {
@@ -307,6 +415,17 @@ public class WhiteBoradFragment extends Fragment {
             }
         });
 
+        Button mReset = view.findViewById(R.id.button_reset);
+        mReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                for(int i = 0; i<viewList.size();i++){
+                    containerVg.removeView(viewList.get(i));
+                }
+            }
+        });
+
 
     }
 
@@ -321,13 +440,14 @@ public class WhiteBoradFragment extends Fragment {
             }
         });
         containerVg.addView(image);
+        viewList.add(image);
     }
 
     private void questionDelete(final View view)
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Prompt");
-        builder.setMessage("do you want delete this image?");
+        builder.setMessage("Do you want delete this image?");
         builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -430,7 +550,10 @@ public class WhiteBoradFragment extends Fragment {
                     JSONArray ja = new JSONArray(feature);
                     JSONObject jo2 = (JSONObject) ja.get(0);
                     String placeName = jo2.optString("place_name");
-
+                    Message msg = Message.obtain();
+                    msg.what = 111;
+                    msg.obj = placeName;
+                    mHandler.sendMessage(msg);
                     Log.d("test","requestApi==>"+ placeName);
 
                 } catch (JSONException e) {
@@ -439,7 +562,24 @@ public class WhiteBoradFragment extends Fragment {
             }
         });
 
+
+
+
     }
+
+    private Handler mHandler = new Handler(){
+        @SuppressLint("HandlerLeak")
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            if(msg.what == 111){
+                String d = (String) msg.obj;
+                if(d!=null) {
+                    mtextPlace.setText(d);
+                }
+            }
+        }
+    };
 
 
 

@@ -153,18 +153,27 @@
     <string name="item_4">item4</string>
     <string name="item_5">item5</string>
     <string name="save">Save Picture</string>
-    <string name="delete">Delete</string>
+    <string name="share">Share</string>
     <string name="reset">Reset</string>
+    <string name="text_view_init">Loading location ...</string>
+    <string name="text_pop_button">
+    Hey! Excited to create your own poster?
+    Choose from the range of stickers below and drag-and-drop them on the whiteboard as you wish!Long press on any sticker to delete it.
+    Feel free to share the poster with your friends on Facebook, or save it to your device! Enjoy! :)</string>
 
 
-    <!-- COMMUNITIES PAGES-->
-    <string name="fb_bt">Go To FB</string>
 
-    <string name="community_0_title">Anna\'s Honours Fieldwork - Hooded Plover Research</string>
-    <string name="community_1_title">Friends of the Hooded Plover Surfcoast- Victoria</string>
-    <string name="community_2_title">Hooded Plover</string>
-    <string name="community_3_title">Hooded Plover Volunteers</string>
-    <string name="community_4_title">Friends of the Hooded Plover - Mornington Peninsula</string>
+    <!-- COMMUNITIES PAGES-->     <!-- ⬇ ▼ ﹀ -->
+    <string name="fb_bt">\t\tJoin it on Facebook\t\t</string>
+
+    <string name="community_0_title">Anna\'s Honours Fieldwork - Hoodie Research \n36 Members ▼ </string>
+    <string name="community_1_title">Friends of the Hooded Plover Surfcoast- Victoria \n5 Members ▼ ️</string>
+    <string name="community_2_title">Hooded Plover - Birdlife Australia \n2902 Followers ▼</string>
+    <string name="community_3_title">Hooded Plover Volunteers \n1876 Followers ▼</string>
+    <string name="community_4_title">Friends of the Hooded Plover - Mornington Peninsula \n342 Followers ▼</string>
+
+
+
 
     <string name="community_0_inrto">Looking for volunteers to help me out with fieldwork on the Victoria coastline
         as part of my honours project exploring the influence of food resource on breeding hooded plover habitat selection</string>
@@ -180,11 +189,12 @@
         updates and photos. (***It is a volunteer run page***)
         \n\nThis page is run by the Bellarine Friends of the Hooded Plover volunteers and is for volunteers,
         community members and interested people to share their stories, photos or experiences about Hooded Plovers.</string>
-    <string name="community_4_inrto">The Friends of the Hooded Plover Mornington Peninsula Inc.
-        (in conjunction with Parks VIC) are a group of local volunteers who coordinate the monitoring
+    <string name="community_4_inrto">FoHPMP (in conjunction with Parks VIC) are a group of local volunteers who coordinate the monitoring
         and management of Beach Nesting Birds within the Peninsula region, under the Guidance of Birdlife Aus.
-        \n\nThe FoHPMP are also involved in: -Educational programs from primary schools to tertiary institutions
-        -Market day stalls in different localities on the Peninsula.</string>
+        <!-- \n\nThe The Friends of the Hooded Plover Mornington Peninsula Inc. are also involved in:
+        -Educational programs from primary schools to tertiary institutions
+        -Market day stalls in different localities on the Peninsula.⬇ ▼ ﹀ -->
+    </string>
 
 
 
@@ -204,6 +214,8 @@
         Cars and off-road vehicles on beaches is a very common problem that these little birds face.
         Their tiny sized eggs and chicks make them very hard to see for the people driving.
         These vehicles on and near the beaches highly contribute towards the low breeding success of Hooded Plovers.</string>
+    <string name="facebook_app_id">388530522305549</string>
+    <string name="facebook_login_protocol_schema">fb388530522305549</string>
 
 
 
