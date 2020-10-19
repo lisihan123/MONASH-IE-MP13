@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -68,6 +69,7 @@ import okhttp3.Response;
 import timber.log.Timber;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+import static android.content.Context.LOCATION_SERVICE;
 
 
 public class WhiteBoradFragment extends Fragment {
@@ -129,7 +131,6 @@ public class WhiteBoradFragment extends Fragment {
         mShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 final boolean drawingCacheEnabled = true;
                 containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
                 containerVg.buildDrawingCache(drawingCacheEnabled);
@@ -529,42 +530,68 @@ public class WhiteBoradFragment extends Fragment {
     }
 
     private void Geocoding(){
+//        Location location = null;
+//
+//            location=getLastKnownLocation();
+//
+//
+//            double latitude = location.getLatitude();
+//            double longitude = location.getLongitude();
 
-        String url = "https://api.mapbox.com/geocoding/v5/mapbox.places/-122.084000,37.421998.json?access_token=pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
-        OkHttpClient okHttpClient = new OkHttpClient();
-        final Request request = new Request.Builder().url(url).build();
-        Call call = okHttpClient.newCall(request);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                Log.d("test","requestApi==>"+e.getMessage());
-            }
-
-            @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                String result = response.body().string();
-                Log.d("test","requestApi==>"+ result);
-                try{
-                    JSONObject jo = new JSONObject(result);
-                    String feature = jo.optString("features");
-                    JSONArray ja = new JSONArray(feature);
-                    JSONObject jo2 = (JSONObject) ja.get(0);
-                    String placeName = jo2.optString("place_name");
-                    Message msg = Message.obtain();
-                    msg.what = 111;
-                    msg.obj = placeName;
-                    mHandler.sendMessage(msg);
-                    Log.d("test","requestApi==>"+ placeName);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+//            String url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + latitude + "," + longitude + ".json?access_token=" + MAPBOX_ACCESS_TOKEN;
+            String url ="https://api.mapbox.com/geocoding/v5/mapbox.places/-73.989,40.733.json?access_token=pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
+            OkHttpClient okHttpClient = new OkHttpClient();
+            final Request request = new Request.Builder().url(url).build();
+            Call call = okHttpClient.newCall(request);
+            call.enqueue(new Callback() {
+                @Override
+                public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                    Log.d("test", "requestApi==>" + e.getMessage());
                 }
+
+                @Override
+                public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                    String result = response.body().string();
+                    Log.d("test", "requestApi==>" + result);
+                    try {
+                        JSONObject jo = new JSONObject(result);
+                        String feature = jo.optString("features");
+                        JSONArray ja = new JSONArray(feature);
+                        JSONObject jo2 = (JSONObject) ja.get(0);
+                        String placeName = jo2.optString("place_name");
+                        Message msg = Message.obtain();
+                        msg.what = 111;
+                        msg.obj = placeName;
+                        mHandler.sendMessage(msg);
+                        Log.d("test", "requestApi==>" + placeName);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
+
+
+
+
+
+
+    }
+    private Location getLastKnownLocation() {
+        LocationManager mLocationManager = (LocationManager) getContext().getSystemService(LOCATION_SERVICE);
+        List<String> providers = mLocationManager.getProviders(true);
+        Location bestLocation = null;
+        for (String provider : providers) {
+            @SuppressLint("MissingPermission") Location l = mLocationManager.getLastKnownLocation(provider);
+            if (l == null) {
+                continue;
             }
-        });
-
-
-
-
+            if (bestLocation == null || l.getAccuracy() < bestLocation.getAccuracy()) {
+                bestLocation = l;
+            }
+        }
+        return bestLocation;
     }
 
     private Handler mHandler = new Handler(){
