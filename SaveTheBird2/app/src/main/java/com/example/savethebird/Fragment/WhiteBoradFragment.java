@@ -45,7 +45,7 @@ import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 import com.google.android.material.tabs.TabLayout;
-import com.squareup.picasso.Picasso;
+
 
 
 import org.jetbrains.annotations.NotNull;
@@ -135,25 +135,28 @@ public class WhiteBoradFragment extends Fragment {
                 containerVg.buildDrawingCache(drawingCacheEnabled);
                 final Bitmap drawingCache = containerVg.getDrawingCache();
                 Bitmap cacheBitmapFromView = null;
+//                SharePhotoContent content = null;
                 if (drawingCache != null) {
                     cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
                     containerVg.setDrawingCacheEnabled(false);
                 }
-
+                if(cacheBitmapFromView!=null){
                 SharePhoto photo = new SharePhoto.Builder()
                         .setBitmap(cacheBitmapFromView)
                         .build();
                 SharePhotoContent content = new SharePhotoContent.Builder()
                         .addPhoto(photo)
                         .build();
+                    if(shareDialog.canShow(SharePhotoContent.class)){
+                        shareDialog.show(content);
+                        Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
+                    }
+                    else {
+                        Log.d("Fail", "Loading facebook fail");
+                    }
+                }
 
-                if(shareDialog.canShow(SharePhotoContent.class)){
-                    shareDialog.show(content);
-                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
-                }
-                else {
-                    Log.d("Fail", "Loading facebook fail");
-                }
+
 //
 //                ShareLinkContent linkContent = new ShareLinkContent.Builder()
 //                        .setQuote("This is useful link\n From My App")
