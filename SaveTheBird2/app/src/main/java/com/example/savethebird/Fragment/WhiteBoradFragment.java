@@ -128,15 +128,15 @@ public class WhiteBoradFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                final boolean drawingCacheEnabled = true;
-                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
-                containerVg.buildDrawingCache(drawingCacheEnabled);
-                final Bitmap drawingCache = containerVg.getDrawingCache();
-                Bitmap cacheBitmapFromView = null;
-                if (drawingCache != null) {
-                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
-                    containerVg.setDrawingCacheEnabled(false);
-                }
+//                final boolean drawingCacheEnabled = true;
+//                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
+//                containerVg.buildDrawingCache(drawingCacheEnabled);
+//                final Bitmap drawingCache = containerVg.getDrawingCache();
+//                Bitmap cacheBitmapFromView = null;
+//                if (drawingCache != null) {
+//                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
+//                    containerVg.setDrawingCacheEnabled(false);
+//                }
 
 //                SharePhoto photo = new SharePhoto.Builder()
 //                        .setBitmap(cacheBitmapFromView)
@@ -150,7 +150,6 @@ public class WhiteBoradFragment extends Fragment {
 //                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
 //                }
 //                else {
-//                    shareDialog.show(content);
 //                    Log.d("Fail", "Loading facebook fail");
 //                }
 
