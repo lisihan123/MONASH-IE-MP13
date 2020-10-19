@@ -138,18 +138,28 @@ public class WhiteBoradFragment extends Fragment {
                     containerVg.setDrawingCacheEnabled(false);
                 }
 
-                SharePhoto photo = new SharePhoto.Builder()
-                        .setBitmap(cacheBitmapFromView)
+//                SharePhoto photo = new SharePhoto.Builder()
+//                        .setBitmap(cacheBitmapFromView)
+//                        .build();
+//                SharePhotoContent content = new SharePhotoContent.Builder()
+//                        .addPhoto(photo)
+//                        .build();
+//
+//                if(shareDialog.canShow(SharePhotoContent.class)){
+//                    shareDialog.show(content);
+//                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
+//                }
+//                else {
+//                    shareDialog.show(content);
+//                    Log.d("Fail", "Loading facebook fail");
+//                }
+
+                ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                        .setQuote("This is useful link\n From My App")
+                        .setContentUrl(Uri.parse("https://youtube.com"))
                         .build();
-                SharePhotoContent content = new SharePhotoContent.Builder()
-                        .addPhoto(photo)
-                        .build();
-                if(shareDialog.canShow(SharePhotoContent.class)){
-                    shareDialog.show(content);
-                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
-                }
-                else {
-                    Log.d("Fail", "Loading facebook fail");
+                if (ShareDialog.canShow(ShareLinkContent.class)) {
+                    shareDialog.show(linkContent);
                 }
             }
         });

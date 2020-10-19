@@ -58,7 +58,8 @@ dependencies {
     implementation 'com.amplifyframework:aws-datastore:1.4.1'
     implementation 'com.amplifyframework:aws-predictions:1.4.1'
     implementation 'com.amplifyframework:aws-storage-s3:1.4.1'
-    implementation 'com.facebook.android:facebook-share:8.1.0'
+//    implementation 'com.facebook.android:facebook-share:8.1.0'
+    implementation 'com.facebook.android:facebook-share:[5,6)'
     implementation 'com.youth.banner:banner:1.4.10'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
@@ -81,7 +82,7 @@ dependencies {
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 
 
     implementation 'com.mapbox.mapboxsdk:mapbox-sdk-geojson:5.5.0'

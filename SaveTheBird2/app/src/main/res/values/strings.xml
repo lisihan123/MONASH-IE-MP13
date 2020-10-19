@@ -156,6 +156,11 @@
     <string name="share">Share</string>
     <string name="reset">Reset</string>
     <string name="text_view_init">Loading location ...</string>
+    <string name="text_pop_button">
+    Hey! Excited to create your own poster?
+    Choose from the range of stickers below and drag-and-drop them on the whiteboard as you wish!Long press on any sticker to delete it.
+    Feel free to share the poster with your friends on Facebook, or save it to your device! Enjoy! :)</string>
+
 
 
     <!-- COMMUNITIES PAGES-->     <!-- ⬇ ▼ ﹀ -->
