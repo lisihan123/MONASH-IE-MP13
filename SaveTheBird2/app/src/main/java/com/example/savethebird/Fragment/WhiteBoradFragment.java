@@ -141,24 +141,76 @@ public class WhiteBoradFragment extends Fragment {
                     cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
                     containerVg.setDrawingCacheEnabled(false);
                 }
+
                 if(cacheBitmapFromView!=null){
-                SharePhoto photo = new SharePhoto.Builder()
-                        .setBitmap(cacheBitmapFromView)
-                        .build();
-                SharePhotoContent content = new SharePhotoContent.Builder()
-                        .addPhoto(photo)
-                        .build();
+                    SharePhoto photo = new SharePhoto.Builder()
+                            .setBitmap(cacheBitmapFromView)
+                            .build();
+                    SharePhotoContent content = new SharePhotoContent.Builder()
+                            .addPhoto(photo)
+                            .build();
                     if(shareDialog.canShow(SharePhotoContent.class)){
                         shareDialog.show(content);
                         Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
                     }
                     else {
                         Log.d("Fail", "Loading facebook fail");
+                        ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                                .setQuote("This is useful link\n From My App")
+                                .setContentUrl(Uri.parse("https://youtube.com"))
+                                .build();
+                        if (ShareDialog.canShow(ShareLinkContent.class)) {
+                            shareDialog.show(linkContent);
+                        }
                     }
                 }
 
+            }
+        });
 
-//
+    }
+
+    private void initShareTest(View view){
+        mShare = view.findViewById(R.id.button_share_picture);
+        ShareDialog shareDialog = new ShareDialog(WhiteBoradFragment.this);
+        CallbackManager callM = CallbackManager.Factory.create();
+        shareDialog.registerCallback(callM, new FacebookCallback<Sharer.Result>() {
+            @Override
+            public void onSuccess(Sharer.Result result) {
+
+                Toast.makeText(getContext(),"Share successfully",Toast.LENGTH_LONG);
+                Log.d("Success", "onSuccess: ");
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getContext(),"Cancel",Toast.LENGTH_LONG);
+                Log.d("Cancel","cancel");
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Toast.makeText(getContext(),error.getMessage(),Toast.LENGTH_LONG);
+                Log.d("Error", "onError: ");
+            }
+        });
+        String url = "https://image.shutterstock.com/image-vector/set-share-icon-260nw-658051099.jpg";
+        SharePhoto photo = new SharePhoto.Builder()
+                .setImageUrl(Uri.parse(url))
+                .build();
+        SharePhotoContent content = new SharePhotoContent.Builder()
+                .addPhoto(photo)
+                .build();
+        mShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(shareDialog.canShow(SharePhotoContent.class)){
+                    shareDialog.show(content);
+                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
+                }
+                else {
+                    Log.d("Fail", "Loading facebook fail");
+                }
 //                ShareLinkContent linkContent = new ShareLinkContent.Builder()
 //                        .setQuote("This is useful link\n From My App")
 //                        .setContentUrl(Uri.parse("https://youtube.com"))
@@ -169,8 +221,8 @@ public class WhiteBoradFragment extends Fragment {
             }
         });
 
-    }
 
+    }
 
     private void initView(View view){
 
