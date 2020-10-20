@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
@@ -84,6 +85,7 @@ public class WhiteBoradFragment extends Fragment {
     TextView mtextPlace;
     Button mShare;
     List<View> viewList = new ArrayList<View>();
+    Location location;
 
 
     @Override
@@ -152,12 +154,15 @@ public class WhiteBoradFragment extends Fragment {
                     if (content == null){
                         Log.d("ERROr", " CONTENT IS NULL ");
                     }
+                    else {
+                        Log.d("CONTENT","This content is not null");
+                    }
                     if(shareDialog.canShow(SharePhotoContent.class)){
                         shareDialog.show(content);
                         Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
                     }
                     else {
-                        Log.d("Fail", "Loading facebook fail");
+                        Log.d("Fail", "Loading facebook fail and shareDialog can not show");
                         ShareLinkContent linkContent = new ShareLinkContent.Builder()
                                 .setQuote("This is useful link\n From My App")
                                 .setContentUrl(Uri.parse("https://youtube.com"))
@@ -585,16 +590,15 @@ public class WhiteBoradFragment extends Fragment {
     }
 
     private void Geocoding(){
-//        Location location = null;
-//
-//            location=getLastKnownLocation();
-//
-//
-//            double latitude = location.getLatitude();
-//            double longitude = location.getLongitude();
 
-//            String url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + latitude + "," + longitude + ".json?access_token=" + MAPBOX_ACCESS_TOKEN;
-            String url ="https://api.mapbox.com/geocoding/v5/mapbox.places/-73.989,40.733.json?access_token=pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
+
+
+
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
+
+            String url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + longitude + "," + latitude + ".json?access_token=" + MAPBOX_ACCESS_TOKEN;
+//            String url ="https://api.mapbox.com/geocoding/v5/mapbox.places/-73.989,40.733.json?access_token=pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
             OkHttpClient okHttpClient = new OkHttpClient();
             final Request request = new Request.Builder().url(url).build();
             Call call = okHttpClient.newCall(request);
@@ -633,21 +637,7 @@ public class WhiteBoradFragment extends Fragment {
 
 
     }
-    private Location getLastKnownLocation() {
-        LocationManager mLocationManager = (LocationManager) getContext().getSystemService(LOCATION_SERVICE);
-        List<String> providers = mLocationManager.getProviders(true);
-        Location bestLocation = null;
-        for (String provider : providers) {
-            @SuppressLint("MissingPermission") Location l = mLocationManager.getLastKnownLocation(provider);
-            if (l == null) {
-                continue;
-            }
-            if (bestLocation == null || l.getAccuracy() < bestLocation.getAccuracy()) {
-                bestLocation = l;
-            }
-        }
-        return bestLocation;
-    }
+
 
     private Handler mHandler = new Handler(){
         @SuppressLint("HandlerLeak")
@@ -663,6 +653,9 @@ public class WhiteBoradFragment extends Fragment {
         }
     };
 
-
-
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        location = ((MainActivity)context).getLocation();
+    }
 }

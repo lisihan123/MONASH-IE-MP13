@@ -111,10 +111,9 @@ public class MainActivity extends AppCompatActivity {
 //        );
 //        navView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
 
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                100);
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                100);
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                1000);
         printKeyHash();
 
     }
@@ -396,4 +395,8 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
+    public Location getLocation(){
+        return location;
+    }
 }
