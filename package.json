@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-native-share": "^4.0.2"
+  }
+}

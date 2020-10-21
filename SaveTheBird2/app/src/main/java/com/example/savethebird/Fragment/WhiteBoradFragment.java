@@ -592,8 +592,6 @@ public class WhiteBoradFragment extends Fragment {
     private void Geocoding(){
 
 
-
-
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
 
