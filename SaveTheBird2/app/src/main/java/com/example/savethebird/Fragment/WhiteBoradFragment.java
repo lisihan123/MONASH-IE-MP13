@@ -100,14 +100,15 @@ public class WhiteBoradFragment extends Fragment {
         initWhiteBoard(view);
         initView(view);
         addToImageList(view);
-        if(location != null){
-            Geocoding();
-        }
-        else{
-            Toast.makeText(getContext(),"Sorry! Can not get your location!", Toast.LENGTH_LONG).show();
-            mtextPlace.setVisibility(View.GONE);
-
-        }
+        Geocoding();
+//        if(location != null){
+////            Geocoding();
+////        }
+////        else{
+////            Toast.makeText(getContext(),"Sorry! Can not get your location!", Toast.LENGTH_LONG).show();
+////            mtextPlace.setVisibility(View.GONE);
+////
+////        }
         initShareTest(view);
 
 
@@ -577,6 +578,7 @@ public class WhiteBoradFragment extends Fragment {
 
     private void Geocoding(){
 
+        if(location != null){
 
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
@@ -613,6 +615,12 @@ public class WhiteBoradFragment extends Fragment {
                     }
                 }
             });
+        }
+
+        else{
+            Toast.makeText(getContext(),"Sorry! Can not get your location!", Toast.LENGTH_LONG).show();
+            mtextPlace.setVisibility(View.GONE);
+        }
 
 
 
