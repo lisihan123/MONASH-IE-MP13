@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,6 +31,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.menu.ActionMenuItemView;
+import androidx.core.app.ShareCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -99,7 +101,7 @@ public class WhiteBoradFragment extends Fragment {
         initView(view);
         addToImageList(view);
         Geocoding();
-        initShare(view);
+        initShareTest(view);
 
 
         return  view;
@@ -180,52 +182,29 @@ public class WhiteBoradFragment extends Fragment {
 
     private void initShareTest(View view){
         mShare = view.findViewById(R.id.button_share_picture);
-        ShareDialog shareDialog = new ShareDialog(WhiteBoradFragment.this);
-        CallbackManager callM = CallbackManager.Factory.create();
-        shareDialog.registerCallback(callM, new FacebookCallback<Sharer.Result>() {
-            @Override
-            public void onSuccess(Sharer.Result result) {
-
-                Toast.makeText(getContext(),"Share successfully",Toast.LENGTH_LONG);
-                Log.d("Success", "onSuccess: ");
-            }
-
-            @Override
-            public void onCancel() {
-                Toast.makeText(getContext(),"Cancel",Toast.LENGTH_LONG);
-                Log.d("Cancel","cancel");
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Toast.makeText(getContext(),error.getMessage(),Toast.LENGTH_LONG);
-                Log.d("Error", "onError: ");
-            }
-        });
-        String url = "https://image.shutterstock.com/image-vector/set-share-icon-260nw-658051099.jpg";
-        SharePhoto photo = new SharePhoto.Builder()
-                .setImageUrl(Uri.parse(url))
-                .build();
-        SharePhotoContent content = new SharePhotoContent.Builder()
-                .addPhoto(photo)
-                .build();
         mShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(shareDialog.canShow(SharePhotoContent.class)){
-                    shareDialog.show(content);
-                    Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
+                final boolean drawingCacheEnabled = true;
+                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
+                containerVg.buildDrawingCache(drawingCacheEnabled);
+                final Bitmap drawingCache = containerVg.getDrawingCache();
+                Bitmap cacheBitmapFromView = null;
+//                SharePhotoContent content = null;
+                if (drawingCache != null) {
+                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
+                    containerVg.setDrawingCacheEnabled(false);
                 }
-                else {
-                    Log.d("Fail", "Loading facebook fail");
+                if(cacheBitmapFromView != null) {
+                    Uri uriToImage =  Uri.parse(MediaStore.Images.Media.insertImage(getContext().getContentResolver(), cacheBitmapFromView, null,null));
+                    Intent intent = ShareCompat.IntentBuilder.from(getActivity())
+                            .setType(getContext().getContentResolver().getType(uriToImage))
+                            .setStream(uriToImage)
+                            .getIntent();
+                    intent.setData(uriToImage);
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    startActivity(Intent.createChooser(intent, "Share Image"));
                 }
-//                ShareLinkContent linkContent = new ShareLinkContent.Builder()
-//                        .setQuote("This is useful link\n From My App")
-//                        .setContentUrl(Uri.parse("https://youtube.com"))
-//                        .build();
-//                if (ShareDialog.canShow(ShareLinkContent.class)) {
-//                    shareDialog.show(linkContent);
-//                }
             }
         });
 
