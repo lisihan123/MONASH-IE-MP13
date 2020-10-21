@@ -100,7 +100,14 @@ public class WhiteBoradFragment extends Fragment {
         initWhiteBoard(view);
         initView(view);
         addToImageList(view);
-        Geocoding();
+        if(location != null){
+            Geocoding();
+        }
+        else{
+            Toast.makeText(getContext(),"Sorry! Can not get your location!", Toast.LENGTH_LONG).show();
+            mtextPlace.setVisibility(View.GONE);
+
+        }
         initShareTest(view);
 
 
