@@ -57,10 +57,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,14 +103,7 @@ public class WhiteBoradFragment extends Fragment {
         initView(view);
         addToImageList(view);
         Geocoding();
-//        if(location != null){
-////            Geocoding();
-////        }
-////        else{
-////            Toast.makeText(getContext(),"Sorry! Can not get your location!", Toast.LENGTH_LONG).show();
-////            mtextPlace.setVisibility(View.GONE);
-////
-////        }
+
         initShareTest(view);
 
 
@@ -198,26 +193,32 @@ public class WhiteBoradFragment extends Fragment {
                 containerVg.buildDrawingCache(drawingCacheEnabled);
                 final Bitmap drawingCache = containerVg.getDrawingCache();
                 Bitmap cacheBitmapFromView = null;
-//                SharePhotoContent content = null;
+
                 if (drawingCache != null) {
                     cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
                     containerVg.setDrawingCacheEnabled(false);
                 }
                 if(cacheBitmapFromView != null) {
                     Uri uriToImage =  Uri.parse(MediaStore.Images.Media.insertImage(getContext().getContentResolver(), cacheBitmapFromView, null,null));
-                    Intent intent = ShareCompat.IntentBuilder.from(getActivity())
-                            .setType(getContext().getContentResolver().getType(uriToImage))
-                            .setStream(uriToImage)
-                            .getIntent();
-                    intent.setData(uriToImage);
-                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                    startActivity(Intent.createChooser(intent, "Share Image"));
+
+                    Intent i = new Intent(Intent.ACTION_SEND);
+
+                    i.setType("image/*");
+                    i.putExtra(Intent.EXTRA_STREAM, uriToImage);
+                    try {
+                        startActivity(Intent.createChooser(i, "Share Photo"));
+                    } catch (android.content.ActivityNotFoundException ex) {
+
+                        ex.printStackTrace();
+                    }
                 }
             }
         });
 
 
     }
+
+
 
     private void initView(View view){
 
