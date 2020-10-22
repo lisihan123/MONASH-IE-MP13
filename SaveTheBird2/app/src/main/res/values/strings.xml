@@ -152,7 +152,7 @@
     <string name="item_3">item3</string>
     <string name="item_4">item4</string>
     <string name="item_5">item5</string>
-    <string name="save">Save Picture</string>
+    <string name="save">Save</string>
     <string name="share">Share</string>
     <string name="reset">Reset</string>
     <string name="text_view_init">Loading location ...</string>
