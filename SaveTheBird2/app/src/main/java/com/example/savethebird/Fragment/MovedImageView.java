@@ -1,7 +1,7 @@
 package com.example.savethebird.Fragment;
 import android.content.Context;
 import android.graphics.Matrix;
-import android.graphics.PointF;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -15,6 +15,8 @@ public class MovedImageView extends AppCompatImageView {
     private int mode = 0;// 初始状态
     private static final int MODE_DRAG = 1;//平移
     private static final int MODE_ZOOM = 2;//缩放
+    private float spacing;
+    private float scale = 1;
 
     public MovedImageView(Context context) {
         super(context);
@@ -35,38 +37,51 @@ public class MovedImageView extends AppCompatImageView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+        int action = event.getAction()& MotionEvent.ACTION_MASK;
+        if (action == MotionEvent.ACTION_DOWN) {
             mode = MODE_DRAG;
             downX = event.getRawX();
             downY = event.getRawY();
             time = System.currentTimeMillis();
         }
 
-        if (event.getAction() == MotionEvent.ACTION_MOVE) {
+        if ( action == MotionEvent.ACTION_POINTER_DOWN){
+            mode = MODE_ZOOM;
+            spacing = getSpacing(event);
+            Log.d("Mode", "Zoom ");
+
+        }
+
+        if (action == MotionEvent.ACTION_MOVE) {
+            if(mode == MODE_DRAG){
+                Log.d("Mode", "drag ");
             moveX = event.getRawX();
             moveY = event.getRawY();
-
             this.setX(getX() + (moveX - downX));
             this.setY(getY() + (moveY - downY));
             downX = moveX;
             downY = moveY;
-            time = System.currentTimeMillis();
-            mode = 0;
+            }
+            if(mode == MODE_ZOOM && event.getPointerCount()==2){
+                scale = scale * getSpacing(event) / spacing;
+                setScaleX(scale);
+                setScaleY(scale);
+            }
         }
 
-        if(event.getAction() == MotionEvent.ACTION_UP){
+        if(action == MotionEvent.ACTION_UP){
+            mode = 0;
             long delay = System.currentTimeMillis()-time;
-            if(delay > 1000){
+            if(delay > 2000){
                 if(onLongClickListener != null){
                     onLongClickListener.onLongClick(this);
                 }
             }
         }
-        if (event.getAction() == MotionEvent.ACTION_POINTER_DOWN){
-            mode = MODE_ZOOM;
 
 
-
+        if(action == MotionEvent.ACTION_POINTER_UP){
+            mode = 0;
         }
         return super.onTouchEvent(event);
     }
@@ -77,15 +92,13 @@ public class MovedImageView extends AppCompatImageView {
         void onLongClick(View view);
     }
 
-    private float distance(MotionEvent event) {
-        float dx = event.getX(1) - event.getX(0);
-        float dy = event.getY(1) - event.getY(0);
-        return (float) Math.sqrt(dx * dx + dy * dy);
+    // 触碰两点间距离
+    private float getSpacing(MotionEvent event) {
+        //通过三角函数得到两点间的距离
+        float x = event.getX(0) - event.getX(1);
+        float y = event.getY(0) - event.getY(1);
+        return (float) Math.sqrt(x * x + y * y);
     }
 
-    private PointF mid(MotionEvent event) {
-        float midX = (event.getX(1) + event.getX(0)) / 2;
-        float midY = (event.getY(1) + event.getY(0)) / 2;
-        return new PointF(midX, midY);
-    }
+
 }

@@ -479,16 +479,16 @@ public class WhiteBoradFragment extends Fragment {
     }
 
     private void putWhiteBoard(int rid){
-        ImageView image = new ImageView(getContext());
+        MovedImageView image = new MovedImageView(getContext());
         image.setImageResource(rid);
-//        image.setLongClickable(true);
-//        image.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                return false;
-//            }
-//        });
-        image.setOnTouchListener(new DragTouchListener(containerVg,getContext()));
+        image.setLongClickable(true);
+        image.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                questionDelete(v);
+                return false;
+            }
+        });
         containerVg.addView(image);
         viewList.add(image);
     }
