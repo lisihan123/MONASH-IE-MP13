@@ -13,7 +13,6 @@
         android:layout_width="400dp"
         android:layout_height="180dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
@@ -21,22 +20,37 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:srcCompat="@drawable/calendar_v3" />
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/lifecycle_note"
+        android:textAlignment="center"
+        android:textColor="#2D2D2D"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="391dp"
-        android:layout_height="415dp"
+        android:layout_height="380dp"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
 
         <TextView
             android:id="@+id/textView26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="92dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="30dp"
             android:fontFamily="@font/roboto"
             android:text="@string/_9_months"
             android:textSize="18sp"
@@ -61,7 +75,7 @@
             android:layout_width="107dp"
             android:layout_height="96dp"
             android:layout_marginStart="92dp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/lifecycle_adult" />
@@ -101,7 +115,7 @@
             android:layout_width="90dp"
             android:layout_height="40dp"
             android:layout_marginEnd="116dp"
-            android:layout_marginBottom="88dp"
+            android:layout_marginBottom="58dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/arrow_1" />
@@ -111,7 +125,7 @@
             android:layout_width="40dp"
             android:layout_height="90dp"
             android:layout_marginStart="44dp"
-            android:layout_marginBottom="148dp"
+            android:layout_marginBottom="118dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/arrow_2" />
@@ -131,7 +145,7 @@
             android:layout_width="104dp"
             android:layout_height="93dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="128dp"
+            android:layout_marginBottom="98dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/lifecycle_juvenie" />
@@ -207,7 +221,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/lifecycle_guide"
             android:layout_width="92dp"
             android:layout_height="46dp"
             android:layout_marginTop="100dp"
@@ -219,22 +233,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="332dp"
-            android:layout_height="28dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/lifecycle_note"
-            android:textAlignment="center"
-            android:textColor="#2D2D2D"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
