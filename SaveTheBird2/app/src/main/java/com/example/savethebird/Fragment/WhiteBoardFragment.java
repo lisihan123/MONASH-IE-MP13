@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -98,7 +99,6 @@ public class WhiteBoardFragment extends Fragment {
         setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.whiteboard, container, false);
-        FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
         initWhiteBoard(view);
         initView(view);
         addToImageList(view);
@@ -110,78 +110,7 @@ public class WhiteBoardFragment extends Fragment {
         return  view;
     }
 
-    private void initShare(View view){
-        mShare = view.findViewById(R.id.button_share_picture);
-        ShareDialog shareDialog = new ShareDialog(WhiteBoardFragment.this);
-        CallbackManager callM = CallbackManager.Factory.create();
-        shareDialog.registerCallback(callM, new FacebookCallback<Sharer.Result>() {
-            @Override
-            public void onSuccess(Sharer.Result result) {
 
-                Toast.makeText(getContext(),"Share successfully",Toast.LENGTH_LONG);
-                Log.d("Success", "onSuccess: ");
-            }
-
-            @Override
-            public void onCancel() {
-                Toast.makeText(getContext(),"Cancel",Toast.LENGTH_LONG);
-                Log.d("Cancel","cancel");
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Toast.makeText(getContext(),error.getMessage(),Toast.LENGTH_LONG);
-                Log.d("Error", "onError: ");
-            }
-        });
-
-        mShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final boolean drawingCacheEnabled = true;
-                containerVg.setDrawingCacheEnabled(drawingCacheEnabled);
-                containerVg.buildDrawingCache(drawingCacheEnabled);
-                final Bitmap drawingCache = containerVg.getDrawingCache();
-                Bitmap cacheBitmapFromView = null;
-//                SharePhotoContent content = null;
-                if (drawingCache != null) {
-                    cacheBitmapFromView = Bitmap.createBitmap(drawingCache);
-                    containerVg.setDrawingCacheEnabled(false);
-                }
-
-                if(cacheBitmapFromView!=null){
-                    SharePhoto photo = new SharePhoto.Builder()
-                            .setBitmap(cacheBitmapFromView)
-                            .build();
-                    SharePhotoContent content = new SharePhotoContent.Builder()
-                            .addPhoto(photo)
-                            .build();
-                    if (content == null){
-                        Log.d("ERROr", " CONTENT IS NULL ");
-                    }
-                    else {
-                        Log.d("CONTENT","This content is not null");
-                    }
-                    if(shareDialog.canShow(SharePhotoContent.class)){
-                        shareDialog.show(content);
-                        Log.d("Success", "lOADING FACEBOOK SUCCESSFULLY ");
-                    }
-                    else {
-                        Log.d("Fail", "Loading facebook fail and shareDialog can not show");
-                        ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                                .setQuote("This is useful link\n From My App")
-                                .setContentUrl(Uri.parse("https://youtube.com"))
-                                .build();
-                        if (ShareDialog.canShow(ShareLinkContent.class)) {
-                            shareDialog.show(linkContent);
-                        }
-                    }
-                }
-
-            }
-        });
-
-    }
 
     private void initShareTest(View view){
         mShare = view.findViewById(R.id.button_share_picture);
@@ -482,11 +411,11 @@ public class WhiteBoardFragment extends Fragment {
         MovedImageView image = new MovedImageView(getContext());
         image.setImageResource(rid);
         image.setLongClickable(true);
-        image.setOnLongClickListener(new View.OnLongClickListener() {
+        long lastClicktime = 0;
+        image.setOnDoubleClick(new MovedImageView.OnDoubleClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                questionDelete(v);
-                return false;
+            public void onDoubleClick(View view) {
+                questionDelete(view);
             }
         });
         containerVg.addView(image);
