@@ -140,44 +140,4 @@ public class ListFragment extends Fragment {
         fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,newFragment).addToBackStack("tag").commit();
     }
 
-// private void init(View view)
-//    {
-//        DragFloatActionButton btnOpenPopup = view.findViewById(R.id.circle_button);
-//        btnOpenPopup.setOnClickListener(new Button.OnClickListener(){
-//
-//            @Override
-//            public void onClick(View arg0) {
-//                LayoutInflater layoutInflater
-//                        = (LayoutInflater)getContext()
-//                        .getSystemService(LAYOUT_INFLATER_SERVICE);
-//                View popupView = layoutInflater.inflate(R.layout.button_popout, null);
-//                final PopupWindow popupWindow = new PopupWindow(
-//                        popupView,
-//                        ViewGroup.LayoutParams.WRAP_CONTENT,
-//                        ViewGroup.LayoutParams.WRAP_CONTENT);
-//                popupWindow.setFocusable(true);
-//
-////                Button btnDismiss = (Button)popupView.findViewById(R.id.dismiss);
-////                btnDismiss.setOnClickListener(new Button.OnClickListener(){
-////
-////                    @Override
-////                    public void onClick(View v) {
-////                         TODO Auto-generated method stub
-////                        popupWindow.dismiss();
-////                    }});
-//
-//                popupWindow.showAsDropDown(btnOpenPopup, 50, -30);
-//
-//                Button more = popupView.findViewById(R.id.more_info);
-//                more.setOnClickListener(new OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        replaceFragment(new MoreInfoFragment());
-//                        popupWindow.dismiss();
-//                    }
-//                });
-//
-//            }});
-//    }
-
 }

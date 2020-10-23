@@ -23,11 +23,6 @@ public class OverviewFragment extends Fragment {
     }
 
 
-
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,8 +45,8 @@ public class OverviewFragment extends Fragment {
         migl2=view.findViewById(R.id.imageView_chick);
         migl3=view.findViewById(R.id.imageView_juvenie);
         migl4 = view.findViewById(R.id.imageView_adult);
-            OverListener ls = new OverListener();
-            migl1.setOnClickListener(ls);
+        OverListener ls = new OverListener();
+        migl1.setOnClickListener(ls);
         migl2.setOnClickListener(ls);
         migl3.setOnClickListener(ls);
         migl4.setOnClickListener(ls);

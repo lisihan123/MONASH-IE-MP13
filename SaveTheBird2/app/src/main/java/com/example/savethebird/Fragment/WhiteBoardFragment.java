@@ -77,7 +77,7 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 import static android.content.Context.LOCATION_SERVICE;
 
 
-public class WhiteBoradFragment extends Fragment {
+public class WhiteBoardFragment extends Fragment {
 
     ActionMenuItemView btnMore;
     TabLayout tl1;
@@ -112,7 +112,7 @@ public class WhiteBoradFragment extends Fragment {
 
     private void initShare(View view){
         mShare = view.findViewById(R.id.button_share_picture);
-        ShareDialog shareDialog = new ShareDialog(WhiteBoradFragment.this);
+        ShareDialog shareDialog = new ShareDialog(WhiteBoardFragment.this);
         CallbackManager callM = CallbackManager.Factory.create();
         shareDialog.registerCallback(callM, new FacebookCallback<Sharer.Result>() {
             @Override
@@ -270,7 +270,7 @@ public class WhiteBoradFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         Fragment myFragment = getFragmentManager().findFragmentById(R.id.nav_host_fragment);
 
-        if (myFragment != null && myFragment instanceof WhiteBoradFragment) {
+        if (myFragment != null && myFragment instanceof WhiteBoardFragment) {
             inflater.inflate(R.menu.mymenu, menu);
 
         }

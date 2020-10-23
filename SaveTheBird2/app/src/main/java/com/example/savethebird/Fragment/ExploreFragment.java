@@ -13,8 +13,6 @@ import androidx.fragment.app.Fragment;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
-//https://blog.csdn.net/qq_41545435/article/details/88601716
-//https://developers.facebook.com/docs/sharing/android
 public class ExploreFragment extends Fragment {
     ImageView mig1, mig2;
 
@@ -29,12 +27,6 @@ public class ExploreFragment extends Fragment {
               return rootView;
 
       }
-//      public void fbShare(){
-//          ShareLinkContent content = new ShareLinkContent.Builder()
-//                  .setContentUrl(Uri.parse("https://developers.facebook.com"))
-//                  .build();
-//
-//      }
 
     public void onResume() {
         super.onResume();

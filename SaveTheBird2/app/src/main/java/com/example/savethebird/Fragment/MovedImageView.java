@@ -12,9 +12,9 @@ public class MovedImageView extends AppCompatImageView {
     private OnLongClickListener onLongClickListener;
     float downX, downY;
     float moveX, moveY;
-    private int mode = 0;// 初始状态
-    private static final int MODE_DRAG = 1;//平移
-    private static final int MODE_ZOOM = 2;//缩放
+    private int mode = 0;// initial
+    private static final int MODE_DRAG = 1;//drag
+    private static final int MODE_ZOOM = 2;//zoom
     private float spacing;
     private float scale = 1;
 
@@ -92,9 +92,8 @@ public class MovedImageView extends AppCompatImageView {
         void onLongClick(View view);
     }
 
-    // 触碰两点间距离
+    // get spacing
     private float getSpacing(MotionEvent event) {
-        //通过三角函数得到两点间的距离
         float x = event.getX(0) - event.getX(1);
         float y = event.getY(0) - event.getY(1);
         return (float) Math.sqrt(x * x + y * y);
