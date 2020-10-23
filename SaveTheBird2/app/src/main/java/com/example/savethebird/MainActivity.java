@@ -29,6 +29,8 @@ import com.amplifyframework.api.graphql.model.ModelMutation;
 import com.amplifyframework.api.rest.RestOptions;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Todo;
+import com.example.savethebird.Fragment.ExploreFragment;
+import com.example.savethebird.Fragment.MoreInfo.MoreInfoFragment;
 import com.example.savethebird.Fragment.home.HomeFragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -69,10 +71,9 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    List<Distribution> list = new ArrayList<>();
+
     private String URL = "http://13.210.103.77/api/distance?lng=%f&lat=%f";
     Location location = null;
-    int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-
-
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
@@ -172,48 +171,24 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 //        getSupportFragmentManager().popBackStackImmediate();
         Fragment current = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        if (current != null && current instanceof HomeFragment) {
+            Log.d("Curretnt", "Home ");
+            super.onBackPressed();
+        }
+
+        else {
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
         }
-
-        if (current != null && current instanceof HomeFragment) {
-
-            super.onBackPressed();
-        } else {
-            super.onBackPressed();
         }
+        super.onBackPressed();
+
+//        else {
+//            super.onBackPressed();
+//        }
     }
 
-    public void readCSV() {
-        int i = 0;// 用于标记打印的条数
-        try {
-            File csv = new File("file:///android_asset/ebird_hooplo.csv"); // CSV文件路径
-            BufferedReader br = new BufferedReader(new FileReader(csv));
-            br.readLine();
-            String line = "";
-            /**
-             * 这里读取csv文件中的前10条数据
-             * 如果要读取第10条到30条数据,只需定义i初始值为9,wile中i<10改为i>=9&&i<30即可,其他范围依次类推
-             */
-            while ((line = br.readLine()) != null) { // 这里读取csv文件中的前10条数据
-                i++;
-//              System.out.println("第" + i + "行：" + line);// 输出每一行数据
-                /**
-                 *  csv格式每一列内容以逗号分隔,因此要取出想要的内容,以逗号为分割符分割字符串即可,
-                 *  把分割结果存到到数组中,根据数组来取得相应值
-                 */
-                String buffer[] = line.split(",");// 以逗号分隔
-                double latitude = Double.parseDouble(buffer[26]);
-                double longitude = Double.parseDouble(buffer[27]);
-                String ObservationDate = buffer[28];
-                Distribution dt = new Distribution(longitude, latitude, ObservationDate);
-                list.add(dt);
-            }
-            br.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
     public void getMyLocation() {
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
