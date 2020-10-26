@@ -82,8 +82,10 @@ public class ListFragment extends Fragment {
             more.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    replaceFragment(new MoreInfoFragment());
+//                    replaceFragment(new MoreInfoFragment());
+                    Navigation.findNavController(getView()).navigate(R.id.navigation_notifications);
                     popupWindow.dismiss();
+
                 }
             });
 
@@ -117,9 +119,6 @@ public class ListFragment extends Fragment {
                     break;
                 case R.id.factlist_image3:
                     replaceFragment(new FactKidFragment());
-                    break;
-                case R.id.more_info:
-                    replaceFragment(new MoreInfoFragment());
                     break;
 
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,7 +77,7 @@ public class OverviewFragment extends Fragment {
                     replaceFragment(new LifeCycleFragment(3));
                     break;
                 case R.id.bt_lifecycle_to_map:
-                    replaceFragment(new MapsFragment());
+                    Navigation.findNavController(getView()).navigate(R.id.navigation_dashboard);
                     break;
 
 
