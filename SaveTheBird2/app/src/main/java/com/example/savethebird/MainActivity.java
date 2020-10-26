@@ -31,6 +31,7 @@ import com.amplifyframework.core.Amplify;
 import com.amplifyframework.datastore.generated.model.Todo;
 import com.example.savethebird.Fragment.ExploreFragment;
 import com.example.savethebird.Fragment.MoreInfo.MoreInfoFragment;
+import com.example.savethebird.Fragment.MovedImageView;
 import com.example.savethebird.Fragment.home.HomeFragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -169,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        Log.d("stack", "number "+ getSupportFragmentManager().getBackStackEntryCount());
+
 //        getSupportFragmentManager().popBackStackImmediate();
         Fragment current = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         if (current != null && current instanceof HomeFragment) {
@@ -374,4 +377,5 @@ public class MainActivity extends AppCompatActivity {
     public Location getLocation(){
         return location;
     }
+
 }

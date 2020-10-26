@@ -161,9 +161,13 @@ public class HomeFragment extends Fragment {
             fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.nav_host_fragment,newFragment).commit();
         }
 
+
+
     @Override
     public void onDestroy() {
         super.onDestroy();
         mBanner.stopAutoPlay();
     }
+
+
 }

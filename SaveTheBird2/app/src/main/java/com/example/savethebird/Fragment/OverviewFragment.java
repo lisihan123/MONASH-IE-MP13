@@ -8,14 +8,17 @@ import androidx.fragment.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.savethebird.Fragment.Map.MapsFragment;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
 
 public class OverviewFragment extends Fragment {
     ImageView migl1, migl2,migl3,migl4;
+    Button mMapB;
 
 
     public OverviewFragment() {
@@ -50,6 +53,9 @@ public class OverviewFragment extends Fragment {
         migl2.setOnClickListener(ls);
         migl3.setOnClickListener(ls);
         migl4.setOnClickListener(ls);
+        mMapB = view.findViewById(R.id.bt_lifecycle_to_map);
+        mMapB.setOnClickListener(ls);
+
 
     }
 
@@ -68,6 +74,9 @@ public class OverviewFragment extends Fragment {
                     break;
                 case R.id.imageView_adult:
                     replaceFragment(new LifeCycleFragment(3));
+                    break;
+                case R.id.bt_lifecycle_to_map:
+                    replaceFragment(new MapsFragment());
                     break;
 
 

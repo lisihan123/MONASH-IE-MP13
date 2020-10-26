@@ -7,7 +7,6 @@ import android.view.View;
 
 import androidx.appcompat.widget.AppCompatImageView;
 
-import static android.content.ContentValues.TAG;
 
 public class MovedImageView extends AppCompatImageView {
 
