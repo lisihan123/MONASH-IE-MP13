@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
     implementation 'androidx.viewpager:viewpager:1.0.0'
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
 //    implementation files('/Users/sihanli/Downloads/YouTubeAndroidPlayerApi-1/libs/YouTubeAndroidPlayerApi.jar')
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
