@@ -237,17 +237,19 @@
 
     <Button
         android:id="@+id/bt_lifecycle_to_map"
-        android:layout_width="220dp"
-        android:layout_height="55dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:background="@drawable/shape_capsule"
         android:backgroundTint="@color/colorPrimary"
         android:drawableLeft="@drawable/ic_map_white"
         android:drawablePadding="10dip"
         android:gravity="center_vertical"
-        android:textAllCaps="false"
         android:paddingLeft="20dip"
         android:text="@string/to_map_bt"
+        android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
