@@ -3,6 +3,7 @@ package com.example.savethebird.Fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.savethebird.Fragment.MoreInfo.MoreInfoFragment;
 import com.example.savethebird.MainActivity;
 import com.example.savethebird.R;
 
@@ -33,6 +35,22 @@ public class ExploreFragment extends Fragment {
 
         ((MainActivity) getActivity())
                 .setActionBarTitle("Connect with Organisations");
+        getView().setFocusableInTouchMode(true);
+        getView().requestFocus();
+        getView().setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_UP && keyCode == KeyEvent.KEYCODE_BACK){
+
+                    // handle back button
+                    getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new MoreInfoFragment()).commit();
+
+                    return true;
+
+                }
+                return false;
+            }
+        });
 
     }
 
