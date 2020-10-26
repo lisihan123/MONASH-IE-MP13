@@ -83,6 +83,8 @@
 
     <!-- LIFECYCLE OVERVIEW AND ANALYSIS PAGE-->
 
+    <string name="to_map_bt">View Hoodies\' Distribution on Map</string>
+
     <string name="eggs">Eggs</string>
     <string name="chick">Chick</string>
     <string name="juvenile">Juvenile</string>
