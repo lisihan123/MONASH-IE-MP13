@@ -80,14 +80,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        if(getActionBar() !=null)
-//        {
-//            getActionBar().hide();
-//        }
-//
-//        if(getSupportActionBar() !=null){
-//            getSupportActionBar().hide();
-//        }
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -99,39 +91,16 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-//        double distance = compareDB(location);
 
-//        buildTodo();
-
-//        Amplify.DataStore.observe(Todo.class,
-//                started -> Log.i("Tutorial", "Observation began."),
-//                change -> Log.i("Tutorial", change.item().toString()),
-//                failure -> Log.e("Tutorial", "Observation failed.", failure),
-//                () -> Log.i("Tutorial", "Observation complete.")
-//        );
-//        navView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
 
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 1000);
-        printKeyHash();
+        requestApi(144.77611,-38.36265);
 
     }
 
-    private void printKeyHash() {
-        try{
-            PackageInfo info = getPackageManager().getPackageInfo("com.example.savethebird",
-                    PackageManager.GET_SIGNATURES);
-            for(Signature signature : info.signatures){
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash", Base64.encodeToString(md.digest(),Base64.DEFAULT));
 
-            }
-        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     public void setActionBarTitle(String title) {
@@ -225,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         location = getLastKnownLocation();
+//        location = new Location();
         Log.e("location", "last known location=" + location);
         if (location != null) {
             // 显示当前设备的位置信息
@@ -275,43 +245,14 @@ public class MainActivity extends AppCompatActivity {
                 + "longitude = " + location.getLongitude();
         Log.e("location", currentPosition);
 //        Toast.makeText(this, currentPosition, Toast.LENGTH_SHORT).show();
-        requestApi(location.getLongitude(), location.getLatitude());
+//        requestApi(location.getLongitude(), location.getLatitude());
     }
 
-    private static double rad(double d) {
-        return d * Math.PI / 180.0;
-    }
 
-    public static double getDistance(double longitude1, double latitude1, double longitude2, double latitude2) {
-        double radLat1 = rad(latitude1);
-        double radLat2 = rad(latitude2);
-        double a = radLat1 - radLat2;
-        double b = rad(longitude1) - rad(longitude2);
-        double distance = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
-        distance = distance * 6378.137;
-        Map<String, Object> map = new HashMap<String, Object>();
-        BigDecimal decimal = new BigDecimal(distance);
-        //结果保留2位小数
-        distance = decimal.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-        map.put("units", "km");
-        map.put("distance", distance);
 
-        return distance;
-    }
 
-//    public void notifyLocation(double distance){
-//        if(distance <=5){
-//            Toast.makeText(MainActivity.this, "Warning", Toast.LENGTH_LONG);
-//            AlertDialog.Builder build = new AlertDialog.Builder(MainActivity.this);
-//            build.setTitle("Alert!").setMessage("You are near a Hooded Plover habitat. Please be aware.").setPositiveButton("I Understand", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//                    Log.d("Ok","aok");
-//                    flag = 1;
-//                }
-//            }).show();
-//        }
-//    }
+
+
 
     private void showNotice()
     {
@@ -367,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
             super.handleMessage(msg);
             if(msg.what == 111){
                 double d = (Double) msg.obj;
-                if(d<=1) {
+                if(d<=2) {
                     showNotice();
                 }
             }
