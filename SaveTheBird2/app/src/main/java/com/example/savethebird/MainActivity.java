@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 1000);
-        requestApi(144.77611,-38.36265);
+
 
     }
 
@@ -245,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
                 + "longitude = " + location.getLongitude();
         Log.e("location", currentPosition);
 //        Toast.makeText(this, currentPosition, Toast.LENGTH_SHORT).show();
-//        requestApi(location.getLongitude(), location.getLatitude());
+        requestApi(location.getLongitude(), location.getLatitude());
     }
 
 

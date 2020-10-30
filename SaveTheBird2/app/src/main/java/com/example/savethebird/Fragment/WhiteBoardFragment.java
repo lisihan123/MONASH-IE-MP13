@@ -509,10 +509,10 @@ public class WhiteBoardFragment extends Fragment {
 
     private void Geocoding(){
 
-//        if(location != null){
+        if(location != null){
 
-            double latitude =  -38.36265;
-            double longitude = 144.77611;
+            double latitude =  location.getLatitude();
+            double longitude = location.getLongitude();
 
             String url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + longitude + "," + latitude + ".json?access_token=" + MAPBOX_ACCESS_TOKEN;
 //            String url ="https://api.mapbox.com/geocoding/v5/mapbox.places/-73.989,40.733.json?access_token=pk.eyJ1IjoibHd1dTAwMjEiLCJhIjoiY2tlZmYwcXR4MGsyODMzdXEyeGhlM21taiJ9.V4hkxkJ5mhH0NMCWoldlyw";
@@ -546,12 +546,12 @@ public class WhiteBoardFragment extends Fragment {
                     }
                 }
             });
-//        }
+        }
 
-//        else{
-//            Toast.makeText(getContext(),"Sorry! Can not get your location!", Toast.LENGTH_LONG).show();
-//            mtextPlace.setVisibility(View.GONE);
-//        }
+        else{
+            Toast.makeText(getContext(),"Sorry! Can not get your location!", Toast.LENGTH_LONG).show();
+            mtextPlace.setVisibility(View.GONE);
+        }
 
 
 
